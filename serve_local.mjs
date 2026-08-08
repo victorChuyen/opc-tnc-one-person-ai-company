@@ -340,6 +340,32 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // Checkout Payment Intent Tracking API
+    if (req.url === '/api/checkout/intent' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => body += chunk.toString());
+        req.on('end', async () => {
+            try {
+                const payload = JSON.parse(body || '{}');
+                console.log(`[CHECKOUT INTENT] Package: ${payload.package} | Method: ${payload.method} | Time: ${payload.timestamp}`);
+                // Notify Chairman via Telegram
+                const teleMsg = `💳 <b>[CHECKOUT INTENT]</b>\n` +
+                    `• Gói: <b>${payload.package || 'N/A'}</b>\n` +
+                    `• Phương thức: <b>${payload.method || 'N/A'}</b>\n` +
+                    `• Thời gian: ${payload.timestamp || new Date().toISOString()}`;
+                try {
+                    await socialEngine.sendTelegramSyncNotice(teleMsg);
+                } catch (err) {}
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: true }));
+            } catch (e) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: false, message: e.message }));
+            }
+        });
+        return;
+    }
+
     // Dedicated Market Isolation Routes (/vi & /en)
     if (req.url === '/vi' || req.url === '/landing_vi') {
         req.url = '/landing_vi.html';
@@ -349,6 +375,9 @@ const server = http.createServer((req, res) => {
     }
     if (req.url === '/landing' || req.url === '/vsl' || req.url === '/lead') {
         req.url = '/landing_vi.html';
+    }
+    if (req.url === '/checkout' || req.url === '/buy' || req.url === '/pricing') {
+        req.url = '/checkout.html';
     }
     if (req.url === '/app' || req.url === '/3d') {
         req.url = '/index.html';

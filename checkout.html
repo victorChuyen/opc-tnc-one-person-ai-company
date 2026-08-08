@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPC-TNC | Chọn Gói & Thanh Toán — One Person AI Company</title>
+    <meta name="description" content="Chọn gói phù hợp để xây dựng One Person AI Company của bạn. Gói 0đ miễn phí, Gói VIP 500K, Gói Setup 1M.">
+    <link rel="icon" type="image/png" href="LOGO-OPC.png">
+    <link rel="apple-touch-icon" href="LOGO-OPC.png">
+    <meta property="og:title" content="OPC-TNC | Chọn Gói & Thanh Toán">
+    <meta property="og:description" content="Xây dựng One Person AI Company với 6 Giám đốc AI tự động hóa 80% công việc.">
+    <meta property="og:image" content="https://ai.breaths.live/tnc_seo_cover.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-card: #111827;
+            --bg-card-hover: #1a2332;
+            --neon-cyan: #00f2ff;
+            --neon-gold: #fbbf24;
+            --neon-green: #10b981;
+            --neon-purple: #a855f7;
+            --neon-pink: #ec4899;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-glow: rgba(0, 242, 255, 0.25);
+            --font-main: 'Be Vietnam Pro', 'Inter', system-ui, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animated {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(0,242,255,0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 20%, rgba(168,85,247,0.05) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(251,191,36,0.04) 0%, transparent 50%),
+                        var(--bg-primary);
+            z-index: 0;
+        }
+
+        .page-container {
+            position: relative; z-index: 1;
+            max-width: 1200px; margin: 0 auto; padding: 20px 16px 60px;
+        }
+
+        /* HEADER */
+        .checkout-header {
+            text-align: center; padding: 32px 0 24px;
+        }
+        .checkout-header .logo-row {
+            display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px;
+        }
+        .checkout-header .logo-row img {
+            width: 48px; height: 48px; border-radius: 12px;
+            border: 2px solid var(--neon-cyan); box-shadow: 0 0 16px rgba(0,242,255,0.3);
+        }
+        .checkout-header h1 {
+            font-size: clamp(22px, 4vw, 34px); font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+        }
+        .checkout-header .subtitle {
+            font-size: 14px; color: var(--text-secondary); margin-top: 8px;
+            max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+
+        /* SPRINT GOAL BADGE */
+        .sprint-goal-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, rgba(0,242,255,0.1), rgba(251,191,36,0.1));
+            border: 1px solid var(--border-glow); border-radius: 100px;
+            padding: 6px 18px; font-size: 11px; font-weight: 700;
+            color: var(--neon-cyan); margin-bottom: 16px; letter-spacing: 0.5px;
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 8px rgba(0,242,255,0.2); }
+            to { box-shadow: 0 0 20px rgba(0,242,255,0.4); }
+        }
+
+        /* PRICING GRID */
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px; margin-top: 32px;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1.5px solid rgba(255,255,255,0.06);
+            border-radius: 20px; padding: 28px 24px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+        }
+        .pricing-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .pricing-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,242,255,0.1);
+        }
+        .pricing-card:hover::before { opacity: 1; }
+
+        /* POPULAR card */
+        .pricing-card.popular {
+            border-color: var(--neon-gold);
+            background: linear-gradient(180deg, rgba(251,191,36,0.06), var(--bg-card));
+        }
+        .pricing-card.popular::before {
+            background: linear-gradient(90deg, transparent, var(--neon-gold), transparent);
+            opacity: 1;
+        }
+
+        /* PREMIUM card */
+        .pricing-card.premium {
+            border-color: var(--neon-purple);
+            background: linear-gradient(180deg, rgba(168,85,247,0.06), var(--bg-card));
+        }
+        .pricing-card.premium::before {
+            background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+            opacity: 1;
+        }
+
+        .card-badge {
+            display: inline-block; font-size: 10px; font-weight: 800;
+            padding: 3px 10px; border-radius: 100px; margin-bottom: 12px;
+            letter-spacing: 0.8px; text-transform: uppercase;
+        }
+        .card-badge.free { background: rgba(16,185,129,0.15); color: var(--neon-green); }
+        .card-badge.hot { background: rgba(251,191,36,0.15); color: var(--neon-gold); }
+        .card-badge.vip { background: rgba(168,85,247,0.15); color: var(--neon-purple); }
+
+        .card-title { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+        .card-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
+
+        .card-price {
+            display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+        }
+        .card-price .amount {
+            font-size: 36px; font-weight: 900;
+        }
+        .card-price .currency { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
+        .card-price .original {
+            font-size: 14px; color: #64748b; text-decoration: line-through; font-weight: 500;
+        }
+        .card-price-note { font-size: 11px; color: var(--text-secondary); margin-bottom: 16px; }
+
+        .card-features { list-style: none; margin-bottom: 20px; }
+        .card-features li {
+            font-size: 13px; padding: 5px 0;
+            display: flex; align-items: flex-start; gap: 8px; line-height: 1.4;
+        }
+        .card-features li::before { content: '✅'; font-size: 12px; flex-shrink: 0; }
+
+        .card-cta {
+            display: block; width: 100%; padding: 14px 0; border: none; border-radius: 12px;
+            font-family: var(--font-main); font-size: 14px; font-weight: 800;
+            cursor: pointer; text-align: center; text-decoration: none;
+            transition: all 0.3s; letter-spacing: 0.3px;
+        }
+        .card-cta.free-btn {
+            background: linear-gradient(135deg, #10b981, #059669); color: #fff;
+        }
+        .card-cta.free-btn:hover { box-shadow: 0 8px 24px rgba(16,185,129,0.35); transform: translateY(-2px); }
+
+        .card-cta.gold-btn {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #000;
+        }
+        .card-cta.gold-btn:hover { box-shadow: 0 8px 24px rgba(251,191,36,0.4); transform: translateY(-2px); }
+
+        .card-cta.purple-btn {
+            background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff;
+        }
+        .card-cta.purple-btn:hover { box-shadow: 0 8px 24px rgba(168,85,247,0.4); transform: translateY(-2px); }
+
+        /* PAYMENT SECTION */
+        .payment-section {
+            margin-top: 48px; text-align: center;
+        }
+        .payment-section h2 {
+            font-size: 22px; font-weight: 800; margin-bottom: 8px;
+        }
+        .payment-section .sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 24px; }
+
+        .payment-methods {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; max-width: 900px; margin: 0 auto;
+        }
+
+        .pay-method-card {
+            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px; padding: 24px; text-align: center;
+            transition: all 0.3s;
+        }
+        .pay-method-card:hover {
+            border-color: var(--border-glow); transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,242,255,0.08);
+        }
+        .pay-method-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .pay-method-card .pay-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+
+        /* VietQR Box */
+        .vietqr-box {
+            background: #fff; border-radius: 12px; padding: 16px; display: inline-block;
+            margin-bottom: 12px;
+        }
+        .vietqr-box img { max-width: 200px; height: auto; }
+        .bank-info { font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-top: 8px; }
+        .bank-info strong { color: var(--neon-cyan); }
+
+        /* PayPal Button */
+        .paypal-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #0070ba; color: #fff; padding: 12px 28px;
+            border-radius: 24px; font-weight: 700; font-size: 14px;
+            text-decoration: none; transition: all 0.3s; border: none; cursor: pointer;
+        }
+        .paypal-btn:hover { background: #003087; box-shadow: 0 8px 24px rgba(0,112,186,0.4); transform: translateY(-2px); }
+
+        /* MoMo Button */
+        .momo-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, #ae2070, #d82d8b); color: #fff; padding: 12px 28px;
+            border-radius: 24px; font-weight: 700; font-size: 14px;
+            text-decoration: none; transition: all 0.3s; border: none; cursor: pointer;
+        }
+        .momo-btn:hover { box-shadow: 0 8px 24px rgba(216,45,139,0.4); transform: translateY(-2px); }
+
+        /* TRUST BADGES */
+        .trust-section {
+            margin-top: 40px; text-align: center;
+        }
+        .trust-badges {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 16px;
+        }
+        .trust-badge {
+            display: flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 100px; padding: 6px 14px; font-size: 11px; font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* FOOTER */
+        .checkout-footer {
+            margin-top: 48px; text-align: center; padding: 24px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 11px; color: #64748b;
+        }
+        .checkout-footer a { color: var(--neon-cyan); text-decoration: none; }
+        .checkout-footer a:hover { text-decoration: underline; }
+
+        /* Amount selector */
+        .amount-selector {
+            display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap;
+        }
+        .amount-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.1);
+            background: transparent; color: var(--text-primary); font-weight: 700; font-size: 13px;
+            cursor: pointer; transition: all 0.25s; font-family: var(--font-main);
+        }
+        .amount-btn:hover, .amount-btn.active {
+            border-color: var(--neon-gold); background: rgba(251,191,36,0.1); color: var(--neon-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .payment-methods { grid-template-columns: 1fr; }
+            .card-price .amount { font-size: 28px; }
+        }
+
+        /* Success notification */
+        .success-toast {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff; padding: 16px 24px; border-radius: 12px;
+            font-weight: 700; font-size: 14px; box-shadow: 0 8px 32px rgba(16,185,129,0.3);
+            transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .success-toast.show { transform: translateX(0); }
+    </style>
+</head>
+<body>
+    <div class="bg-animated"></div>
+
+    <div class="page-container">
+        <!-- HEADER -->
+        <header class="checkout-header">
+            <div class="sprint-goal-badge">
+                🚀 SPRINT GOAL: 1,000 BIẾT ➔ 100 TẢI ➔ 10 VÀO NHÓM ➔ 1 CK 1M
+            </div>
+            <div class="logo-row">
+                <img src="LOGO-OPC.png" alt="OPC-TNC Logo">
+                <h1>CHỌN GÓI & THANH TOÁN</h1>
+            </div>
+            <p class="subtitle">
+                Xây dựng <strong>One Person AI Company</strong> với 6 Giám đốc AI tự động hóa 80% Marketing, Sales & Vận hành doanh nghiệp.
+            </p>
+        </header>
+
+        <!-- PRICING CARDS -->
+        <div class="pricing-grid">
+            <!-- GÓI 0Đ -->
+            <div class="pricing-card">
+                <span class="card-badge free">🎁 MIỄN PHÍ</span>
+                <h3 class="card-title">Bản Sao Mã Nguồn OPC</h3>
+                <p class="card-desc">Trải nghiệm 3D Virtual Office Simulator, 157 Prompt Vault & Obsidian Vault.</p>
+                <div class="card-price">
+                    <span class="amount" style="color:var(--neon-green);">0đ</span>
+                    <span class="currency">MIỄN PHÍ</span>
+                </div>
+                <p class="card-price-note">Nhận ngay qua Email & Nhóm Zalo</p>
+                <ul class="card-features">
+                    <li>3D Virtual Office Simulator 360°</li>
+                    <li>157 Prompt Vault (Obsidian Vault)</li>
+                    <li>Mã nguồn GitHub Open-Source</li>
+                    <li>Hướng dẫn nhân bản A-Z cho người mới</li>
+                    <li>Tham gia Nhóm Zalo Mã Nguồn VIP</li>
+                </ul>
+                <a href="https://ai.breaths.live/vi" class="card-cta free-btn" id="btn-free">
+                    🎁 NHẬN MIỄN PHÍ NGAY
+                </a>
+            </div>
+
+            <!-- GÓI 500K -->
+            <div class="pricing-card popular">
+                <span class="card-badge hot">🔥 PHỔ BIẾN NHẤT</span>
+                <h3 class="card-title">Gói VIP Nhóm Coaching</h3>
+                <p class="card-desc">Vào nhóm VIP coaching trực tiếp, nhận hỗ trợ setup & chiến lược từ đội ngũ AI.</p>
+                <div class="card-price">
+                    <span class="amount" style="color:var(--neon-gold);">500K</span>
+                    <span class="currency">VNĐ</span>
+                    <span class="original">2.000.000đ</span>
+                </div>
+                <p class="card-price-note">Giảm 75% — Chỉ còn giá ưu đãi Sprint</p>
+                <ul class="card-features">
+                    <li>Toàn bộ Gói 0đ (ở trên)</li>
+                    <li>Vào Nhóm VIP Coaching có hỗ trợ</li>
+                    <li>Hướng dẫn cài đặt 1-on-1 qua Zalo/Telegram</li>
+                    <li>Bộ mẫu quảng cáo Meta Ads Hormozi</li>
+                    <li>Chuỗi Email Onboarding 14 Ngày tự động</li>
+                    <li>Ưu tiên hỗ trợ kỹ thuật 48h</li>
+                </ul>
+                <button class="card-cta gold-btn" id="btn-500k" onclick="selectPackage('500K')">
+                    ⚡ MUA GÓI VIP 500K — THANH TOÁN NGAY
+                </button>
+            </div>
+
+            <!-- GÓI 1M -->
+            <div class="pricing-card premium">
+                <span class="card-badge vip">💎 SETUP TOÀN DIỆN</span>
+                <h3 class="card-title">Gói Setup 3D Simulator & 5 AI Directors</h3>
+                <p class="card-desc">Chairman Victor Chuyen cầm tay chỉ việc setup toàn bộ hệ thống AI Company của bạn.</p>
+                <div class="card-price">
+                    <span class="amount" style="color:var(--neon-purple);">1.000K</span>
+                    <span class="currency">VNĐ</span>
+                    <span class="original">10.000.000đ</span>
+                </div>
+                <p class="card-price-note">Giảm 90% — Ưu đãi chỉ trong Sprint 10 ngày</p>
+                <ul class="card-features">
+                    <li>Toàn bộ Gói VIP 500K (ở trên)</li>
+                    <li>1:1 Video Call Setup với Chairman Victor (60 phút)</li>
+                    <li>Cài đặt hoàn chỉnh 6 AI Directors trên máy bạn</li>
+                    <li>Tùy chỉnh Landing Page & 3D Simulator theo brand</li>
+                    <li>Kết nối VietQR/PayPal thanh toán tự động</li>
+                    <li>Kết nối Telegram Bot & Resend Email Engine</li>
+                    <li>30 ngày hỗ trợ kỹ thuật ưu tiên qua Telegram</li>
+                </ul>
+                <button class="card-cta purple-btn" id="btn-1m" onclick="selectPackage('1M')">
+                    💎 MUA GÓI SETUP 1M — THANH TOÁN NGAY
+                </button>
+            </div>
+        </div>
+
+        <!-- PAYMENT SECTION -->
+        <section class="payment-section" id="payment-section" style="display:none;">
+            <h2>💳 Chọn Phương Thức Thanh Toán</h2>
+            <p class="sub">Gói bạn chọn: <strong id="selected-package-label">—</strong></p>
+
+            <div class="payment-methods">
+                <!-- VietQR -->
+                <div class="pay-method-card">
+                    <h3>🏦 Chuyển Khoản VietQR (Việt Nam)</h3>
+                    <p class="pay-desc">Quét mã QR bằng App Ngân hàng — Xác nhận tự động trong 3 giây</p>
+                    <div class="vietqr-box" id="vietqr-box">
+                        <img id="vietqr-img" src="" alt="VietQR Code" style="display:none;">
+                        <p id="vietqr-loading" style="color:#333;font-size:13px;">⏳ Đang tạo mã QR...</p>
+                    </div>
+                    <div class="bank-info">
+                        <strong>MB Bank</strong> — Trần Ngọc Chuyền<br>
+                        STK: <strong>0989890022</strong><br>
+                        Nội dung CK: <strong id="ck-content">OPC [Gói] [SĐT]</strong>
+                    </div>
+                </div>
+
+                <!-- PayPal -->
+                <div class="pay-method-card">
+                    <h3>🌍 PayPal (International)</h3>
+                    <p class="pay-desc">For global customers — Pay securely via PayPal</p>
+                    <div style="margin-bottom:12px;">
+                        <div class="amount-selector">
+                            <button class="amount-btn active" onclick="setPaypalAmount(20)">$20 (500K)</button>
+                            <button class="amount-btn" onclick="setPaypalAmount(49)">$49 (1M)</button>
+                        </div>
+                    </div>
+                    <a href="https://PayPal.Me/victorchuyen/20" target="_blank" class="paypal-btn" id="paypal-link">
+                        💙 Pay with PayPal — $<span id="paypal-amount">20</span> USD
+                    </a>
+                    <p style="font-size:11px;color:var(--text-secondary);margin-top:8px;">
+                        PayPal.Me/victorchuyen
+                    </p>
+                </div>
+
+                <!-- MoMo -->
+                <div class="pay-method-card">
+                    <h3>📱 Ví MoMo</h3>
+                    <p class="pay-desc">Thanh toán nhanh qua ví điện tử MoMo</p>
+                    <button class="momo-btn" onclick="openMoMo()">
+                        📱 Thanh Toán qua MoMo
+                    </button>
+                    <p style="font-size:11px;color:var(--text-secondary);margin-top:8px;">
+                        SĐT MoMo: 0989890022 — Trần Ngọc Chuyền
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST SECTION -->
+        <section class="trust-section">
+            <h2 style="font-size:18px;font-weight:800;">🛡️ Cam Kết An Toàn & Bảo Mật</h2>
+            <div class="trust-badges">
+                <div class="trust-badge">🔒 100% Bảo Mật Thông Tin</div>
+                <div class="trust-badge">⚡ Kích Hoạt Tự Động 3 Giây</div>
+                <div class="trust-badge">💰 Hoàn Tiền 100% Nếu Không Hài Lòng</div>
+                <div class="trust-badge">🌐 Thanh Toán Quốc Tế PayPal</div>
+                <div class="trust-badge">📞 Hỗ Trợ Zalo: 0989890022</div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="checkout-footer">
+            <p>
+                🎓 OPC | ONE PERSON COMPANY — Powered by 6 C-Suite AI Directors<br>
+                <a href="https://ai.breaths.live">🚀 3D Simulator</a> ·
+                <a href="https://coach.io.vn/">🎯 Coach AI</a> ·
+                <a href="https://github.com/victorChuyen/opc-tnc-one-person-ai-company">🐙 GitHub</a> ·
+                <a href="https://zalo.me/g/tdhmtu261">💬 Zalo VIP</a> ·
+                <a href="https://cal.com/victorchuyen/coachai">📅 Book 1:1</a>
+            </p>
+            <p style="margin-top:8px;">© 2026 TNC GROUP — Chairman Victor Chuyen</p>
+        </footer>
+    </div>
+
+    <!-- SUCCESS TOAST -->
+    <div class="success-toast" id="success-toast">
+        ✅ Đã chọn gói thành công! Vui lòng thanh toán bên dưới.
+    </div>
+
+    <script>
+        let currentPackage = '';
+        let currentAmount = 500000;
+
+        function selectPackage(pkg) {
+            currentPackage = pkg;
+            const section = document.getElementById('payment-section');
+            const label = document.getElementById('selected-package-label');
+
+            if (pkg === '500K') {
+                currentAmount = 500000;
+                label.textContent = '⚡ Gói VIP Nhóm Coaching — 500.000đ ($20 USD)';
+                setPaypalAmount(20);
+            } else if (pkg === '1M') {
+                currentAmount = 1000000;
+                label.textContent = '💎 Gói Setup 3D Simulator & 5 AI Directors — 1.000.000đ ($49 USD)';
+                setPaypalAmount(49);
+            }
+
+            // Update VietQR
+            const ckContent = `OPC ${pkg} SPRINT`;
+            document.getElementById('ck-content').textContent = ckContent;
+            generateVietQR(currentAmount, ckContent);
+
+            section.style.display = 'block';
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Show toast
+            const toast = document.getElementById('success-toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function generateVietQR(amount, content) {
+            const img = document.getElementById('vietqr-img');
+            const loading = document.getElementById('vietqr-loading');
+
+            // VietQR Quick Link format
+            const bankId = 'MB';
+            const accountNo = '0989890022';
+            const accountName = 'TRAN NGOC CHUYEN';
+            const encodedContent = encodeURIComponent(content);
+
+            const qrUrl = `https://img.vietqr.io/image/${bankId}-${accountNo}-compact2.png?amount=${amount}&addInfo=${encodedContent}&accountName=${encodeURIComponent(accountName)}`;
+
+            img.src = qrUrl;
+            img.onload = () => {
+                img.style.display = 'block';
+                loading.style.display = 'none';
+            };
+            img.onerror = () => {
+                loading.textContent = '⚠️ Không tải được mã QR. Vui lòng CK thủ công.';
+            };
+        }
+
+        function setPaypalAmount(usd) {
+            document.getElementById('paypal-amount').textContent = usd;
+            document.getElementById('paypal-link').href = `https://PayPal.Me/victorchuyen/${usd}`;
+
+            // Update active button
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(`$${usd}`)) btn.classList.add('active');
+            });
+        }
+
+        function openMoMo() {
+            const amount = currentAmount || 500000;
+            const content = `OPC ${currentPackage || '500K'} SPRINT`;
+            // Deep link to MoMo app
+            const momoUrl = `https://nhantien.momo.vn/0989890022?amount=${amount}&comment=${encodeURIComponent(content)}`;
+            window.open(momoUrl, '_blank');
+        }
+
+        // Auto-track with server when payment is selected
+        async function notifyPaymentIntent(pkg, method) {
+            try {
+                await fetch('/api/checkout/intent', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ package: pkg, method, timestamp: new Date().toISOString() })
+                });
+            } catch (e) { /* silent */ }
+        }
+    </script>
+</body>
+</html>

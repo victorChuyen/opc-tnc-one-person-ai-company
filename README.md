@@ -16,6 +16,15 @@ If this toolkit helps you build your **One-Person AI Company**, please **give us
 
 ---
 
+## 📘 HƯỚNG DẪN CHI TIẾT A-Z CHO NGƯỜI MỚI (BEGINNER GUIDE)
+👉 **[Đọc Hướng Dẫn A-Z Từng Bước Nhân Bản Doanh Nghiệp AI](BEGINNER_CLONE_GUIDE_AZ.md)**
+
+### 📺 VIDEO TUTORIALS:
+- 🇻🇳 **Video Hướng Dẫn Tiếng Việt (Step-by-Step)**: [https://www.youtube.com/watch?v=opc_tnc_guide_vi](https://www.youtube.com/watch?v=opc_tnc_guide_vi)
+- 🇬🇧 **English Masterclass Video Guide**: [https://www.youtube.com/watch?v=opc_tnc_guide_en](https://www.youtube.com/watch?v=opc_tnc_guide_en)
+
+---
+
 ## 💎 Overview
 
 **OPC-TNC** (One-Person AI Company) is an autonomous, open-source framework designed for solopreneurs, AI engineers, and agencies to run an entire business using **5 AI C-Suite Directors** orchestrated by an **AI CEO** via a Hub-and-Spoke architecture.

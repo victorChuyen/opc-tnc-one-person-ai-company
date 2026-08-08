@@ -1,0 +1,20 @@
+{
+  "renderNullAs": "\\-",
+  "taskCompletionTracking": true,
+  "taskCompletionUseDateOfDay": false,
+  "taskCompletionText": "completion",
+  "taskCompletionDateFormat": "YYYY-MM-DD",
+  "recursiveSubTaskCompletion": false,
+  "warnOnEmptyEnable": true,
+  "enableDataviewJs": true,
+  "enableInlineDataview": true,
+  "enableInlineDataviewJs": true,
+  "enableInlineFieldHighlighting": true,
+  "prettyRenderInlineFields": true,
+  "dataviewJsKeyword": "dataviewjs",
+  "inlineDataviewKeyword": "=",
+  "inlineQueriesKeyword": "dataview",
+  "inlineJsQueriesKeyword": "$=",
+  "maxResultSize": 50000,
+  "showYields": true
+}

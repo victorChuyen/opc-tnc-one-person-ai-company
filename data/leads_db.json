@@ -1,0 +1,65 @@
+[
+  {
+    "id": "LEAD-1786201378820",
+    "name": "Alex Hormori",
+    "phone": "1458764328",
+    "email": "coach.chuyen@gmail.com",
+    "business": "Agency Owner / Solopreneur",
+    "timestamp": "2026-08-08T15:02:58.821Z",
+    "status": "QUALIFIED"
+  },
+  {
+    "id": "LEAD-1786201045714",
+    "name": "Lê Văn Phụng QA Test",
+    "phone": "0979034798",
+    "email": "gdkd.3t@gmail.com",
+    "business": "Mô hình OPC 1 Người",
+    "timestamp": "2026-08-08T14:57:25.715Z",
+    "status": "QUALIFIED"
+  },
+  {
+    "id": "LEAD-1786191502292",
+    "name": "Lê Văn Phụng",
+    "phone": "0979034798",
+    "email": "tncsharetools@gmail.com",
+    "business": "Agency / Freelancer",
+    "timestamp": "2026-08-08T12:18:22.293Z",
+    "status": "QUALIFIED"
+  },
+  {
+    "id": "LEAD-1786179126266",
+    "name": "LUCKY",
+    "phone": "0869356799",
+    "email": "TNC.CANVA@GMAIL.COM",
+    "business": "SME Business",
+    "timestamp": "2026-08-08T08:52:06.272Z",
+    "status": "QUALIFIED"
+  },
+  {
+    "id": "LEAD-1786169612581",
+    "name": "HOÀNG NGỌC LAN",
+    "phone": "0346611825",
+    "email": "getyourguidemedia@gmail.com",
+    "business": "SME / Chủ Doanh Nghiệp",
+    "timestamp": "2026-08-08T06:13:32.583Z",
+    "status": "QUALIFIED"
+  },
+  {
+    "id": "LEAD-1786161691381",
+    "name": "Nguyễn Thiết Hừng",
+    "phone": "0332356009",
+    "email": "hungnguyenthiet2001@gmail.com",
+    "business": "SME Business",
+    "timestamp": "2026-08-08T04:01:31.385Z",
+    "status": "QUALIFIED"
+  },
+  {
+    "id": "LEAD-1786160981861",
+    "name": "Nguyễn Thị Xuân Phương",
+    "phone": "0984355305",
+    "email": "kiemtienvuive837@gmail.com",
+    "business": "Agency / Freelancer",
+    "timestamp": "2026-08-08T03:49:41.867Z",
+    "status": "QUALIFIED"
+  }
+]

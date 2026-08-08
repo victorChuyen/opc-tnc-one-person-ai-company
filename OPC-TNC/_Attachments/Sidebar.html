@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+      font-size: 13px;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,242,255,0.3);
+    }
+    .header h2 {
+      margin: 0;
+      font-size: 15px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header p {
+      margin: 6px 0 0 0;
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+    .btn {
+      background: linear-gradient(135deg, #ffaa00, #ff8800);
+      color: #000;
+      font-weight: 700;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 8px;
+      font-size: 12px;
+      box-shadow: 0 4px 12px rgba(255,170,0,0.3);
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(255,170,0,0.5);
+    }
+    .btn-seed {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      font-weight: 800;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 12px;
+      font-size: 11px;
+      box-shadow: 0 4px 12px rgba(16,185,129,0.3);
+    }
+    .email-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .btn-sm {
+      background: #334155;
+      color: #00f2ff;
+      border: 1px solid rgba(0,242,255,0.3);
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-sm:hover {
+      background: #0284c7;
+      color: #fff;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .stat-card {
+      background: #1e293b;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .stat-card .num {
+      font-size: 18px;
+      font-weight: 800;
+      color: #00f2ff;
+    }
+    .stat-card .label {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .lead-list {
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .lead-item {
+      background: #1e293b;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-left: 4px solid #00f2ff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .lead-name {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 13px;
+    }
+    .lead-info {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(0,242,255,0.15);
+      color: #00f2ff;
+    }
+    .loading {
+      text-align: center;
+      color: #94a3b8;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h2>🚀 OPC-TNC REVERSE MATH MANAGER</h2>
+    <p>Target: 2 Sales 1M/Ngày & VIP Coaching (20M-45M)</p>
+  </div>
+
+  <button class="btn-seed" onclick="google.script.run.seedReverseEngineeringSuite()">🔥 SEEDING GÓI 0Đ & VIP COACHING SUITE</button>
+  <button class="btn" onclick="loadLeads()">🔄 TẢI LẠI LEADS REALTIME</button>
+
+  <div style="margin-bottom: 8px; font-weight: 700; font-size: 11px; color: #ffaa00;">📧 BẬT EMAIL 5-DAY CHO DÒNG ĐANG CHỌN:</div>
+  <div class="email-actions">
+    <div class="btn-sm" onclick="google.script.run.triggerDay0Email()">📩 Day 0 (Welcome Gói 0đ)</div>
+    <div class="btn-sm" onclick="google.script.run.triggerDay2Email()">📩 Day 2 (5 AI C-Suite)</div>
+    <div class="btn-sm" onclick="google.script.run.triggerDay3Email()">🎯 Day 3 (Ads & Sales)</div>
+    <div class="btn-sm" onclick="google.script.run.triggerDay5Email()">💎 Day 5 (VIP Coaching)</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="num" id="totalLeads">0</div>
+      <div class="label">Tổng Lead Gói 0đ</div>
+    </div>
+    <div class="stat-card">
+      <div class="num" id="todayLeads">0</div>
+      <div class="label">Mới Hôm Nay</div>
+    </div>
+  </div>
+
+  <div id="leadContainer" class="lead-list">
+    <div class="loading">⏳ Đang tải danh sách Lead...</div>
+  </div>
+
+  <script>
+    function loadLeads() {
+      document.getElementById('leadContainer').innerHTML = '<div class="loading">⏳ Đang cập nhật dữ liệu...</div>';
+      google.script.run.withSuccessHandler(renderLeads).getLeadsData();
+    }
+
+    function renderLeads(leads) {
+      var container = document.getElementById('leadContainer');
+      if (!leads || leads.length === 0) {
+        container.innerHTML = '<div class="loading">Chưa có dữ liệu Lead.</div>';
+        document.getElementById('totalLeads').innerText = '0';
+        document.getElementById('todayLeads').innerText = '0';
+        return;
+      }
+
+      document.getElementById('totalLeads').innerText = leads.length;
+      document.getElementById('todayLeads').innerText = leads.length;
+
+      var html = '';
+      for (var i = 0; i < leads.length; i++) {
+        var l = leads[i];
+        html += '<div class="lead-item">' +
+          '<div class="lead-name">' + (l.name || 'Khách Hàng') + ' <span class="badge">' + (l.status || 'QUALIFIED') + '</span></div>' +
+          '<div class="lead-info">' +
+            '📱 SĐT: <b>' + (l.phone || 'N/A') + '</b><br/>' +
+            '📧 Email: ' + (l.email || 'N/A') + '<br/>' +
+            '💼 Ngành: ' + (l.business || 'SME') +
+          '</div>' +
+        '</div>';
+      }
+      container.innerHTML = html;
+    }
+
+    window.onload = loadLeads;
+  </script>
+</body>
+</html>

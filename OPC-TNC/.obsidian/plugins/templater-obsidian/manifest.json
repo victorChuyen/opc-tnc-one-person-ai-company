@@ -1,0 +1,9 @@
+{
+  "id": "templater-obsidian",
+  "name": "Templater",
+  "version": "2.9.2",
+  "minAppVersion": "1.4.0",
+  "description": "Create and insert templates in your notes with dynamic code execution.",
+  "author": "SilentVoid13",
+  "authorUrl": "https://github.com/SilentVoid13"
+}

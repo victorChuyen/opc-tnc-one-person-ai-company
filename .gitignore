@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+.env.template
+tmp/
+.tmp.*/
+.vscode/
+
+# Ignore large media videos (>100MB) for GitHub compliance
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.tar.gz

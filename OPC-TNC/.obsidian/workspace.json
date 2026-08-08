@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "a2665ecc714ff341",
+    "type": "split",
+    "children": [
+      {
+        "id": "17491ed056575479",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0110c09744899cf9",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "451f4d01e4d5ef8b",
+    "type": "split",
+    "children": [
+      {
+        "id": "59573760af06fec9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f7113c94f31f4e9a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6a16c86187fe4557",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "[\"company\"]",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "853a4fe08ebb38c6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Đánh dấu"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 451.5
+  },
+  "right": {
+    "id": "79c2bb4ac3a5f866",
+    "type": "split",
+    "children": [
+      {
+        "id": "6fd7e06997f68397",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "314a7eb4962c877a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "3_Offers ( khóa học, gói tư vấn, công cụ, quà tặng, upsell.)/Offer 0 - Bộ công cụ Prompt Workflow.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Liên kết đến của Offer 0 - Bộ công cụ Prompt Workflow.md"
+            }
+          },
+          {
+            "id": "8589328df45a5ad4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "cd254528126bd133",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2b456c44192a8789",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "a2d3132b27adbbe0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "a7feffd1f6d9ca23",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "12_skills-agency-agents-main/testing/testing-test-results-analyzer.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 202.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "zk-prefixer:Create new unique note": false,
+      "random-note:Open random note": false,
+      "publish:Publish changes...": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "6a16c86187fe4557",
+  "lastOpenFiles": [
+    "Untitled 2.canvas",
+    "scratch/desktop.ini",
+    "scratch/install_plugins.js",
+    "scratch",
+    "06-CANVAS/desktop.ini",
+    "06-CANVAS/opc-system-architecture.canvas",
+    "06-CANVAS",
+    "00-INBOX/_template-inbox.md",
+    "07-TEMPLATES/_agent-output.md",
+    "Clippings/Movers Tale.md",
+    "Untitled 1.canvas",
+    "Clippings/Google Flow - TRAVEL VIỆT NAM 2026.md",
+    "Clippings/desktop.ini",
+    "12_skills-agency-agents-main/testing/testing-test-results-analyzer.md",
+    "Clippings",
+    "2026-07-31.md",
+    "Untitled.canvas",
+    "_Dashboard/00 - Home.md",
+    "admin/images/qr_momo_real.png",
+    "admin/images/qr_bidv_sepay_real.png",
+    "OPC-TNC – Project Blueprint.md",
+    "12_skills-agency-agents-main/skills/remotion-video-creation/rules/assets/desktop.ini",
+    "12_skills-agency-agents-main/skills/x-api/desktop.ini",
+    "12_skills-agency-agents-main/skills/lead-intelligence/agents/desktop.ini",
+    "12_skills-agency-agents-main/skills/verification-loop/SKILL.md",
+    "12_skills-agency-agents-main/skills/ui-demo/SKILL.md",
+    "12_skills-agency-agents-main/skills/ui-color-ux/SKILL.md",
+    "12_skills-agency-agents-main/skills/token-budget-advisor/SKILL.md",
+    "12_skills-agency-agents-main/skills/team-builder/SKILL.md",
+    "12_skills-agency-agents-main/skills/tdd-workflow/SKILL.md",
+    "12_skills-agency-agents-main/skills/swiftui-patterns/SKILL.md",
+    "12_skills-agency-agents-main/skills/x-api/SKILL.md",
+    "12_skills-agency-agents-main/skills/workspace-surface-audit/SKILL.md",
+    "12_skills-agency-agents-main/skills/visa-doc-translate/SKILL.md",
+    "12_skills-agency-agents-main/skills/visa-doc-translate/README.md",
+    "12_skills-agency-agents-main/skills/videodb/reference/use-cases.md",
+    "12_skills-agency-agents-main/skills/videodb/reference/streaming.md",
+    "12_skills-agency-agents-main/skills/videodb/reference/search.md",
+    "12_skills-agency-agents-main/skills/videodb/reference/rtstream.md",
+    "12_skills-agency-agents-main/skills/videodb/reference/rtstream-reference.md",
+    "12_skills-agency-agents-main/skills/videodb/reference/generative.md",
+    "_Attachments/qr_bidv_sepay_real.png",
+    "_Attachments/qr_momo_real.png",
+    "_Attachments/OPC TNC  Mind Map.png",
+    "_Attachments/NotebookLM Mind Map.png"
+  ]
+}

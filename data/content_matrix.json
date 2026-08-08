@@ -1,0 +1,19 @@
+{
+  "channels": {
+    "1": {
+      "name": "Kênh 1: AI SaaS",
+      "postCount": 30,
+      "topic": "Tự động hóa doanh nghiệp SME & AI Agentic Platform"
+    },
+    "2": {
+      "name": "Kênh 2: Meta Ads",
+      "postCount": 30,
+      "topic": "Tối ưu Meta Ads CPA & Copywriting Hormozi 500k Offer"
+    },
+    "3": {
+      "name": "Kênh 3: B2B Growth",
+      "postCount": 30,
+      "topic": "Cold Outreach 3-Step & B2B Retention Strategy"
+    }
+  }
+}

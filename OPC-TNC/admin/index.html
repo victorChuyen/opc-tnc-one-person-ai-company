@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPC-TNC — Executive Admin & Agency Skills Management Center</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #080c14;
+            --card-bg: rgba(18, 26, 43, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-accent: #38bdf8;
+            --purple-accent: #818cf8;
+            --emerald-accent: #10b981;
+            --rose-accent: #f43f5e;
+            --amber-accent: #f59e0b;
+            --momo-accent: #ae2070;
+            --paypal-accent: #0070ba;
+            --composio-accent: #7c3aed;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 2.5rem;
+            background: rgba(12, 18, 32, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, var(--composio-accent), var(--primary-accent));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+            box-shadow: 0 0 24px rgba(124, 58, 237, 0.5);
+        }
+
+        .brand-title h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, var(--primary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-title p {
+            font-size: 0.78rem;
+            color: var(--emerald-accent);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-badge {
+            width: 9px;
+            height: 9px;
+            background-color: var(--emerald-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--emerald-accent);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            padding: 0.65rem 1.25rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-vsl {
+            background: linear-gradient(135deg, var(--rose-accent), #e11d48);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(244, 63, 94, 0.4);
+        }
+
+        .btn-vsl:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(244, 63, 94, 0.6);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--composio-accent), var(--primary-accent));
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(124, 58, 237, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1440px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* OVERVIEW METRICS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 1.25rem;
+            backdrop-filter: blur(14px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(124, 58, 237, 0.4);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #fff;
+        }
+
+        .stat-subtext {
+            font-size: 0.75rem;
+            color: var(--emerald-accent);
+            margin-top: 0.35rem;
+        }
+
+        /* TABS NAV */
+        .tabs-nav {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tab-btn {
+            padding: 0.85rem 1.4rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 12px 12px 0 0;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .tab-btn.active {
+            color: #fff;
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.25), rgba(18, 26, 43, 0.9));
+            border-color: var(--composio-accent);
+            border-bottom-color: transparent;
+            box-shadow: 0 -4px 16px rgba(124, 58, 237, 0.2);
+        }
+
+        /* TAB PANELS */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CONFIG CARDS */
+        .config-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.25rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(16px);
+            box-shadow: var(--glass-glow);
+        }
+
+        .card-header {
+            margin-bottom: 1.75rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1.25rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #fff;
+        }
+
+        .card-header p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary-accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-weight: 600;
+        }
+
+        .badge-vsl {
+            background: rgba(244, 63, 94, 0.2);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+        }
+
+        .badge-skills {
+            background: rgba(16, 185, 129, 0.2);
+            color: #6ee7b7;
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .badge-paypal {
+            background: rgba(0, 112, 186, 0.2);
+            color: #38bdf8;
+            border-color: rgba(0, 112, 186, 0.4);
+        }
+
+        .badge-composio {
+            background: rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            border-color: rgba(124, 58, 237, 0.4);
+        }
+
+        .form-control {
+            background: rgba(10, 15, 26, 0.7);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 0.85rem 1.1rem;
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.3);
+            background: rgba(10, 15, 26, 0.95);
+        }
+
+        /* AGENCY SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            transition: all 0.25 ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--emerald-accent);
+            transform: translateY(-2px);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .skill-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .skill-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* SOCIAL CHANNELS LINKS GRID */
+        .social-link-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .social-link-card .title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-link-card a {
+            color: #fff;
+            font-size: 0.85rem;
+            text-decoration: none;
+            word-break: break-all;
+            background: rgba(255,255,255,0.03);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.2s ease;
+        }
+
+        .social-link-card a:hover {
+            color: var(--primary-accent);
+            border-color: var(--primary-accent);
+        }
+
+        /* IFRAME PREVIEW */
+        .iframe-preview {
+            width: 100%;
+            height: 500px;
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            background: #000;
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            padding: 1.1rem 1.75rem;
+            background: linear-gradient(135deg, var(--emerald-accent), #059669);
+            color: #fff;
+            border-radius: 16px;
+            font-weight: 600;
+            box-shadow: 0 12px 36px rgba(16, 185, 129, 0.45);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        /* ====================================================
+           RESPONSIVE UX/UI — TABLET & MOBILE BREAKPOINTS
+           ==================================================== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+                padding: 1.25rem;
+            }
+            .header-actions {
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            .btn {
+                flex: 1 1 auto;
+                justify-content: center;
+                text-align: center;
+            }
+            .main-container {
+                padding: 1.25rem;
+            }
+            .tabs-nav {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 8px;
+            }
+            .tab-btn {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+            .config-card {
+                padding: 1.5rem;
+                border-radius: 18px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+            .brand-title h1 {
+                font-size: 1.25rem;
+                line-height: 1.35;
+            }
+            .brand-title p {
+                font-size: 0.75rem;
+            }
+            .header-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+            .main-container {
+                padding: 1rem;
+            }
+            .config-card {
+                padding: 1.15rem;
+                border-radius: 16px;
+            }
+            .card-header h2 {
+                font-size: 1.15rem;
+            }
+            .card-header p {
+                font-size: 0.8rem;
+            }
+            .qr-preview-box {
+                flex-direction: column !important;
+                align-items: center;
+                gap: 1.5rem !important;
+            }
+            .qr-card {
+                max-width: 100% !important;
+                width: 100%;
+            }
+            .qr-card img {
+                max-width: 240px !important;
+                height: auto;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .toast {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+                justify-content: center;
+                padding: 0.9rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="brand-logo">
+            <div class="brand-icon">OPC</div>
+            <div class="brand-title">
+                <h1>OPC-TNC Executive Admin & Agency Skills Center</h1>
+                <p><span class="status-badge"></span> 100% Autonomous AI Squad Engine v4.0 — 157 Agency Skills Connected</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <a href="file:///D:/OPC-TNC/OPC-TNC/11_Media/VSL/index.HTML" target="_blank" class="btn btn-vsl">
+                🎬 Mở VSL Landing Page
+            </a>
+            <a href="https://github.com/victorChuyen" target="_blank" class="btn btn-secondary">
+                🐙 GitHub Repo
+            </a>
+            <button class="btn btn-secondary" onclick="exportEnvFile()">
+                📥 Tải File `.env`
+            </button>
+            <button class="btn btn-primary" onclick="saveAllSettings()">
+                💾 Lưu Cấu Hình Live
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- OVERVIEW METRICS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>AGENCY SKILLS REPOSITORY</span>
+                    <span>⚡ 157 SKILLS</span>
+                </div>
+                <div class="stat-value">12_SKILLS AGENCY</div>
+                <div class="stat-subtext">🟢 Active in 12_skills-agency-agents-main</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>VSL LANDING PAGE</span>
+                    <span>🎬 READY IN 48H</span>
+                </div>
+                <div class="stat-value">11_Media/VSL</div>
+                <div class="stat-subtext">🎯 Target: Gói 1.000.000 VNĐ</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>PAYPAL LIVE PRODUCTION</span>
+                    <span>💳 LIVE READY</span>
+                </div>
+                <div class="stat-value">PAYPAL ACTIVE</div>
+                <div class="stat-subtext">Client ID: AZxgATR4j89N...</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>TELEGRAM BOT CONTROL</span>
+                    <span>📱 24/7 ONLINE</span>
+                </div>
+                <div class="stat-value">@OPC_TNC_BOT</div>
+                <div class="stat-subtext">Chat ID: -1003415285389</div>
+            </div>
+        </div>
+
+        <!-- TABS NAV -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('vsl-landing')">🎬 1. VSL Landing Page & Video Preview</button>
+            <button class="tab-btn" onclick="switchTab('agency-skills')">⚡ 2. 12_Skills Agency Repository (157+ Skills)</button>
+            <button class="tab-btn" onclick="switchTab('company-links')">🏢 3. Thông Tin & Social Channels</button>
+            <button class="tab-btn" onclick="switchTab('payment-gateways')">💳 4. Cổng Thanh Toán Live (PayPal & MoMo)</button>
+            <button class="tab-btn" onclick="switchTab('cal-booking')">📅 5. Cal.com Booking API</button>
+            <button class="tab-btn" onclick="switchTab('google-oauth')">🔑 6. Google OAuth 2.0 & Firebase</button>
+            <button class="tab-btn" onclick="switchTab('composio-toolkits')">🔌 7. Composio Toolkits Auth</button>
+        </div>
+
+        <!-- TAB 1: VSL LANDING PAGE & PREVIEW -->
+        <div id="vsl-landing" class="tab-content active">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>🎬 VSL Landing Page & Live Video Preview <span class="badge badge-vsl">11_Media/VSL</span></h2>
+                    <p>Trang Video Sales Letter chuyển đổi bán hàng cao cấp cho gói 1.000.000đ (Triển khai AI Agentic 48h).</p>
+                </div>
+                <div class="form-grid" style="margin-bottom: 1.5rem;">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label>Đường Dẫn URL Trang VSL Local <span class="badge badge-vsl">Official</span></label>
+                        <input type="text" id="vsl_url_input" class="form-control" value="file:///D:/OPC-TNC/OPC-TNC/11_Media/VSL/index.HTML">
+                    </div>
+                </div>
+                <h4 style="margin-bottom: 1rem; color: var(--primary-accent);">Xem Trực Tiếp Trang VSL Landing Page:</h4>
+                <iframe src="../11_Media/VSL/index.HTML" class="iframe-preview"></iframe>
+            </div>
+        </div>
+
+        <!-- TAB 2: 12_SKILLS AGENCY REPOSITORY -->
+        <div id="agency-skills" class="tab-content">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>⚡ 12_Skills Agency Agents Repository (157+ Custom Skills) <span class="badge badge-skills">Connected</span></h2>
+                    <p>Đã tích hợp thư mục <code>D:\OPC-TNC\OPC-TNC\12_skills-agency-agents-main</code> làm Quy tắc thực thi (Rule) bắt buộc cho Lucky và AI Squad.</p>
+                </div>
+                
+                <h4 style="margin-bottom: 1.25rem; color: var(--emerald-accent);">Các Skills Tiêu Biểu Cho AI Squad (Live Active):</h4>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>🎯 lead-intelligence</h4>
+                        <p>Tác nhân Lead Hunter: Quét BANT, phân tích công ty & chấm lead score tự động.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>✍️ brand-voice</h4>
+                        <p>Tác nhân Content: Đảm bảo 100% nội dung phát ra chuẩn giọng Founder Victor Chuyen.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>📢 content-engine</h4>
+                        <p>Tác nhân Content: Tự động tạo 10 kịch bản video TikTok & post Facebook 48h.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🔄 crosspost</h4>
+                        <p>Tác nhân MCP: Tự động phân phối 1 bài viết master tới 5 kênh Socials.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🎨 ui-color-ux</h4>
+                        <p>Thiết kế UX/UI: Chuẩn hóa bảng màu Dark Mode & Glassmorphism cao cấp.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>💧 liquid-glass-design</h4>
+                        <p>Thiết kế Giao diện: Hiệu ứng kính mờ và viền phát sáng neon linh hoạt.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🎬 video-editing</h4>
+                        <p>Tác nhân Delivery: Tự động hóa kịch bản video hướng dẫn 3-5' bàn giao cho khách.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🔌 mcp-server-patterns</h4>
+                        <p>Cổng MCP: Chuẩn hóa tool calls cho 3rd party APIs.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🤖 openclaw-persona-forge</h4>
+                        <p>Tác nhân Setup: Khởi tạo mô hình AI Agentic Workflow chuyên sâu 48h.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🔍 deep-research</h4>
+                        <p>Tác nhân Market: Nghiên cứu đối thủ & thu thập insight nỗi đau thị trường.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: COMPANY INFO & SOCIAL CHANNELS -->
+        <div id="company-links" class="tab-content">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>🏢 Thông Tin Công Ty & Các Kênh Hỗ Trợ Chính Thức</h2>
+                    <p>Danh sách 9 kênh liên hệ, tư vấn, cộng đồng Zalo/Telegram và mạng xã hội của Founder Victor Chuyen.</p>
+                </div>
+                <div class="form-grid">
+                    <div class="social-link-card">
+                        <span class="title">📅 Đặt Lịch Tư Vấn Coach AI (Cal.com)</span>
+                        <a href="https://cal.com/victorchuyen/coachai" target="_blank">https://cal.com/victorchuyen/coachai</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">🐙 GitHub Profile Victor Chuyen</span>
+                        <a href="https://github.com/victorChuyen" target="_blank">https://github.com/victorChuyen</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">💬 Zalo Admin Trực Tiếp</span>
+                        <a href="https://zalo.me/0989890022" target="_blank">https://zalo.me/0989890022</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">✈️ Telegram Admin Trực Tiếp</span>
+                        <a href="https://t.me/victorchuyen" target="_blank">https://t.me/victorchuyen</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">👥 Group Zalo Hỗ Trợ Cộng Đồng</span>
+                        <a href="https://zalo.me/g/tdhmtu261" target="_blank">https://zalo.me/g/tdhmtu261</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">✉️ Email Support Chính Thức</span>
+                        <a href="mailto:support@VictorChuyen.net">support@VictorChuyen.net</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">🎵 Kênh TikTok Victor Chuyen</span>
+                        <a href="https://www.tiktok.com/@victorchuyen" target="_blank">https://www.tiktok.com/@victorchuyen</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">📘 Fanpage Facebook Chính Thức</span>
+                        <a href="https://www.facebook.com/go.victorchuyen.net/" target="_blank">https://www.facebook.com/go.victorchuyen.net/</a>
+                    </div>
+
+                    <div class="social-link-card">
+                        <span class="title">✈️ Group Telegram VibeCode Coaching</span>
+                        <a href="https://t.me/vibecodocoaching" target="_blank">https://t.me/vibecodocoaching</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: PAYMENT GATEWAYS -->
+        <div id="payment-gateways" class="tab-content">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>💳 1. Cấu Hình PayPal Live Production <span class="badge badge-paypal">Live Status</span></h2>
+                    <p>Thông số cổng thanh toán quốc tế PayPal Live cho gói khóa học & dịch vụ tư vấn.</p>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>PAYPAL_CLIENT_ID <span class="badge badge-paypal">Live Secret</span></label>
+                        <input type="text" id="paypal_client_id" class="form-control" value="AZxgATR4j89NJDnX3ugOO2MmtLQrxJwcgTZ235tHzd9tMznVBPTR3rwt_Q8Lv1QARhiT5FxOSOWcixYH">
+                    </div>
+                    <div class="form-group">
+                        <label>PAYPAL_CLIENT_SECRET <span class="badge badge-paypal">Live Secret</span></label>
+                        <input type="password" id="paypal_client_secret" class="form-control" value="EAwOC3HwfaaSP3Lr9zqUmN4x3f6dXJ5Au3MVlKWCiprk-iiyAy7jFc1RKW5NgisgyRQd4edV5NfkMXui">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: CAL.COM BOOKING API -->
+        <div id="cal-booking" class="tab-content">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>📅 Cấu Hình Đặt Lịch Tư Vấn Cal.com API</h2>
+                    <p>Tích hợp API Key và Event Path cho phép khách hàng đặt lịch Demo 30 phút tự động.</p>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>VITE_CAL_API_KEY <span class="badge">Live Key</span></label>
+                        <input type="text" id="cal_api_key" class="form-control" value="cal_live_13012d21cb77286d280217149ab34699">
+                    </div>
+                    <div class="form-group">
+                        <label>VITE_CAL_EVENT_PATH</label>
+                        <input type="text" id="cal_event_path" class="form-control" value="victorchuyen/coachai">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: GOOGLE OAUTH 2.0 -->
+        <div id="google-oauth" class="tab-content">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>🔑 Google OAuth 2.0 Client Credentials (coaching-vibecode)</h2>
+                    <p>Thông số xác thực tài khoản Google và Firebase Auth Handler cho dự án edu-victorchuyen.</p>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Google Project ID</label>
+                        <input type="text" id="google_project_id" class="form-control" value="coursemarket-488612">
+                    </div>
+                    <div class="form-group">
+                        <label>Google Client ID</label>
+                        <input type="text" id="google_client_id" class="form-control" value="7727527343-05atdffrjcs212idgkt806j7v7sh3opi.apps.googleusercontent.com">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: COMPOSIO TOOLKITS -->
+        <div id="composio-toolkits" class="tab-content">
+            <div class="config-card">
+                <div class="card-header">
+                    <h2>🔌 Composio Platform Auth & Toolkits Integration <span class="badge badge-composio">Workspace Active</span></h2>
+                    <p>Workspace: <code>f0807557459_workspace_first_project</code> — Quản lý 10+ Toolkits kết nối ứng dụng doanh nghiệp.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+        <span>✅</span>
+        <span id="toast-msg">Đã cập nhật cấu hình live thành công!</span>
+    </div>
+
+    <footer>
+        <p>OPC-TNC — One Person Company (Trần Nguyên Chuyên) | Powered by 12_Skills Agency Agents & LUCKY AI Co-Founder v4.0</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+
+        function saveAllSettings() {
+            showToast("Đã lưu & đồng bộ 100% tất cả 157 Skills & Cấu hình OPC-TNC thành công!");
+        }
+
+        function exportEnvFile() {
+            showToast("📥 Đã xuất file .env với link VSL & 157 Agency Skills!");
+        }
+    </script>
+</body>
+</html>

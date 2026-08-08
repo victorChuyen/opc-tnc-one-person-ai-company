@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>OPC-TNC | VSL Demo 48H — AI Agentic Done-For-You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="OPC-TNC triển khai tác nhân AI Done-For-You cho doanh nghiệp trong 48 giờ. Kết quả thực tế trên bài toán thật, không cần kiến thức lập trình hay tự mày mò kỹ thuật.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- LIQUID GLASS & UI-COLOR-UX DESIGN SYSTEM -->
+  <style>
+    :root {
+      --bg-dark: #030712;
+      --card-glass: rgba(15, 23, 42, 0.75);
+      --card-glass-hover: rgba(30, 41, 59, 0.85);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --card-border-glow: rgba(56, 189, 248, 0.45);
+      --primary-cyan: #38bdf8;
+      --purple-glow: #a855f7;
+      --emerald-green: #10b981;
+      --rose-accent: #f43f5e;
+      --amber-accent: #fbbf24;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 40px rgba(56, 189, 248, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(168, 85, 247, 0.15) 0px, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.1) 0px, transparent 45%),
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* =========================================================
+       SLEEK FLOATING LIQUID GLASS URGENCY BAR
+       ========================================================= */
+    .top-glass-bar {
+      position: sticky;
+      top: 12px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      max-width: 960px;
+      margin: 0 auto 1.5rem;
+      padding: 0 16px;
+    }
+
+    .top-glass-capsule {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(244, 63, 94, 0.45);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 25px rgba(244, 63, 94, 0.2);
+      border-radius: 999px;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .urgency-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--rose-accent);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--rose-accent);
+      animation: pulse 1.5s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(244, 63, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+    }
+
+    .timer-pill {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(168, 85, 247, 0.25));
+      border: 1px solid rgba(244, 63, 94, 0.5);
+      padding: 4px 18px;
+      border-radius: 999px;
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 1px;
+      box-shadow: inset 0 0 12px rgba(244, 63, 94, 0.3);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       MAIN LAYOUT WRAPPER & HERO HEADER
+       ========================================================= */
+    .wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .container {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid var(--card-border);
+      border-radius: 32px;
+      padding: 44px 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--glass-shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-cyan), var(--purple-glow), transparent);
+    }
+
+    /* HERO PILL BADGE */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--primary-cyan);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+    }
+
+    /* HEADLINE H1 */
+    h1 {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      color: #fff;
+      letter-spacing: -0.75px;
+    }
+
+    h1 .highlight {
+      background: linear-gradient(135deg, #38bdf8, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .subheadline {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       CINEMATIC VIDEO DEMO SLOT
+       ========================================================= */
+    .video-wrap {
+      position: relative;
+      margin: 36px 0;
+      border-radius: 24px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(168, 85, 247, 0.4), rgba(15, 23, 42, 0.8));
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.15);
+    }
+
+    .video-container {
+      position: relative;
+      background: rgba(8, 14, 26, 0.95);
+      border-radius: 22px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-placeholder {
+      text-align: center;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      max-width: 520px;
+    }
+
+    .play-button {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-cyan), var(--purple-glow));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 4px;
+    }
+
+    .play-button:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 45px rgba(168, 85, 247, 0.8);
+    }
+
+    .video-placeholder h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+
+    .video-placeholder p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* =========================================================
+       HERO OFFER CARD — CROWN JEWEL (LUXURY GLASS)
+       ========================================================= */
+    .offer-box {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--card-border-glow);
+      border-radius: 28px;
+      padding: 38px 32px;
+      margin: 36px 0;
+      box-shadow: 0 0 50px rgba(56, 189, 248, 0.12), 0 20px 40px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .offer-header {
+      margin-bottom: 24px;
+    }
+
+    .offer-header h3 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .offer-header p {
+      font-size: 16px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* DELIVERABLES LIST */
+    .deliverables-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .deliverable-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .deliverable-item::before {
+      content: '✓';
+      color: var(--emerald-green);
+      font-weight: 900;
+    }
+
+    /* DIGITAL COUNTDOWN CARD INSIDE OFFER BOX */
+    .digital-clock-card {
+      background: rgba(8, 14, 26, 0.85);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      border-radius: 20px;
+      padding: 16px 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      box-shadow: inset 0 0 20px rgba(244, 63, 94, 0.12);
+      flex-wrap: wrap;
+    }
+
+    .clock-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .clock-digits {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .digit-box {
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      border-radius: 12px;
+      padding: 6px 14px;
+      min-width: 68px;
+      text-align: center;
+    }
+
+    .digit-num {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .digit-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--rose-accent);
+      letter-spacing: 0.5px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* PRICING BLOCK */
+    .pricing-block {
+      margin-bottom: 28px;
+    }
+
+    .price-strike {
+      font-size: 18px;
+      color: #64748b;
+      text-decoration: line-through;
+      margin-right: 12px;
+      font-weight: 600;
+    }
+
+    .price-active {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #34d399, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .price-badge {
+      display: inline-block;
+      margin-top: 8px;
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      color: var(--rose-accent);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    /* MAIN CTA BUTTON */
+    .main-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 620px;
+      padding: 20px 32px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--emerald-green), #059669, #0284c7);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35), 0 0 20px rgba(56, 189, 248, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .main-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.5), 0 0 30px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(135deg, #34d399, #10b981, #0284c7);
+    }
+
+    /* =========================================================
+       BENEFITS 3-COLUMN CARDS GRID
+       ========================================================= */
+    .section-header {
+      margin: 44px 0 28px;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      color: var(--purple-glow);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .benefit-intro {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e2e8f0;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .benefit-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid var(--card-border);
+      border-top: 2px solid var(--primary-cyan);
+      border-radius: 22px;
+      padding: 28px 24px;
+      text-align: left;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-cyan);
+      background: rgba(30, 41, 59, 0.85);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .benefit-card h4 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .benefit-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       EXECUTIVE CONNECT BAR — PREMIUM MODERN SaaS GRID
+       ========================================================= */
+    .connect-section {
+      margin: 48px 0 24px;
+      padding-top: 40px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .connect-section h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .connect-section p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* VIP CAL.COM PRIMARY BUTTON */
+    .btn-cal-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 580px;
+      padding: 18px 28px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #7c3aed, #6d28d9, #4f46e5);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .btn-cal-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(124, 58, 237, 0.5);
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed, #4f46e5);
+    }
+
+    /* 3-COLUMN SECONDARY SUPPORT BUTTONS */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .btn-support {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-support:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--primary-cyan);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-support.zalo-admin {
+      border-color: rgba(56, 189, 248, 0.35);
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--primary-cyan);
+    }
+
+    /* =========================================================
+       EXECUTIVE FOOTER & BRAND SIGNATURE
+       ========================================================= */
+    footer {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--card-border);
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================================================
+       RESPONSIVE — TABLET (max-width: 768px)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .container {
+        padding: 36px 24px;
+        border-radius: 28px;
+      }
+      h1 {
+        font-size: 32px;
+      }
+      .subheadline {
+        font-size: 16px;
+        margin-bottom: 28px;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .support-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+    }
+
+    /* =========================================================
+       RESPONSIVE — MOBILE (max-width: 480px)
+       ========================================================= */
+    @media (max-width: 480px) {
+      .urgency-text-desktop { display: none !important; }
+      .urgency-text-mobile { display: inline !important; }
+
+      /* URGENCY BAR: Relative on mobile so it never covers cards while scrolling */
+      .top-glass-bar {
+        position: relative !important;
+        top: 0;
+        padding: 0 10px;
+        margin: 10px auto 16px;
+      }
+      .top-glass-capsule {
+        border-radius: 14px;
+        padding: 10px 14px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+      .urgency-title {
+        font-size: 13px;
+        line-height: 1.35;
+        gap: 8px;
+        flex: 1;
+      }
+      .timer-pill {
+        font-size: 15px;
+        padding: 6px 12px;
+      }
+
+      /* CONTAINER */
+      .wrapper {
+        padding: 10px 12px 40px;
+      }
+      .container {
+        padding: 28px 18px;
+        border-radius: 24px;
+      }
+
+      /* HERO HEADLINE — Clean spacing, no awkward breaks */
+      h1 {
+        font-size: 26px;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      h1 br { display: none; }
+
+      .subheadline {
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+
+      /* VIDEO DEMO BOX — No cut off text */
+      .video-wrap {
+        margin: 24px 0;
+        border-radius: 18px;
+      }
+      .video-placeholder {
+        padding: 28px 16px;
+      }
+      .video-placeholder h3 {
+        font-size: 18px;
+      }
+      .video-placeholder p {
+        font-size: 13px;
+      }
+      .play-button {
+        width: 64px;
+        height: 64px;
+        font-size: 26px;
+      }
+
+      /* OFFER BOX */
+      .offer-box {
+        padding: 28px 18px;
+        border-radius: 22px;
+        margin: 28px 0;
+      }
+      .offer-header h3 {
+        font-size: 20px;
+      }
+      .offer-header p {
+        font-size: 14px;
+      }
+      .deliverable-item {
+        font-size: 13px;
+        padding: 6px 12px;
+      }
+
+      /* DIGITAL CLOCK */
+      .digital-clock-card {
+        padding: 12px 14px;
+        gap: 10px;
+        width: 100%;
+      }
+      .clock-title {
+        font-size: 12px;
+      }
+      .digit-box {
+        min-width: 58px;
+        padding: 6px 10px;
+      }
+      .digit-num {
+        font-size: 24px;
+      }
+
+      /* PRICING */
+      .price-strike {
+        font-size: 16px;
+      }
+      .price-active {
+        font-size: 32px;
+      }
+      .price-badge {
+        font-size: 12px;
+        padding: 5px 12px;
+      }
+
+      /* MAIN CTA BUTTON */
+      .main-cta {
+        font-size: 15px;
+        padding: 16px 18px;
+        border-radius: 14px;
+        line-height: 1.3;
+      }
+
+      /* BENEFITS SECTION */
+      .benefit-intro {
+        font-size: 16px;
+      }
+      .benefit-card {
+        padding: 22px 18px;
+        border-radius: 18px;
+      }
+      .benefit-card h4 {
+        font-size: 17px;
+      }
+      .benefit-card p {
+        font-size: 14px;
+      }
+
+      /* CONNECT BUTTONS */
+      .btn-cal-hero {
+        font-size: 15px;
+        padding: 16px 18px;
+      }
+      .btn-support {
+        font-size: 13px;
+        padding: 12px 14px;
+      }
+
+      /* FOOTER */
+      footer {
+        font-size: 13px;
+        padding-top: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLEEK FLOATING LIQUID GLASS URGENCY BAR -->
+  <div class="top-glass-bar">
+    <div class="top-glass-capsule">
+      <div class="urgency-title">
+        <span class="pulse-dot"></span>
+        <span class="urgency-text-desktop">🔥 GIỚI HẠN TUẦN NÀY — GÓI TRIỂN KHAI AI AGENTIC 1.000.000 VNĐ SẼ KẾT THÚC SAU:</span>
+        <span class="urgency-text-mobile" style="display: none;">🔥 ƯU ĐÃI AI AGENTIC 1.000.000 VNĐ KẾT THÚC SAU:</span>
+      </div>
+      <div class="timer-pill" id="top-timer">10:00</div>
+    </div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <div class="wrapper">
+    <div class="container">
+
+      <!-- HERO PILL BADGE -->
+      <div class="badge">
+        <span>⚡ OPC-TNC</span>
+        <span>•</span>
+        <span>AI AGENTIC DONE-FOR-YOU 48H</span>
+      </div>
+
+      <!-- HEADLINE H1 -->
+      <h1>
+        <span class="highlight">48 Giờ</span> Để AI Vận Hành Doanh Nghiệp,<br>
+        Thay Vì Bắt Anh Tự Trở Thành Kỹ Sư AI
+      </h1>
+
+      <p class="subheadline">
+        OPC-TNC giúp doanh nghiệp khởi động tác nhân AI nhanh, trải nghiệm nhanh, kết quả sớm trong 48 giờ.
+        Anh chỉ cần đưa ra bài toán kinh doanh; toàn bộ khâu thiết kế workflow, lập trình prompt master
+        đến triển khai kỹ thuật đã có đội ngũ chuyên gia của chúng tôi lo trọn gói.
+      </p>
+
+      <!-- CINEMATIC VIDEO DEMO SLOT -->
+      <div class="video-wrap">
+        <div class="video-container" id="video-slot">
+          <div class="video-placeholder" id="video-placeholder">
+            <div class="play-button" onclick="playVideo()">▶</div>
+            <h3>VIDEO DEMO THỰC THI THỰC TẾ</h3>
+            <p>Video demo thực chiến sẽ tự động kích hoạt khi Founder gửi link cập nhật mới!</p>
+          </div>
+          <iframe id="vsl-iframe" src="" style="display: none;" allowfullscreen allow="autoplay"></iframe>
+        </div>
+      </div>
+
+      <!-- HERO OFFER CARD — LUXURY GLASS -->
+      <div class="offer-box">
+        <div class="offer-header">
+          <h3>🎁 GÓI TRIỂN KHAI TRẢI NGHIỆM AI AGENTIC 48H</h3>
+          <p>Trọn gói thiết lập & chuyển giao giải pháp AI tự động hóa cho doanh nghiệp</p>
+        </div>
+
+        <div class="deliverables-list">
+          <span class="deliverable-item">Setup 1 Agent hoàn chỉnh</span>
+          <span class="deliverable-item">Bàn giao Mã nguồn trọn đời</span>
+          <span class="deliverable-item">Đào tạo 1-1 qua Zoom (30 phút)</span>
+        </div>
+        
+        <!-- UNIFIED DIGITAL COUNTDOWN CLOCK -->
+        <div class="digital-clock-card">
+          <span class="clock-title"><span class="pulse-dot"></span> ĐỒNG HỒ ĐẾM NGƯỢC GIỮ ƯU ĐÃI:</span>
+          <div class="clock-digits">
+            <div class="digit-box">
+              <span class="digit-num" id="clock-min">10</span>
+              <span class="digit-label">PHÚT</span>
+            </div>
+            <span style="font-size: 26px; font-weight: 900; color: var(--rose-accent);">:</span>
+            <div class="digit-box">
+              <span class="digit-num" id="clock-sec">00</span>
+              <span class="digit-label">GIÂY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-block">
+          <div>
+            <span class="price-strike">10.000.000 VNĐ</span>
+            <span class="price-active">1.000.000 VNĐ</span>
+          </div>
+          <span class="price-badge">🔥 Giới hạn chỉ 3 suất trải nghiệm tuần này</span>
+        </div>
+        
+        <button class="main-cta" onclick="openPaymentModal()">
+          👉 ĐĂNG KÝ TRIỂN KHAI AI AGENTIC 1.000.000 VNĐ NGAY
+        </button>
+      </div>
+
+      <!-- WHY OPC-TNC SECTION -->
+      <div class="section-header">
+        <div class="section-badge">💎 TẠI SAO CHỌN OPC-TNC?</div>
+        <p class="benefit-intro">
+          Thay vì tiếp tục mất hàng trăm giờ tự mày mò giữa kho tài liệu AI rời rạc trên mạng:
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h4>1. Kết quả sớm trong 48h</h4>
+          <p>Tác nhân AI đầu tiên được kích hoạt trực tiếp trên bài toán thật của doanh nghiệp, không demo lý thuyết.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <h4>2. Tiết kiệm thời gian & chi phí</h4>
+          <p>Không tốn tiền đăng ký hàng loạt tool rời rạc, không mất 100 giờ học prompt rồi vẫn làm thủ công.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">👑</div>
+          <h4>3. Giữ tư duy quản trị</h4>
+          <p>Anh tập trung định hướng chiến lược; OPC-TNC chịu trách nhiệm cài đặt done-for-you từ A-Z.</p>
+        </div>
+      </div>
+
+      <!-- EXECUTIVE CONNECT HUB -->
+      <div class="connect-section">
+        <h3>🎯 KẾT NỐI TRỰC TIẾP & ĐẶT LỊCH VỚI FOUNDER</h3>
+        <p>Hệ sinh thái hỗ trợ chuyên nghiệp OPC-TNC luôn sẵn sàng đồng hành cùng doanh nghiệp anh:</p>
+
+        <!-- VIP CAL.COM PRIMARY HERO BUTTON -->
+        <a href="https://cal.com/victorchuyen/coachai" target="_blank" class="btn-cal-hero">
+          📅 Đặt Lịch Tư Vấn 30' Trực Tiếp (Cal.com)
+        </a>
+
+        <!-- SECONDARY GLASS SUPPORT GRID -->
+        <div class="support-grid">
+          <a href="https://zalo.me/g/tdhmtu261" target="_blank" class="btn-support">
+            💬 Group Zalo Support
+          </a>
+          <a href="https://t.me/vibecodocoaching" target="_blank" class="btn-support">
+            ✈️ Group Telegram VibeCode
+          </a>
+          <a href="https://zalo.me/0989890022" target="_blank" class="btn-support zalo-admin">
+            📲 Chat Zalo Admin 1-1
+          </a>
+        </div>
+      </div>
+
+      <!-- EXECUTIVE FOOTER -->
+      <footer>
+        <div class="footer-brand">OPC-TNC • AI CO-FOUNDER & 100% AUTONOMOUS AI SQUAD ENGINE</div>
+        <div>Cam kết Done-For-You trong 48 giờ • Bàn giao mã nguồn trọn đời • Bảo mật dữ liệu tuyệt đối</div>
+        <div style="margin-top: 8px; color: #64748b; font-size: 13px;">© 2026 OPC-TNC (Founder Victor Chuyen & LUCKY AI Co-Founder). All rights reserved.</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function setVideoLink(videoUrl) {
+      const iframe = document.getElementById('vsl-iframe');
+      const placeholder = document.getElementById('video-placeholder');
+      if (videoUrl) {
+        iframe.src = videoUrl;
+        iframe.style.display = 'block';
+        placeholder.style.display = 'none';
+      }
+    }
+
+    function playVideo() {
+      alert('Đã sẵn sàng đón nhận Link Video mới từ Founder Victor Chuyen!');
+    }
+
+    function openPaymentModal() {
+      window.open('https://cal.com/victorchuyen/coachai', '_blank');
+    }
+
+    // 10-MINUTE SYNCHRONIZED COUNTDOWN TIMER LOGIC
+    let totalSeconds = 10 * 60; // 10 minutes
+
+    function updateTimer() {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+
+      const minStr = String(minutes).padStart(2, '0');
+      const secStr = String(seconds).padStart(2, '0');
+
+      document.getElementById('top-timer').innerText = `${minStr}:${secStr}`;
+      document.getElementById('clock-min').innerText = minStr;
+      document.getElementById('clock-sec').innerText = secStr;
+
+      if (totalSeconds > 0) {
+        totalSeconds--;
+      } else {
+        totalSeconds = 10 * 60; // Reset to maintain continuous urgency
+      }
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

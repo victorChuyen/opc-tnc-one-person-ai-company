@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /logs/
+
+Sitemap: https://ai.breaths.live/sitemap.xml

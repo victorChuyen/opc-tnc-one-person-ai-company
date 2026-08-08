@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "node-ceo",
+      "type": "text",
+      "text": "# 🧑‍💼 Victor CEO\n- Master Orchestrator\n- TNC AI Enterprise",
+      "x": -200,
+      "y": -200,
+      "width": 300,
+      "height": 160
+    },
+    {
+      "id": "node-paperclip",
+      "type": "text",
+      "text": "# 🧠 Paperclip Board\n- Port 3100\n- Issue & Task Tracking",
+      "x": 200,
+      "y": -200,
+      "width": 300,
+      "height": 160
+    },
+    {
+      "id": "node-cmo",
+      "type": "text",
+      "text": "# 📈 Alex CMO\n- Niche Analysis\n- Competitor SPEAR",
+      "x": -400,
+      "y": 100,
+      "width": 260,
+      "height": 140
+    },
+    {
+      "id": "node-creative",
+      "type": "text",
+      "text": "# 🎨 Hormozi Creative\n- Grand Slam Offer\n- Ad Copy Hooks",
+      "x": -100,
+      "y": 100,
+      "width": 260,
+      "height": 140
+    },
+    {
+      "id": "node-sales",
+      "type": "text",
+      "text": "# 💼 Jordan Sales\n- Cold Outreach\n- Demo Call Script",
+      "x": 200,
+      "y": 100,
+      "width": 260,
+      "height": 140
+    },
+    {
+      "id": "node-ads",
+      "type": "text",
+      "text": "# 📢 Meta Ads Specialist\n- Audit 20 điểm\n- Auto-Rules 24/7",
+      "x": 500,
+      "y": 100,
+      "width": 260,
+      "height": 140
+    },
+    {
+      "id": "node-9router",
+      "type": "text",
+      "text": "# 🔀 9Router Gateway\n- Port 20128\n- Multi-LLM Proxy",
+      "x": 50,
+      "y": 350,
+      "width": 350,
+      "height": 140
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "fromNode": "node-ceo",
+      "fromSide": "right",
+      "toNode": "node-paperclip",
+      "toSide": "left",
+      "label": "Điều phối"
+    },
+    {
+      "id": "edge-2",
+      "fromNode": "node-paperclip",
+      "fromSide": "bottom",
+      "toNode": "node-cmo",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-3",
+      "fromNode": "node-paperclip",
+      "fromSide": "bottom",
+      "toNode": "node-creative",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-4",
+      "fromNode": "node-paperclip",
+      "fromSide": "bottom",
+      "toNode": "node-sales",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-5",
+      "fromNode": "node-paperclip",
+      "fromSide": "bottom",
+      "toNode": "node-ads",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-6",
+      "fromNode": "node-cmo",
+      "fromSide": "bottom",
+      "toNode": "node-9router",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-7",
+      "fromNode": "node-creative",
+      "fromSide": "bottom",
+      "toNode": "node-9router",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-8",
+      "fromNode": "node-sales",
+      "fromSide": "bottom",
+      "toNode": "node-9router",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-9",
+      "fromNode": "node-ads",
+      "fromSide": "bottom",
+      "toNode": "node-9router",
+      "toSide": "top"
+    }
+  ]
+}

@@ -1,63 +1,40 @@
-# 📌 ENGLISH DISCORD PINNED WELCOME POST (OPC-TNC GLOBAL COMMUNITY)
-
-> **Purpose**: Ready-to-copy English pinned post for Discord welcome channels, announcement boards, and bot onboarding (`https://discord.com/channels/1098935967873765457/1098935968582598707`).
+# 📌 DISCORD CHANNEL TOPIC & SHORT PINNED POST (OPTIMIZED FOR DISCORD LIMITS)
 
 ---
 
-## 📋 DISCORD MARKDOWN TEXT (COPY & PASTE DIRECTLY INTO DISCORD)
+## ⚡ OPTION 1: DISCORD CHANNEL TOPIC (DÙNG ĐỂ DÁN VÀO MỤC CHANNEL TOPIC - MAX 1024 CHARS)
 
-```markdown
-# 🚀 WELCOME TO THE ONE-PERSON AI COMPANY (OPC-TNC) GLOBAL COMMUNITY!
-***
-Hello Solopreneurs, AI Engineers, Agency Owners & Developers! 👋
+> **Dán trực tiếp vào ô Channel Topic của kênh #announcements (Chuẩn 100% không bị quá ký tự)**:
 
-I am **Victor Chuyen** (Chairman of TNC Group). I'm thrilled to welcome you to our official community for building autonomous **One-Person AI Companies** powered by **5 AI C-Suite Directors** and a **3D Virtual Office Simulator**.
-
-### 🎁 [FREE 0$ LEAD MAGNET] YOUR OPEN-SOURCE TOOLKIT:
-Here is your immediate access to our open-source codebase and 157 Prompt Vault:
-
-💻 **1. Official GitHub Repository (V1.0 Public Codebase):**
-> https://github.com/victorChuyen/opc-tnc-one-person-ai-company
-
-⭐ **2. Support Open Source (Give us a 5-Star ⭐ Review on GitHub):**
-> https://github.com/victorChuyen/opc-tnc-one-person-ai-company/stargazers
-
-📘 **3. Beginner A-Z Step-by-Step Cloning Guide:**
-> https://github.com/victorChuyen/opc-tnc-one-person-ai-company/blob/main/BEGINNER_CLONE_GUIDE_AZ.md
-
-🌐 **4. Interactive 3D Virtual Office Simulator (Live Demo):**
-> https://ai.breaths.live
-
-***
-### 🚀 CORE SETUP PACKAGE (3D SIMULATOR & 5 AI DIRECTORS):
-**Special Launch Price:** **$49 USD** *(Regular: $450 USD)*
-
-Includes: Web Server Deployment + 5 AI Directors Suite (CEO, CMO, CSO, CPO, CHRO) + Automated Payment Reconciliation!
-
-💳 **Global PayPal Checkout Link:**
-> https://PayPal.Me/victorchuyen
-
-***
-### 🎯 BOOK A 1:1 VIP STRATEGY CALL WITH CHAIRMAN VICTOR CHUYEN:
-Directly partner with Chairman Victor Chuyen to package your Grand Slam offer and scale your AI agency:
-> 📅 **Book your 20-minute Strategy Call:** https://cal.com/victorchuyen/coachai
-
-📌 **COMMUNITY RULES:**
-1. Be respectful and constructive to all members.
-2. No unauthorized promo or spam.
-3. For technical support, ping `@Admin` or open a support thread!
-
-Let's build your autonomous AI empire together! 🚀
+```text
+🚀 One-Person AI Company (OPC-TNC) | 3D Office Simulator & 5 AI Directors Suite
+💻 GitHub V1.0: https://github.com/victorChuyen/opc-tnc-one-person-ai-company
+⭐ Star GitHub: https://github.com/victorChuyen/opc-tnc-one-person-ai-company/stargazers
+🌐 3D Live Demo: https://ai.breaths.live
+💳 Pro Setup ($49): https://PayPal.Me/victorchuyen
+📅 1:1 Call: https://cal.com/victorchuyen/coachai
 ```
 
 ---
 
-## 🛠️ HOW TO PIN IN DISCORD
+## 📌 OPTION 2: SHORT PINNED CHAT MESSAGE (DÙNG ĐỂ GỬI TIN NHẮN CHÁT VÀ GHIM NỔI BẬT)
 
-1. Copy the Markdown code block above.
-2. Paste and send the message in your `#welcome` or `#announcements` channel on Discord.
-3. Hover over your sent message, click the **`...` (More)** menu button ➔ Click **`Pin Message`**.
-4. Confirm by clicking **`Oh yeah, pin it!`**.
+> **Dán vào khung chát gửi tin nhắn ➔ Bấm Pin Message**:
+
+```markdown
+# 🚀 ONE-PERSON AI COMPANY (OPC-TNC)
+Welcome! Build your autonomous AI empire with 5 AI C-Suite Directors & 3D Virtual Office Simulator.
+
+🎁 **FREE OPEN-SOURCE TOOLKIT:**
+💻 **GitHub Codebase:** https://github.com/victorChuyen/opc-tnc-one-person-ai-company
+⭐ **Give a Star ⭐:** https://github.com/victorChuyen/opc-tnc-one-person-ai-company/stargazers
+📘 **A-Z Setup Guide:** https://github.com/victorChuyen/opc-tnc-one-person-ai-company/blob/main/BEGINNER_CLONE_GUIDE_AZ.md
+🌐 **3D Live Demo:** https://ai.breaths.live
+
+🚀 **PRO SETUP ($49 USD):**
+💳 **PayPal:** https://PayPal.Me/victorchuyen
+📅 **1:1 Strategy Call:** https://cal.com/victorchuyen/coachai
+```
 
 ---
 *Created by **Chairman Victor Chuyen & AI Squad OPC-TNC**.*

@@ -181,6 +181,26 @@ const server = http.createServer((req, res) => {
                     console.error('[AI CFO] Telegram notice error:', err.message);
                 }
 
+                // Save transaction locally in data/transactions_db.json
+                const txDbPath = path.join(__dirname, 'data', 'transactions_db.json');
+                let txList = [];
+                if (fs.existsSync(txDbPath)) {
+                    try { txList = JSON.parse(fs.readFileSync(txDbPath, 'utf8')); } catch (e) {}
+                }
+                const newTx = {
+                    id: `TX-${Date.now()}`,
+                    student: payload.name || payload.student || 'Khách Hàng',
+                    phone,
+                    amount,
+                    status: 'PAID_VERIFIED',
+                    access: 'GRANTED',
+                    bankRef,
+                    courseCode,
+                    date: new Date().toLocaleString('vi-VN')
+                };
+                txList.unshift(newTx);
+                fs.writeFileSync(txDbPath, JSON.stringify(txList, null, 2));
+
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({
                     success: true,
@@ -200,17 +220,19 @@ const server = http.createServer((req, res) => {
     }
 
     if (req.url === '/api/finance/transactions' && req.method === 'GET') {
+        const txDbPath = path.join(__dirname, 'data', 'transactions_db.json');
+        let txList = [];
+        if (fs.existsSync(txDbPath)) {
+            try { txList = JSON.parse(fs.readFileSync(txDbPath, 'utf8')); } catch (e) {}
+        }
+        const totalRev = txList.reduce((sum, item) => sum + (item.amount || 0), 0);
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
             success: true,
-            totalTransactions: 3,
-            totalRevenue: 3000000,
-            mrr: 15000000,
-            recentTransactions: [
-                { id: 'TX-20260807-001', student: 'Mr. Thắng Win', phone: '0989890022', amount: 1000000, status: 'PAID_VERIFIED', access: 'GRANTED', bankRef: 'FT2621983012', date: '2026-08-07 19:30' },
-                { id: 'TX-20260807-002', student: 'Demo Lead 01', phone: '0912345678', amount: 1000000, status: 'PAID_VERIFIED', access: 'GRANTED', bankRef: 'FT2621983015', date: '2026-08-07 20:15' },
-                { id: 'TX-20260807-003', student: 'Demo Lead 02', phone: '0987654321', amount: 1000000, status: 'PENDING', access: 'BLOCKED', bankRef: 'WAITING_BANK', date: '2026-08-07 21:00' }
-            ]
+            totalTransactions: txList.length,
+            totalRevenue: totalRev,
+            mrr: totalRev,
+            recentTransactions: txList
         }));
         return;
     }

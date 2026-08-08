@@ -17,7 +17,8 @@ If this toolkit helps you build your **One-Person AI Company**, please **give us
 ---
 
 ## 📘 HƯỚNG DẪN CHI TIẾT A-Z CHO NGƯỜI MỚI (BEGINNER GUIDE)
-👉 **[Đọc Hướng Dẫn A-Z Từng Bước Nhân Bản Doanh Nghiệp AI](BEGINNER_CLONE_GUIDE_AZ.md)**
+👉 **[Đọc Hướng Dẫn A-Z Từng Bước Nhân Bản Doanh Nghiệp AI](BEGINNER_CLONE_GUIDE_AZ.md)**  
+👉 **[Đọc Chiến Lược Quy Trình Thu Leads Tự Động Từ GitHub (GitHub Lead Pipeline)](GITHUB_LEAD_GENERATION_PIPELINE.md)**
 
 ### 📺 VIDEO TUTORIALS:
 - 🇻🇳 **Video Hướng Dẫn Tiếng Việt (Step-by-Step)**: [https://www.youtube.com/watch?v=opc_tnc_guide_vi](https://www.youtube.com/watch?v=opc_tnc_guide_vi)

@@ -54,12 +54,12 @@ export const translations = {
         "btn_grant_access": "💰 Cấp Quyền Học Liệu",
 
         // Sprint 1 Tracker
-        "sprint_title": "🚀 SPRINT 1,000 FOLLOWERS / PAGE (+100 RÒNG/NGÀY)",
+        "sprint_title": "🚀 SPRINT DOANH NGHIỆP AI: 1,000 BIẾT ➔ 100 TẢI ➔ 10 VÀO NHÓM",
         "sprint_badge": "● DAY 1/10 LIVE",
-        "stat_flw": "1. Flw Ròng/Ngày",
-        "stat_leads": "2. Opt-in Bản Sao OPC",
-        "stat_demo": "3. Cal.com Consult",
-        "stat_closed": "4. Chốt Chuyển Tiền",
+        "stat_flw": "1. 1,000 Người Biết",
+        "stat_leads": "2. 100 Lượt Tải OPC",
+        "stat_demo": "3. 10 Vào Nhóm CK 500K",
+        "stat_closed": "4. 1 Khách CK 1 Triệu",
         "btn_content_matrix": "🚀 90 BÀI CONTENT MATRIX",
         "btn_kpi_matrix": "📊 MA TRẬN KPI & NHIỆM VỤ 3 KÊNH",
 
@@ -150,12 +150,12 @@ export const translations = {
         "btn_grant_access": "💰 Grant Course Access",
 
         // Sprint 1 Tracker
-        "sprint_title": "🚀 SPRINT 1,000 FOLLOWERS / PAGE (+100 NET/DAY)",
+        "sprint_title": "🚀 AI SPRINT GOAL: 1,000 REACH ➔ 100 DOWNLOADS ➔ 10 GROUP PAIDS",
         "sprint_badge": "● DAY 1/10 LIVE",
-        "stat_flw": "1. Net Flw/Day",
-        "stat_leads": "2. Opt-in OPC Source Code",
-        "stat_demo": "3. Cal.com Consult",
-        "stat_closed": "4. Closed Sales/Day",
+        "stat_flw": "1. 1,000 Reach/Views",
+        "stat_leads": "2. 100 OPC Downloads",
+        "stat_demo": "3. 10 Group $20 Paids",
+        "stat_closed": "4. 1 Client $49 Paid",
         "btn_content_matrix": "🚀 90 CONTENT MATRIX",
         "btn_kpi_matrix": "📊 3-CHANNEL KPI MATRIX",
 

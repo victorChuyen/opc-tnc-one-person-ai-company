@@ -69,10 +69,11 @@ export async function executeComposioAction(actionName, params = {}, connectedAc
  * Schedule Post via Composio Trigger Scheduler
  */
 export async function scheduleComposioPost(postItem, timeSlot) {
-  const contentMsg = `${postItem.title}\n\n${postItem.hook}\n\n${postItem.body}\n\n👉 Xem chi tiết & Tải mã nguồn: https://ai.breaths.live\n${postItem.hashtags}`;
+  const mediaPath = postItem.video_file ? `11_Media/Video/FOMO AI - STOP - 48 SHORT/${postItem.video_file}` : (postItem.image_file || '');
+  const contentMsg = `${postItem.title}\n\n${postItem.hook}\n\n${postItem.body}\n\n🎬 Media Video Asset: ${mediaPath}\n👉 Xem chi tiết & Tải mã nguồn: https://ai.breaths.live\n${postItem.hashtags}`;
 
   console.log(`\n📅 [COMPOSIO SCHEDULER] Scheduled Post: "${postItem.title}"`);
-  console.log(`⏰ Time Slot: ${timeSlot} | Platform: ${postItem.platform}`);
+  console.log(`⏰ Time Slot: ${timeSlot} | Platform: ${postItem.platform} | Media: ${mediaPath}`);
 
   // Dispatch to Connected Account 1 (Reddit / GitHub)
   if (postItem.platform.includes('GitHub') || postItem.platform.includes('Discord')) {

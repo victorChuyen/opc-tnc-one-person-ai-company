@@ -813,8 +813,8 @@
                 agent.isMoving = true;
             });
 
-            showCollabToast('🪑 Đã triệu tập toàn bộ 5 AI Directors quay về đúng vị trí bàn làm việc!');
-            addTerminalLog('[SYSTEM]', 'Triệu tập 5 AI Directors quay về vị trí bàn làm việc.');
+            showCollabToast('🪑 Đã triệu tập toàn bộ 6 AI Directors quay về đúng vị trí bàn làm việc!');
+            addTerminalLog('[SYSTEM]', 'Triệu tập 6 AI Directors quay về vị trí bàn làm việc.');
         }
 
         /* ────────────── CHAIRMAN COMMAND & PAPERCLIP API BRIDGE ────────────── */

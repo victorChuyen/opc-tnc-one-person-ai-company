@@ -88,12 +88,12 @@ export async function notifyNewLeadToTelegram(lead) {
 // AI C-Suite Director Personas
 const AI_DIRECTOR_RESPONSES = {
   victor: `👑 <b>CHAIRMAN VICTOR CHUYEN (HUMAN FOUNDER)</b>\n\n` +
-    `"Chào bạn! Tôi là Victor Chuyen - Founder & Chairman tại TNC Group. Mô hình OPC-TNC giúp 1 cá nhân vận hành toàn bộ doanh nghiệp nhờ đội ngũ 5 Giám đốc AI Agentic.\n\n` +
+    `"Chào bạn! Tôi là Victor Chuyen - Founder & Chairman tại TNC Group. Mô hình OPC-TNC giúp 1 cá nhân vận hành toàn bộ doanh nghiệp nhờ đội ngũ 6 Giám đốc AI Agentic.\n\n` +
     `👉 Muốn trao đổi 1:1 trực tiếp với tôi? Đặt lịch tại: https://cal.com/victorchuyen/coachai"`,
 
   ceo: `👑 <b>AI CEO (EXECUTIVE ORCHESTRATOR)</b>\n\n` +
     `"Tôi quản trị toàn bộ dòng công việc Hub-and-Spoke. Khi Chairman đưa ra chỉ thị, tôi tự động phân rã mục tiêu cho CMO, CSO, CPO, CHRO và CFO thực thi đồng bộ.\n\n` +
-    `⚡ Trạng thái hệ thống: <b>5/5 AI Directors Online 100%</b>"`,
+    `⚡ Trạng thái hệ thống: <b>6/6 AI Directors Online 100%</b>"`,
 
   cmo: `📢 <b>AI CMO (MARKETING & COPYWRITING)</b>\n\n` +
     `"Tôi đảm nhận: 90 Kịch bản Meta Ads chuẩn Hormozi, Niche Market Research, Lead Magnet Conversion & Email Automation 5 ngày qua Resend API.\n\n` +

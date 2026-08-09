@@ -4,7 +4,7 @@ export const translations = {
     vi: {
         // Header & Branding
         "brand_title": "TNC GROUP | SIMULATOR CÔNG TY AI 3D 360°",
-        "indicator_status": "5 GIÁM ĐỐC AI C-SUITE ONLINE — MÔ HÌNH HUB-AND-SPOKE",
+        "indicator_status": "6 GIÁM ĐỐC AI C-SUITE ONLINE — MÔ HÌNH HUB-AND-SPOKE",
         "top_lead_title": "🎁 Nhận ngay Bản Sao Mã Nguồn OPC để xây dựng 🎓 OPC | One Person Company của bạn",
         "top_lead_cta": "⚡ Kích hoạt nhận mã nguồn",
         "hero_mobile_title": "Mô Phỏng Doanh Nghiệp 1 Người\nvới 6 Giám Đốc AI Agentic",
@@ -102,7 +102,7 @@ export const translations = {
     en: {
         // Header & Branding
         "brand_title": "TNC GROUP | 360° 3D AI COMPANY SIMULATOR",
-        "indicator_status": "5 AI C-SUITE DIRECTORS ONLINE — HUB-AND-SPOKE MODEL",
+        "indicator_status": "6 AI C-SUITE DIRECTORS ONLINE — HUB-AND-SPOKE MODEL",
         "top_lead_title": "🎁 Get the OPC Source Code Clone to Build Your 🎓 OPC | One Person Company",
         "top_lead_cta": "⚡ Activate & Get Source Code",
         "hero_mobile_title": "One Person AI Company Simulator\nwith 6 C-Suite AI Directors",

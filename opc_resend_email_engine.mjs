@@ -146,7 +146,7 @@ function buildWelcomeHtml({ name = 'Khách Hàng', lang = 'vi' }) {
 
     <!-- Global PayPal Upgrade Option -->
     <div style="background:linear-gradient(135deg, #1e3a8a, #2563eb);border:1.5px solid #60a5fa;padding:20px;margin:25px 0;border-radius:12px;text-align:center;color:#ffffff;">
-        <span style="background:#ffaa00;color:#000;font-size:10px;font-weight:900;padding:4px 12px;border-radius:12px;text-transform:uppercase;">🚀 PRO SETUP & 5 AI C-SUITE DIRECTORS</span>
+        <span style="background:#ffaa00;color:#000;font-size:10px;font-weight:900;padding:4px 12px;border-radius:12px;text-transform:uppercase;">🚀 PRO SETUP & 6 AI C-SUITE DIRECTORS</span>
         <h3 style="margin:10px 0 6px 0;font-size:15px;color:#ffffff;">Core Setup Package (3D Simulator + Web Server)</h3>
         <p style="margin:0 0 14px 0;font-size:12.5px;color:#dbeafe;">Special Global Launch Price: <b>$49 USD (1.000.000đ)</b> <s style="color:#93c5fd;">$450 USD</s></p>
         <a href="${PAYPAL_ME}" target="_blank" style="background:#facc15;color:#000000;font-weight:900;font-size:12.5px;padding:12px 22px;border-radius:8px;text-decoration:none;display:inline-block;box-shadow:0 4px 15px rgba(250,204,21,0.4);">
@@ -167,7 +167,7 @@ function buildWelcomeHtml({ name = 'Khách Hàng', lang = 'vi' }) {
     <div style="background:rgba(15,23,42,0.8);border-left:4px solid #00f2ff;padding:15px;margin:20px 0;border-radius:8px;">
         <h3 style="margin:0 0 8px 0;font-size:14px;color:#00f2ff;">🎁 QUYỀN LỢI GÓI 0Đ CỦA BẠN BAO GỒM:</h3>
         <ul style="margin:0;padding-left:20px;font-size:13px;color:#cbd5e1;line-height:1.7;">
-            <li><b>Bộ 157 Prompt Vault:</b> Chuẩn hóa cho 5 Giám đốc AI (CEO, CMO, CSO, CPO, CHRO).</li>
+            <li><b>Bộ 157 Prompt Vault:</b> Chuẩn hóa cho 6 Giám đốc AI (CEO, CMO, CSO, CPO, CHRO, CFO).</li>
             <li><b>Mô hình 3D Virtual Office Simulator:</b> Trải nghiệm không gian làm việc AI 360°.</li>
             <li><b>Obsidian Vault Note:</b> Mẫu ghi chép KPI hàng ngày & quản trị tri thức.</li>
             <li><b>Tải Mã Nguồn Trực Tiếp Từ GitHub:</b> Toàn bộ source code V1.0 & Apps Script Suite.</li>
@@ -189,7 +189,7 @@ function buildWelcomeHtml({ name = 'Khách Hàng', lang = 'vi' }) {
     <!-- Official Paid Offer Upgrade Box -->
     <div style="background:linear-gradient(135deg, #1e3a8a, #2563eb);border:1.5px solid #60a5fa;padding:20px;margin:25px 0;border-radius:12px;text-align:center;color:#ffffff;">
         <span style="background:#ffaa00;color:#000;font-size:10px;font-weight:900;padding:4px 12px;border-radius:12px;text-transform:uppercase;">🚀 GÓI CÀI ĐẶT TRỰC TIẾP PRO</span>
-        <h3 style="margin:10px 0 6px 0;font-size:15px;color:#ffffff;">Gói Setup 3D Simulator & 5 AI Directors C-Suite</h3>
+        <h3 style="margin:10px 0 6px 0;font-size:15px;color:#ffffff;">Gói Setup 3D Simulator & 6 AI Directors C-Suite</h3>
         <p style="margin:0 0 14px 0;font-size:12.5px;color:#dbeafe;">Giá ưu đãi khởi tạo: <b>1.000.000đ</b> <s style="color:#93c5fd;">10.000.000đ</s></p>
         <a href="https://cal.com/victorchuyen/coachai" target="_blank" style="background:#facc15;color:#000000;font-weight:900;font-size:12.5px;padding:12px 22px;border-radius:8px;text-decoration:none;display:inline-block;box-shadow:0 4px 15px rgba(250,204,21,0.4);">
             👉 ĐẶT LỊCH SETUP GÓI 1M & TƯ VẤN 1:1
@@ -278,13 +278,13 @@ export async function triggerLeadWelcomeEmail(lead) {
 }
 
 /**
- * Day 2 Email: Secrets of 5 AI C-Suite Directors
+ * Day 2 Email: Secrets of 6 AI C-Suite Directors
  */
 export async function triggerDay2Email(lead) {
   const isEn = lead.lang === 'en' || lead.business === 'GLOBAL_ENGLISH';
   const subject = isEn 
-    ? `🤖 Secrets of 5 AI C-Suite Directors: Replace a 20-Person Team 👑`
-    : `🤖 Bí mật 5 Giám Đốc AI (C-Suite) thay thế đội ngũ 20 nhân sự 👑`;
+    ? `🤖 Secrets of 6 AI C-Suite Directors: Replace a 20-Person Team 👑`
+    : `🤖 Bí mật 6 Giám Đốc AI (C-Suite) thay thế đội ngũ 20 nhân sự 👑`;
 
   const bodyHtml = isEn ? `
     <h2 style="color:#ffaa00;font-size:16px;margin-top:0;">Hello ${lead.name || 'there'},</h2>
@@ -292,7 +292,7 @@ export async function triggerDay2Email(lead) {
     <div style="background:rgba(15,23,42,0.8);border-left:4px solid #00f2ff;padding:15px;margin:18px 0;border-radius:8px;">
         <h3 style="margin:0 0 8px 0;font-size:14px;color:#00f2ff;">👑 THE HUB-AND-SPOKE 6 AI DIRECTORS MODEL:</h3>
         <ul style="margin:0;padding-left:20px;font-size:13px;color:#cbd5e1;line-height:1.7;">
-            <li>👑 <b>AI CEO:</b> Orchestrates strategy ➔ Decomposes goals ➔ Delegates to 5 C-Suite directors.</li>
+            <li>👑 <b>AI CEO:</b> Orchestrates strategy ➔ Decomposes goals ➔ Delegates to 5 C-Suite directors (CMO, CSO, CPO, CHRO, CFO).</li>
             <li>📢 <b>AI CMO:</b> Runs Meta Ads, analyzes competitor ads, writes Alex Hormozi offers.</li>
             <li>💼 <b>AI CSO:</b> Hunts B2B leads, sends 3-step cold emails, executes 20m demo scripts.</li>
             <li>🛠️ <b>AI CPO:</b> Fullstack React/Node.js developer, manages REST APIs & deployment.</li>

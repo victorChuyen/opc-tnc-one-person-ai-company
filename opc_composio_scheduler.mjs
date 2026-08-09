@@ -29,21 +29,21 @@ try {
   }
 } catch (e) {}
 
-const COMPOSIO_BASE_URL = 'https://backend.composio.dev/v1';
+const COMPOSIO_BASE_URL = 'https://backend.composio.dev/api/v3';
 const COMPOSIO_USER_ID = process.env.COMPOSIO_USER_ID || 'pg-test-007ec7c9-6fd2-4115-97d5-899231d5aa17';
-const COMPOSIO_AUTH_CONFIG = process.env.COMPOSIO_AUTH_CONFIG_ID || 'ac_rH405NHt-xn7';
-const CONNECTED_ACCOUNT_1 = process.env.COMPOSIO_CONNECTED_ACCOUNT_ID_1 || 'ca_iavALyujy9P0';
-const CONNECTED_ACCOUNT_2 = process.env.COMPOSIO_CONNECTED_ACCOUNT_ID_2 || 'ca_RC-qYfv97MI6';
+const COMPOSIO_AUTH_CONFIG = process.env.COMPOSIO_AUTH_CONFIG_ID || 'ac_AV3QWAIlmCFB';
+const CONNECTED_ACCOUNT_1 = process.env.COMPOSIO_CONNECTED_ACCOUNT_ID_1 || 'ca_lOXbSfTR5FXM';
+const CONNECTED_ACCOUNT_2 = process.env.COMPOSIO_CONNECTED_ACCOUNT_ID_2 || 'ca_t6SG5j-ivRNU';
 
 /**
- * Execute Composio Action API
+ * Execute Composio Action API (v3)
  */
 export async function executeComposioAction(actionName, params = {}, connectedAccountId = CONNECTED_ACCOUNT_1) {
   try {
     const url = `${COMPOSIO_BASE_URL}/actions/${actionName}/execute`;
     const payload = {
-      connectedAccountId: connectedAccountId,
-      userId: COMPOSIO_USER_ID,
+      connected_account_id: connectedAccountId,
+      user_id: COMPOSIO_USER_ID,
       input: params
     };
 

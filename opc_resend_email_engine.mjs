@@ -40,7 +40,7 @@ export const SUBDOMAIN_POOL = Array.from({ length: 10 }, (_, i) => {
     id: `opc${index}`,
     subdomain: subdomain,
     sender: `🚀 OPC TNC | One Person Company <victor@${subdomain}>`,
-    apiKey: process.env[`RESEND_API_KEY_OPC${index}`] || process.env.RESEND_API_KEY || ''
+    apiKey: process.env[`RESEND_API_KEY_OPC${index}`] || ''
   };
 });
 
@@ -237,7 +237,7 @@ function buildEmailWrapper({ title, bodyHtml }) {
                             <p style="font-size:12px;color:#94a3b8;border-top:1px solid rgba(255,255,255,0.1);padding-top:15px;margin-top:25px;">
                                 💻 GitHub Open Source Repo: <a href="${GITHUB_REPO}" style="color:#00f2ff;text-decoration:none;">${GITHUB_REPO}</a><br/>
                                 ⭐ Rate 5 Stars on GitHub: <a href="${GITHUB_STAR}" style="color:#ffaa00;text-decoration:none;">Give a Star ⭐</a><br/>
-                                🌐 Web App 3D Simulator: <a href="https://ai.breaths.live" style="color:#00f2ff;text-decoration:none;">https://ai.breaths.live</a><br/>
+                                🌐 Web App 3D Simulator: <a href="https://opc.breaths.live" style="color:#00f2ff;text-decoration:none;">https://opc.breaths.live</a><br/>
                                 💳 Global PayPal Payment: <a href="${PAYPAL_ME}" style="color:#00f2ff;text-decoration:none;">https://PayPal.Me/victorchuyen</a><br/>
                                 📅 Book 1:1 Strategy Call: <a href="https://cal.com/victorchuyen/coachai" style="color:#ffaa00;text-decoration:none;">https://cal.com/victorchuyen/coachai</a>
                             </p>
@@ -247,7 +247,7 @@ function buildEmailWrapper({ title, bodyHtml }) {
                     <tr>
                         <td style="background:#0f172a;padding:16px;text-align:center;font-size:11px;color:#64748b;border-top:1px solid rgba(255,255,255,0.08);">
                             © 2026 OPC TNC — One Person Company.<br/>
-                            Chairman Victor Chuyen | Verified Domain: ai.breaths.live
+                            Chairman Victor Chuyen | Verified Domain: opc.breaths.live
                         </td>
                     </tr>
                 </table>
@@ -408,7 +408,7 @@ export async function triggerDay4Email(lead) {
         </p>
     </div>
     <div style="text-align:center;margin:25px 0;">
-        <a href="https://ai.breaths.live" target="_blank" style="background:#00f2ff;color:#000;font-weight:900;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;">
+        <a href="https://opc.breaths.live" target="_blank" style="background:#00f2ff;color:#000;font-weight:900;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;">
             👉 KHÁM PHÁ MÔ HÌNH VẬN HÀNH TẠI 3D OFFICE SIMULATOR
         </a>
     </div>
@@ -438,7 +438,7 @@ export async function triggerDay5Email(lead) {
         </a>
     </div>
   ` : `
-    <h2 style="color:#ffaa00;font-size:16px;margin-top:0;">Chào ${name},</h2>
+    <h2 style="color:#ffaa00;font-size:16px;margin-top:0;">Chào ${lead.name || 'bạn'},</h2>
     <p>Đây là email cuối cùng trong chuỗi hướng dẫn khởi tạo Doanh nghiệp AI 1 Người (OPC-TNC).</p>
     <p>Nếu bạn muốn trực tiếp xây dựng và sở hữu toàn bộ bộ mã nguồn này cùng Victor Chuyen, hãy đặt lịch hẹn 1:1 ngay hôm nay:</p>
     <div style="background:linear-gradient(135deg, #1e3a8a, #2563eb);border:1.5px solid #60a5fa;padding:20px;margin:20px 0;border-radius:12px;text-align:center;color:#ffffff;">

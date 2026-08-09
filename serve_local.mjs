@@ -134,6 +134,10 @@ const server = http.createServer((req, res) => {
     if (req.url === '/api/ticker/news' && req.method === 'GET') {
         let leadsCount = 44;
         let ybaiSentCount = 37;
+        let realRevenue = 0;
+        let paidTxCount = 0;
+        let latestPaidMsg = '';
+
         try {
             const dbPath = path.join(__dirname, 'data', 'leads_db.json');
             if (fs.existsSync(dbPath)) {
@@ -143,17 +147,35 @@ const server = http.createServer((req, res) => {
             }
         } catch (e) {}
 
+        try {
+            const txDbPath = path.join(__dirname, 'data', 'transactions_db.json');
+            if (fs.existsSync(txDbPath)) {
+                const txList = JSON.parse(fs.readFileSync(txDbPath, 'utf8'));
+                const paidList = txList.filter(t => t.status === 'PAID_VERIFIED');
+                paidTxCount = paidList.length;
+                realRevenue = paidList.reduce((sum, t) => sum + (Number(t.amount) || 0), 0);
+                if (paidList.length > 0) {
+                    const top = paidList[0];
+                    latestPaidMsg = `💰 CHUYỂN KHOẢN THỰC THÀNH CÔNG: KH ${top.student || 'Học viên'} vừa gạch nợ VietQR MB Bank ${Number(top.amount || 500000).toLocaleString('vi-VN')}đ (${top.courseCode || '500K'})!`;
+                }
+            }
+        } catch (e) {}
+
+        const newsList = [
+            { tag: '🔴 LIVE 24/7', text: latestPaidMsg || `Hệ thống AI Squad vừa gửi thành công ${ybaiSentCount} Email Outreach cho Danh sách Đại sứ YBAI!` },
+            { tag: '⚡ GIÁ GÓI NIÊM YẾT', text: 'Bản Sao Mã Nguồn: 0đ (Free) | Gói VIP Coaching: 500.000đ ($20) | Gói Setup 1:1: 1.000.000đ ($40)' },
+            { tag: '🚀 BÁO CÁO THỰC TẾ', text: `Doanh thu thực nhận: ${realRevenue.toLocaleString('vi-VN')}đ | ${paidTxCount} Giao dịch CK thực tế | ${leadsCount} Leads đã đồng bộ Google Sheets!` },
+            { tag: '🎓 AI CFO AUTOMATION', text: 'AI CFO tự động đối soát VietQR MB Bank 0989890022 trong 3 giây — Chỉ ghi nhận doanh thu khi có CK thật 100%!' },
+            { tag: '🔥 ĐẶT LỊCH HẸN', text: 'Đặt lịch Video Call 1:1 Setup trực tiếp cùng Founder Victor Chuyen tại cal.com/victorchuyen/coachai' }
+        ];
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
             success: true,
             updated_at: new Date().toISOString(),
-            news: [
-                { tag: '🔴 LIVE 24/7', text: `Hệ thống AI Squad vừa gửi thành công ${ybaiSentCount} Email Outreach cá nhân hóa cho Danh sách Đại sứ YBAI!` },
-                { tag: '⚡ KẾ HOẠCH HOT', text: 'AI CFO đã tích hợp tự động đối soát VietQR MB Bank 0989890022 gạch nợ tự động trong 3 giây!' },
-                { tag: '🚀 BÁO CÁO REALTIME', text: `Tổng cộng ${leadsCount} Leads đã được đồng bộ trực tiếp lên hệ thống Google Sheets & Database!` },
-                { tag: '🎓 AI CHRO', text: 'AI CHRO đang tự động hóa tính lương KPI, thuế TNCN/BHXH và đào tạo SOP nhân sự mới trong 24h!' },
-                { tag: '🔥 ƯU ĐÃI KHAN HIẾM', text: 'Còn 01 Slot Coach 1:1 trực tiếp cùng Founder Victor Chuyen tuần này! Đặt lịch tại cal.com/victorchuyen/coachai' }
-            ]
+            real_revenue: realRevenue,
+            paid_transactions: paidTxCount,
+            news: newsList
         }));
         return;
     }
@@ -184,7 +206,7 @@ const server = http.createServer((req, res) => {
                     event_name: eventName,
                     event_time: payload.timestamp || Math.floor(Date.now() / 1000),
                     event_id: eventId,
-                    event_source_url: payload.event_source_url || 'https://ai.breaths.live',
+                    event_source_url: payload.event_source_url || 'https://opc.breaths.live',
                     action_source: 'website',
                     user_data: hashedUserData,
                     custom_data: customData
@@ -573,6 +595,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 OPC-TNC Virtual Office Local Server running at http://localhost:${PORT}`);
-    console.log(`🌐 Ready to tunnel to https://ai.breaths.live via Cloudflare!`);
+    console.log(`🌐 Ready to tunnel to https://opc.breaths.live via Cloudflare!`);
     startTelegramBotPolling();
 });

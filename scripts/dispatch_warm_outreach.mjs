@@ -71,7 +71,7 @@ function buildEmailHtml(lead) {
 
       <!-- CTA Button -->
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://ai.breaths.live/vi" target="_blank" style="background: #2563eb; color: #ffffff; font-weight: 800; font-size: 15px; padding: 14px 28px; border-radius: 30px; text-decoration: none; display: inline-block; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);">👉 XEM VIDEO DEMO 3D & NHẬN MÃ NGUỒN 0Đ</a>
+        <a href="https://opc.breaths.live/vi" target="_blank" style="background: #2563eb; color: #ffffff; font-weight: 800; font-size: 15px; padding: 14px 28px; border-radius: 30px; text-decoration: none; display: inline-block; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);">👉 XEM VIDEO DEMO 3D & NHẬN MÃ NGUỒN 0Đ</a>
       </div>
 
       <p style="color: #64748b; font-size: 14px;">Nếu có bất kỳ câu hỏi nào về mô hình hoặc cách triển khai, bạn chỉ cần <strong>Reply trực tiếp Email này</strong> hoặc nhắn qua Telegram/Zalo cho tôi nhé!</p>
@@ -83,7 +83,7 @@ function buildEmailHtml(lead) {
         Trân trọng,<br>
         <strong>Victor Chuyen & Co-Founder LUCKY</strong><br>
         <span style="font-size: 12px; color: #94a3b8;">Founder & Chief AI Coach | OPC-TNC System</span><br>
-        <span style="font-size: 12px; color: #2563eb;">🌐 Website: <a href="https://ai.breaths.live/vi" style="color: #2563eb; text-decoration: none;">ai.breaths.live</a></span>
+        <span style="font-size: 12px; color: #2563eb;">🌐 Website: <a href="https://opc.breaths.live/vi" style="color: #2563eb; text-decoration: none;">opc.breaths.live</a></span>
       </p>
     </div>
 

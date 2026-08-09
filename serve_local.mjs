@@ -517,7 +517,13 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // Dedicated Market Isolation Routes & 301 SEO Clean URL Redirection
+    // Dedicated Market Isolation Routes & 301 SEO Clean URL Redirection (Hide .html extensions)
+    if (req.url === '/index.html' || req.url.startsWith('/index.html?')) {
+        const query = req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : '';
+        res.writeHead(301, { 'Location': '/' + query });
+        res.end();
+        return;
+    }
     if (req.url === '/landing_vi.html' || req.url === '/landing.html' || req.url === '/landing_vi') {
         res.writeHead(301, { 'Location': '/vi' });
         res.end();
@@ -530,6 +536,11 @@ const server = http.createServer((req, res) => {
     }
     if (req.url === '/checkout.html' || req.url === '/buy' || req.url === '/pricing') {
         res.writeHead(301, { 'Location': '/checkout' });
+        res.end();
+        return;
+    }
+    if (req.url === '/app' || req.url === '/3d') {
+        res.writeHead(301, { 'Location': '/?mode=3d' });
         res.end();
         return;
     }
@@ -546,9 +557,6 @@ const server = http.createServer((req, res) => {
     if (req.url === '/checkout') {
         req.url = '/checkout.html';
     }
-    if (req.url === '/app' || req.url === '/3d') {
-        req.url = '/index.html';
-    }
     if (req.url === '/favicon.ico' || req.url === '/favicon.gif' || req.url === '/Favicon.gif' || req.url === '/favicon.png') {
         const iconName = req.url.replace('/', '');
         const targetPath = path.join(__dirname, iconName);
@@ -564,11 +572,14 @@ const server = http.createServer((req, res) => {
     // Smart Hybrid Device Router:
     // Mobile Devices -> index_mobile.html (Ultra-Fast 2D Executive App, 0% GPU load, <0.1s load time)
     // Desktop Devices or ?mode=3d -> index.html (3D Virtual Office Simulator 360°)
-    let targetFile = req.url === '/' ? 'index.html' : req.url;
-    if (req.url === '/' || req.url === '') {
+    let targetFile = 'index.html';
+    if (req.url === '/' || req.url === '' || req.url.startsWith('/?')) {
         const ua = req.headers['user-agent'] || '';
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-        targetFile = isMobile ? 'index_mobile.html' : 'index.html';
+        const hasExplicit3D = req.url.includes('mode=3d');
+        targetFile = (isMobile && !hasExplicit3D) ? 'index_mobile.html' : 'index.html';
+    } else {
+        targetFile = req.url;
     }
 
     let filePath = path.join(__dirname, targetFile);

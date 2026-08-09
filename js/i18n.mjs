@@ -122,7 +122,17 @@ export const translations = {
         "btn_bottom_source": "🎁 NHẬN BẢN SAO OPC (0Đ)",
         "btn_bottom_zalo": "💬 CHÁT ZALO ADVISOR",
         "key_skills_label": "⚡ BỘ KỸ NĂNG NỔI BẬT:",
-        "drawer_close": "✕ Đóng"
+        "drawer_close": "✕ Đóng",
+
+        // Lead Form & OTO Modals
+        "lead_modal_title": "🎁 NHẬN BẢN SAO MÃ NGUỒN OPC ĐỂ XÂY DỰNG 🎓 OPC | ONE PERSON COMPANY CỦA BẠN",
+        "lead_modal_desc": "Tự động hóa 80% công việc Marketing, Sales B2B, Code SaaS & Vận hành doanh nghiệp mà không cần nhân sự cồng kềnh.",
+        "label_name": "Họ và Tên của bạn *",
+        "label_phone": "Số điện thoại Zalo (nhận file) *",
+        "label_email": "Email nhận tài liệu *",
+        "btn_submit_lead_mobile": "🚀 KÍCH HOẠT & NHẬN BẢN SAO MÃ NGUỒN OPC (0Đ)",
+        "oto_modal_badge": "🚨 FLASH DEAL CHỈ 1 SLOT TRƯỚC 7H SÁNG",
+        "oto_modal_sent_title": "🎁 ĐÃ GỬI BỘ TÀI LIỆU VÀO EMAIL CỦA BẠN!"
     },
     en: {
         // Header & Branding
@@ -245,7 +255,17 @@ export const translations = {
         "btn_bottom_source": "🎁 GET OPC SOURCE CODE ($0)",
         "btn_bottom_zalo": "👾 DISCORD / TELEGRAM 2-WAY",
         "key_skills_label": "⚡ FEATURED AI SKILLS:",
-        "drawer_close": "✕ Close"
+        "drawer_close": "✕ Close",
+
+        // Lead Form & OTO Modals
+        "lead_modal_title": "🎁 GET OPC SOURCE CODE CLONE TO BUILD YOUR 🎓 OPC | ONE PERSON COMPANY",
+        "lead_modal_desc": "Automate 80% of Marketing, B2B Sales, SaaS Coder & Business Operations without heavy payroll.",
+        "label_name": "Your Full Name *",
+        "label_phone": "Zalo / Phone Number (to receive files) *",
+        "label_email": "Your Email Address *",
+        "btn_submit_lead_mobile": "🚀 ACTIVATE & GET OPC SOURCE CODE CLONE ($0)",
+        "oto_modal_badge": "🚨 FLASH DEAL 50% OFF — SPECIAL LAUNCH",
+        "oto_modal_sent_title": "🎁 SOURCE CODE SENT TO YOUR EMAIL!"
     }
 };
 

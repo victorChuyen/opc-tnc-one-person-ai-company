@@ -473,7 +473,7 @@
 
     <!-- Bottom Fixed CTA Bar -->
     <div class="bottom-nav-bar">
-        <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" data-i18n="btn_bottom_source">🎁 NHẬN BẢN SAO OPC (0Đ)</a>
+        <button onclick="openMobileLeadModal()" class="btn-bottom-primary" data-i18n="btn_bottom_source">🎁 NHẬN BẢN SAO OPC (0Đ)</button>
         <a href="https://zalo.me/0989890022" target="_blank" class="btn-bottom-secondary" id="btn-bottom-secondary" data-i18n="btn_bottom_zalo">💬 CHÁT ZALO ADVISOR</a>
     </div>
 
@@ -482,6 +482,53 @@
         <div class="modal-drawer" onclick="event.stopPropagation()">
             <button class="modal-close-btn" onclick="closeDirectorModal()" data-i18n="drawer_close">✕ Đóng</button>
             <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- 0Đ Lead Capture Form Modal Drawer -->
+    <div class="modal-overlay" id="mobile-lead-modal" onclick="closeMobileLeadModal()">
+        <div class="modal-drawer" onclick="event.stopPropagation()" style="border-top-color:var(--neon-gold);">
+            <button class="modal-close-btn" onclick="closeMobileLeadModal()" data-i18n="drawer_close">✕ Đóng</button>
+            <div style="font-size:15px;font-weight:900;color:var(--neon-gold);margin-bottom:6px;" data-i18n="lead_modal_title">🎁 NHẬN BẢN SAO MÃ NGUỒN OPC (0Đ)</div>
+            <div style="font-size:11.5px;color:var(--text-muted);line-height:1.45;margin-bottom:14px;" data-i18n="lead_modal_desc">Tự động hóa 80% công việc Marketing, Sales B2B, Code SaaS & Vận hành doanh nghiệp mà không cần nhân sự cồng kềnh.</div>
+
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+                <div>
+                    <label style="display:block;font-size:11px;font-weight:700;color:#fff;margin-bottom:4px;" data-i18n="label_name">Họ và Tên của bạn *</label>
+                    <input type="text" id="m-lead-name" placeholder="Ví dụ: Nguyễn Văn Nam" style="width:100%;padding:10px 12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:12px;outline:none;">
+                </div>
+                <div>
+                    <label style="display:block;font-size:11px;font-weight:700;color:#fff;margin-bottom:4px;" data-i18n="label_phone">Số điện thoại Zalo (nhận file) *</label>
+                    <input type="tel" id="m-lead-phone" placeholder="Ví dụ: 0989890022" style="width:100%;padding:10px 12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:12px;outline:none;">
+                </div>
+                <div>
+                    <label style="display:block;font-size:11px;font-weight:700;color:#fff;margin-bottom:4px;" data-i18n="label_email">Email nhận tài liệu *</label>
+                    <input type="email" id="m-lead-email" placeholder="Ví dụ: nam.nguyen@gmail.com" style="width:100%;padding:10px 12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:12px;outline:none;">
+                </div>
+            </div>
+
+            <button class="btn-bottom-primary" style="width:100%;padding:12px;font-size:13px;border-radius:10px;" id="btn-submit-m-lead" onclick="submitMobileLeadForm()" data-i18n="btn_submit_lead_mobile">🚀 KÍCH HOẠT & NHẬN BẢN SAO MÃ NGUỒN OPC (0Đ)</button>
+        </div>
+    </div>
+
+    <!-- OTO Payment Flash Deal Modal Drawer -->
+    <div class="modal-overlay" id="mobile-oto-modal" onclick="closeMobileOtoModal()">
+        <div class="modal-drawer" onclick="event.stopPropagation()" style="border-top-color:#10b981;text-align:center;">
+            <button class="modal-close-btn" onclick="closeMobileOtoModal()" data-i18n="drawer_close">✕ Đóng</button>
+            <span style="background:#ffaa00;color:#000;font-size:10px;font-weight:900;padding:3px 10px;border-radius:12px;display:inline-block;margin-bottom:8px;" data-i18n="oto_modal_badge">🚨 FLASH DEAL CHỈ 1 SLOT TRƯỚC 7H SÁNG</span>
+            <div style="font-size:15px;font-weight:900;color:#10b981;margin-bottom:6px;" data-i18n="oto_modal_sent_title">🎁 ĐÃ GỬI BỘ TÀI LIỆU VÀO EMAIL CỦA BẠN!</div>
+            <div style="font-size:11.5px;color:#cbd5e1;line-height:1.45;margin-bottom:14px;">Chuyển khoản VietQR MB Bank <strong style="color:#ffaa00;">0989890022</strong> để kích hoạt Gói VIP 500K / 1M tự động trong 3 giây.</div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:12px;margin-bottom:14px;">
+                <img id="m-vietqr-img" src="https://img.vietqr.io/image/MB-0989890022-compact2.png?amount=500000&addInfo=OPC%20500K&accountName=TRAN%20NGOC%20CHUYEN" style="max-width:210px;width:100%;border-radius:10px;margin-bottom:10px;" alt="VietQR Scan">
+                <div style="font-size:11px;color:#fff;font-weight:700;">MB Bank: <span style="color:#00f2ff;">0989890022</span> (Trần Ngọc Chuyền)</div>
+                <div style="font-size:11px;color:#ffaa00;font-weight:800;margin-top:2px;">Cú pháp CK: <span style="color:#fff;">OPC 500K</span></div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" style="font-size:12px;padding:11px;">🚀 XEM BẢNG GIÁ FULL 4-TIER (500K - 1M)</a>
+                <a href="https://zalo.me/g/tdhmtu261" target="_blank" class="btn-bottom-secondary" id="btn-oto-group" style="font-size:11.5px;padding:10px;">💬 VÀO NHÓM ZALO MÃ NGUỒN (VIP)</a>
+            </div>
         </div>
     </div>
 
@@ -678,6 +725,61 @@
                 iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
                 iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
                 document.getElementById('vsl-unmute-mobile').style.display = 'none';
+            }
+        };
+
+        window.openMobileLeadModal = function() {
+            document.getElementById('mobile-lead-modal').style.display = 'flex';
+        };
+
+        window.closeMobileLeadModal = function() {
+            document.getElementById('mobile-lead-modal').style.display = 'none';
+        };
+
+        window.openMobileOtoModal = function() {
+            document.getElementById('mobile-oto-modal').style.display = 'flex';
+        };
+
+        window.closeMobileOtoModal = function() {
+            document.getElementById('mobile-oto-modal').style.display = 'none';
+        };
+
+        window.submitMobileLeadForm = async function() {
+            const name = document.getElementById('m-lead-name').value.trim();
+            const phone = document.getElementById('m-lead-phone').value.trim();
+            const email = document.getElementById('m-lead-email').value.trim();
+
+            if (!name || !phone || !email) {
+                alert(currentLang === 'en' ? '⚠️ Please fill out all required fields (*).' : '⚠️ Vui lòng điền đầy đủ thông tin bắt buộc (*).');
+                return;
+            }
+
+            const btn = document.getElementById('btn-submit-m-lead');
+            btn.disabled = true;
+            btn.innerText = currentLang === 'en' ? '⏳ ACTIVATING...' : '⏳ ĐANG KÍCH HOẠT...';
+
+            try {
+                await fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        phone,
+                        email,
+                        business: 'Mobile App Lead Intake',
+                        lang: currentLang,
+                        segment: currentLang === 'en' ? 'GLOBAL_ENGLISH' : 'VIETNAM_DOMESTIC'
+                    })
+                });
+                closeMobileLeadModal();
+                openMobileOtoModal();
+            } catch (err) {
+                console.error('Lead submit error:', err);
+                closeMobileLeadModal();
+                openMobileOtoModal();
+            } finally {
+                btn.disabled = false;
+                btn.innerText = currentLang === 'en' ? '🚀 ACTIVATE & GET OPC SOURCE CODE CLONE ($0)' : '🚀 KÍCH HOẠT & NHẬN BẢN SAO MÃ NGUỒN OPC (0Đ)';
             }
         };
 

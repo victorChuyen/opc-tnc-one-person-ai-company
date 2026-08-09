@@ -1724,32 +1724,48 @@
         }
 
         const youtubeAudioStateMap = {};
-        function toggleIframeSound(iframeId, btnEl) {
-            const iframe = document.getElementById(iframeId);
-            if (!iframe) return;
+        function toggleIframeSound(targetIframeId, btnEl) {
+            const allIframes = ['iframe-saas-video', 'iframe-b2b-video'];
 
-            youtubeAudioStateMap[iframeId] = !youtubeAudioStateMap[iframeId];
-            const isUnmute = youtubeAudioStateMap[iframeId];
+            allIframes.forEach(id => {
+                const iframe = document.getElementById(id);
+                if (!iframe) return;
 
-            try {
-                const func = isUnmute ? 'unMute' : 'mute';
-                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: func, args: [] }), '*');
+                if (id === targetIframeId) {
+                    youtubeAudioStateMap[id] = !youtubeAudioStateMap[id];
+                    const isUnmute = youtubeAudioStateMap[id];
 
-                if (isUnmute) {
-                    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
-                    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+                    try {
+                        const func = isUnmute ? 'unMute' : 'mute';
+                        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: func, args: [] }), '*');
+
+                        if (isUnmute) {
+                            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+                            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+                        }
+
+                        if (btnEl) {
+                            btnEl.innerHTML = isUnmute ? '🔇 TẮT ÂM THANH' : '🔊 BẬT ÂM THANH';
+                        }
+
+                        if (typeof showCollabToast === 'function') {
+                            showCollabToast(isUnmute ? '🔊 Đã BẬT âm thanh Video YouTube!' : '🔇 Đã TẮT âm thanh Video YouTube!');
+                        }
+                    } catch (e) {
+                        console.error('[YOUTUBE SOUND] Error toggling sound:', e);
+                    }
+                } else {
+                    // Force mute and reset state for other video players to prevent overlapping audio
+                    youtubeAudioStateMap[id] = false;
+                    try {
+                        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+                    } catch (e) {}
+                    const otherBtn = document.querySelector(`button[onclick*="${id}"]`);
+                    if (otherBtn) {
+                        otherBtn.innerHTML = '🔊 BẬT ÂM THANH';
+                    }
                 }
-
-                if (btnEl) {
-                    btnEl.innerHTML = isUnmute ? '🔇 TẮT ÂM THANH' : '🔊 BẬT ÂM THANH';
-                }
-
-                if (typeof showCollabToast === 'function') {
-                    showCollabToast(isUnmute ? '🔊 Đã BẬT âm thanh tiếng cho Video YouTube!' : '🔇 Đã TẮT âm thanh tiếng Video YouTube!');
-                }
-            } catch (e) {
-                console.error('[YOUTUBE SOUND] Error toggling sound:', e);
-            }
+            });
         }
 
         // Expose functions to global scope for onclick handlers (module scope is not global)

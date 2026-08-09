@@ -525,17 +525,33 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // Dedicated Market Isolation Routes (/vi & /en)
-    if (req.url === '/vi' || req.url === '/landing_vi') {
+    // Dedicated Market Isolation Routes & 301 SEO Clean URL Redirection
+    if (req.url === '/landing_vi.html' || req.url === '/landing.html' || req.url === '/landing_vi') {
+        res.writeHead(301, { 'Location': '/vi' });
+        res.end();
+        return;
+    }
+    if (req.url === '/landing_en.html' || req.url === '/landing_en') {
+        res.writeHead(301, { 'Location': '/en' });
+        res.end();
+        return;
+    }
+    if (req.url === '/checkout.html' || req.url === '/buy' || req.url === '/pricing') {
+        res.writeHead(301, { 'Location': '/checkout' });
+        res.end();
+        return;
+    }
+
+    if (req.url === '/vi') {
         req.url = '/landing_vi.html';
     }
-    if (req.url === '/en' || req.url === '/landing_en') {
+    if (req.url === '/en') {
         req.url = '/landing_en.html';
     }
     if (req.url === '/landing' || req.url === '/vsl' || req.url === '/lead') {
         req.url = '/landing_vi.html';
     }
-    if (req.url === '/checkout' || req.url === '/buy' || req.url === '/pricing') {
+    if (req.url === '/checkout') {
         req.url = '/checkout.html';
     }
     if (req.url === '/app' || req.url === '/3d') {

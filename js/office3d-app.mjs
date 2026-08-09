@@ -96,20 +96,17 @@
                 canvas: document.getElementById('webgl-canvas'),
                 antialias: !isMobile,
                 alpha: false,
-                powerPreference: isMobile ? 'default' : 'high-performance'
+                powerPreference: isMobile ? 'low-power' : 'high-performance'
             });
             renderer.setSize(W, H);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
-            renderer.shadowMap.enabled = !isMobile;
-            if (!isMobile) {
-                renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-            }
+            renderer.setPixelRatio(isMobile ? 1.0 : Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = false;
             renderer.toneMapping = THREE.ACESFilmicToneMapping;
             renderer.toneMappingExposure = 1.15;
             renderer.outputColorSpace = THREE.SRGBColorSpace;
 
             controls = new OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
+            controls.enableDamping = !isMobile;
             controls.dampingFactor = 0.05;
             controls.maxPolarAngle = Math.PI / 2 - 0.05;
             controls.minDistance = 6;
@@ -117,10 +114,10 @@
             controls.target.set(0, 0, 0.5);
 
             /* ═══════ POST-PROCESSING ═══════ */
-            composer = new EffectComposer(renderer);
-            composer.addPass(new RenderPass(scene, camera));
-
             if (!isMobile) {
+                composer = new EffectComposer(renderer);
+                composer.addPass(new RenderPass(scene, camera));
+
                 const bloomPass = new UnrealBloomPass(
                     new THREE.Vector2(W, H),
                     0.25,   // soft subtle bloom for a warm comfortable feel
@@ -759,7 +756,11 @@
                 updateNametagPosition(agent.config.tagId, agent.humanoid.position);
             });
 
-            composer.render();
+            if (composer) {
+                composer.render();
+            } else {
+                renderer.render(scene, camera);
+            }
         }
 
         /* ────────────── NAME TAG PROJECTION ────────────── */

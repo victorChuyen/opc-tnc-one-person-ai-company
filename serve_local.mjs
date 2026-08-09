@@ -53,6 +53,14 @@ const server = http.createServer((req, res) => {
     // Enable CORS for Paperclip API & cross-origin requests
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH');
+
+    // 301 Permanent SEO Redirect from legacy domain ai.breaths.live to opc.breaths.live
+    const host = req.headers.host || '';
+    if (host.includes('ai.breaths.live')) {
+        res.writeHead(301, { 'Location': `https://opc.breaths.live${req.url}` });
+        res.end();
+        return;
+    }
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
     if (req.method === 'OPTIONS') {

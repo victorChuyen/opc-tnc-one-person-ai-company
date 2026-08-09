@@ -10,6 +10,7 @@ console.log('🔍 RUNNING DEEP QA SYSTEM LINK AUDIT ON OPC-TNC...\n');
 
 const htmlFiles = [
   'index.html',
+  'index_mobile.html',
   'landing.html',
   'landing_vi.html',
   'landing_en.html',

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OPC-TNC — Executive Mobile AI Dashboard | One Person Company</title>
+    <meta name="description" content="Mô phỏng Điều hành Doanh nghiệp 1 Người tự động hóa 80% với bộ 6 Giám đốc AI C-Suite. Giao diện Mobile siêu tốc, mượt mà 60fps.">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/gif" href="Favicon.gif">
+    <link rel="apple-touch-icon" href="LOGO-OPC.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Realtime TV Ticker Component -->
+    <script src="js/tv_ticker.js"></script>
+
+    <style>
+        :root {
+            --bg-main: #0b1120;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --border-card: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --neon-gold: #ffaa00;
+            --neon-cyan: #00f2ff;
+            --color-ceo: #9d4edd;
+            --color-cmo: #ff007f;
+            --color-cso: #00f2ff;
+            --color-cpo: #00ff88;
+            --color-chro: #ffaa00;
+            --color-cfo: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: #0b1120;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.18) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(157, 78, 221, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+            padding-top: 42px; /* Space for TV Ticker */
+            padding-bottom: 75px; /* Space for Bottom CTA Bar */
+            min-height: 100vh;
+        }
+
+        .mobile-container {
+            padding: 12px 14px;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* Top Header */
+        .mobile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .brand-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .brand-sub {
+            font-size: 9.5px;
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-mode-3d {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(157, 78, 221, 0.3));
+            border: 1px solid rgba(0, 242, 255, 0.4);
+            color: var(--neon-cyan);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 5px 9px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Hero Banner */
+        .hero-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(255, 170, 0, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 14px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 170, 0, 0.15);
+            color: var(--neon-gold);
+            border: 1px solid var(--neon-gold);
+            font-size: 10px;
+            font-weight: 900;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            font-weight: 900;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .hero-desc {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
+
+        /* 6 AI Directors Grid */
+        .directors-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .directors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .director-card {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 12px;
+            padding: 10px 12px;
+            border: 1px solid var(--border-card);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .director-card:active {
+            transform: scale(0.97);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .director-role {
+            font-size: 9.5px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .director-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .director-desc {
+            font-size: 10px;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* Video Section */
+        .video-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 14px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+
+        .vsl-unmute-btn {
+            position: absolute;
+            top: 10px; right: 10px;
+            z-index: 10;
+            background: linear-gradient(135deg, #ffaa00, #ff8800);
+            color: #000000;
+            font-weight: 900;
+            font-size: 11px;
+            padding: 7px 12px;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 0 14px rgba(255, 170, 0, 0.8);
+            cursor: pointer;
+        }
+
+        /* Bottom Fixed Bar */
+        .bottom-nav-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 14px;
+            display: flex;
+            gap: 10px;
+            z-index: 9999;
+        }
+
+        .btn-bottom-primary {
+            flex: 1;
+            background: linear-gradient(135deg, #ffaa00, #ff8800);
+            color: #000000;
+            font-weight: 900;
+            font-size: 12.5px;
+            padding: 11px 12px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 170, 0, 0.4);
+        }
+
+        .btn-bottom-secondary {
+            flex: 1;
+            background: rgba(0, 136, 204, 0.2);
+            border: 1px solid #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 11px 12px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Director Modal Drawer */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: flex-end;
+            z-index: 99999;
+        }
+
+        .modal-drawer {
+            width: 100%;
+            background: #0f172a;
+            border-top: 2px solid var(--neon-cyan);
+            border-radius: 20px 20px 0 0;
+            padding: 20px 16px 30px 16px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp 0.25s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .modal-close-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            float: right;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        <!-- Top Header -->
+        <header class="mobile-header">
+            <div class="brand-box">
+                <img src="LOGO-OPC.png" alt="OPC Logo" class="brand-logo">
+                <div>
+                    <div class="brand-title">OPC-TNC</div>
+                    <div class="brand-sub">🟢 EXECUTIVE MOBILE</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="index.html?mode=3d" class="btn-mode-3d">🎮 Chế Độ 3D Engine</a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-card">
+            <span class="hero-badge">⚡ EXECUTIVE AI COMPANY (0 HEADCOUNT)</span>
+            <h1 class="hero-title">Mô Phỏng Doanh Nghiệp 1 Người Với 6 Giám Đốc AI</h1>
+            <p class="hero-desc">Tự động hóa 80% công việc Marketing, Sales B2B, Code SaaS & Vận hành tài chính 24/7 trên kiến trúc Hub-and-Spoke.</p>
+            <div style="display:flex;gap:8px;">
+                <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" style="font-size:11.5px;padding:9px;">🚀 Bảng Giá 0đ - 500K - 1M</a>
+                <a href="https://zalo.me/g/tdhmtu261" target="_blank" class="btn-bottom-secondary" style="font-size:11.5px;padding:9px;">💬 Nhóm Zalo Mã Nguồn</a>
+            </div>
+        </section>
+
+        <!-- Video VSL Section -->
+        <section class="video-card">
+            <div class="directors-header">
+                <div class="section-title">🎬 VIDEO DEMO VIRTUAL OFFICE</div>
+            </div>
+            <div class="video-wrapper">
+                <button class="vsl-unmute-btn" id="vsl-unmute-mobile" onclick="unmuteMobileVsl()">🔊 BẤM BẬT ÂM THANH</button>
+                <iframe id="iframe-mobile-vsl" src="https://www.youtube-nocookie.com/embed/DMwT0iDdIm8?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=DMwT0iDdIm8&controls=1&modestbranding=1&rel=0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- 6 AI Directors Grid -->
+        <section>
+            <div class="directors-header">
+                <div class="section-title">👥 BỘ SẢO 6 GIÁM ĐỐC AI C-SUITE</div>
+                <span style="font-size:10px;color:var(--text-muted);">Chạm để xem chi tiết</span>
+            </div>
+
+            <div class="directors-grid">
+                <!-- CEO -->
+                <div class="director-card" style="border-color:var(--color-ceo);" onclick="showDirectorModal('ceo')">
+                    <div class="director-role" style="color:var(--color-ceo);">👑 TỔNG GIÁM ĐỐC</div>
+                    <div class="director-title">AI CEO</div>
+                    <div class="director-desc">Phân tích chỉ thị, bóc tách công việc & uỷ quyền cho 5 AI Directors.</div>
+                </div>
+
+                <!-- CMO -->
+                <div class="director-card" style="border-color:var(--color-cmo);" onclick="showDirectorModal('cmo')">
+                    <div class="director-role" style="color:var(--color-cmo);">📢 MARKETING</div>
+                    <div class="director-title">AI CMO</div>
+                    <div class="director-desc">Meta Ads, Copywriting Alex Hormozi & Phân tích đối thủ ngách.</div>
+                </div>
+
+                <!-- CSO -->
+                <div class="director-card" style="border-color:var(--color-cso);" onclick="showDirectorModal('cso')">
+                    <div class="director-role" style="color:var(--color-cso);">💼 SALES B2B</div>
+                    <div class="director-title">AI CSO</div>
+                    <div class="director-desc">Cold Email 3-Step, LinkedIn Outreach & Kịch bản Demo Call 20m.</div>
+                </div>
+
+                <!-- CPO -->
+                <div class="director-card" style="border-color:var(--color-cpo);" onclick="showDirectorModal('cpo')">
+                    <div class="director-role" style="color:var(--color-cpo);">🛠️ KỸ THUẬT & SAAS</div>
+                    <div class="director-title">AI CPO</div>
+                    <div class="director-desc">Fullstack Coder: SaaS, React, Cloudflare Workers & API Design.</div>
+                </div>
+
+                <!-- CHRO -->
+                <div class="director-card" style="border-color:var(--color-chro);" onclick="showDirectorModal('chro')">
+                    <div class="director-role" style="color:var(--color-chro);">🧬 NHÂN SỰ AI</div>
+                    <div class="director-title">AI CHRO</div>
+                    <div class="director-desc">Spawn Agent mới, tạo Skills & Đánh giá năng suất toàn đội ngũ.</div>
+                </div>
+
+                <!-- CFO -->
+                <div class="director-card" style="border-color:var(--color-cfo);" onclick="showDirectorModal('cfo')">
+                    <div class="director-role" style="color:var(--color-cfo);">💎 TÀI CHÍNH & THUẾ</div>
+                    <div class="director-title">AI CFO</div>
+                    <div class="director-desc">Đối soát VietQR MB Bank 3s, tự động cấp quyền tài liệu & MRR.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bottom Fixed CTA Bar -->
+    <div class="bottom-nav-bar">
+        <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary">🎁 NHẬN BẢN SAO OPC (0Đ)</a>
+        <a href="https://zalo.me/0989890022" target="_blank" class="btn-bottom-secondary">💬 CHÁT ZALO ADVISOR</a>
+    </div>
+
+    <!-- Modal Drawer for Director details -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeDirectorModal()">
+        <div class="modal-drawer" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeDirectorModal()">✕ Đóng</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const directorsData = {
+            ceo: {
+                title: '👑 AI CEO — TỔNG GIÁM ĐỐC TỰ ĐỘNG',
+                color: '#9d4edd',
+                desc: 'Nhận chỉ thị từ Chairman Victor Chuyen → Bóc tách thành kế hoạch thi hành → Uỷ quyền tự động cho 5 Giám đốc AI (CMO, CSO, CPO, CHRO, CFO).',
+                skills: ['ceo_victor_master_9skills', 'agentic-engineering', 'prompt-engineer', 'kpi-dashboard-design']
+            },
+            cmo: {
+                title: '📢 AI CMO — GIÁM ĐỐC MARKETING & META ADS',
+                color: '#ff007f',
+                desc: 'Chuyên gia Meta Ads, Copywriting Alex Hormozi Offer 500k, phân tích đối thủ cạnh tranh & sáng tạo nội dung ngách.',
+                skills: ['meta_ads_cmo_framework', 'hormozi_copywriting', 'competitor_intelligence', 'ads_audit']
+            },
+            cso: {
+                title: '💼 AI CSO — GIÁM ĐỐC SALES B2B & OUTREACH',
+                color: '#00f2ff',
+                desc: 'Tiếp cận B2B qua Cold Email 3-Step, LinkedIn Outreach, Kịch bản Demo Call 20 phút & Neo giá Hormozi.',
+                skills: ['b2b_outreach_sequence', 'linkedin_b2b_outreach', 'demo_call_script', 'pricing_anchor']
+            },
+            cpo: {
+                title: '🛠️ AI CPO — GIÁM ĐỐC KỸ THUẬT & CODE SAAS',
+                color: '#00ff88',
+                desc: 'Lập trình Fullstack: Code SaaS, API Design, Cloudflare Workers & React System. Build & Deploy hệ thống 24/7.',
+                skills: ['api-design', 'cloudflare-workers-expert', 'frontend-patterns', 'react-best-practices']
+            },
+            chro: {
+                title: '🧬 AI CHRO — GIÁM ĐỐC NHÂN SỰ AI AGENTIC',
+                color: '#ffaa00',
+                desc: 'Spawn AI Agent mới khi mở rộng phòng ban, tạo Skills chuyên biệt & giám sát hiệu năng làm việc.',
+                skills: ['agentic-engineering', 'prompt-engineer', 'Agent Spawning', 'Skill Creation']
+            },
+            cfo: {
+                title: '💎 AI CFO — GIÁM ĐỐC TÀI CHÍNH & VIETQR 3S',
+                color: '#10b981',
+                desc: 'Đối soát chuyển khoản VietQR MB Bank 0989890022 trong 3 giây, tự động mở khóa tài liệu VIP & kiểm soát dòng tiền.',
+                skills: ['finance-reconciliation', 'auto-access-gating', 'cashflow-audit', 'vietqr-webhook-engine']
+            }
+        };
+
+        function showDirectorModal(key) {
+            const data = directorsData[key];
+            if (!data) return;
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <div style="font-size:15px;font-weight:900;color:${data.color};margin-bottom:8px;">${data.title}</div>
+                <div style="font-size:12px;color:#cbd5e1;line-height:1.5;margin-bottom:14px;">${data.desc}</div>
+                <div style="font-size:11px;font-weight:800;color:var(--neon-gold);margin-bottom:6px;">⚡ BỘ KỸ NĂNG NỔI BẬT:</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                    ${data.skills.map(s => `<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;">${s}</span>`).join('')}
+                </div>
+            `;
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+
+        function closeDirectorModal() {
+            document.getElementById('modal-overlay').style.display = 'none';
+        }
+
+        function unmuteMobileVsl() {
+            const iframe = document.getElementById('iframe-mobile-vsl');
+            if (iframe) {
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+                document.getElementById('vsl-unmute-mobile').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

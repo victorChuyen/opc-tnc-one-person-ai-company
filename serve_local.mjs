@@ -53,15 +53,16 @@ const server = http.createServer((req, res) => {
     // Enable CORS for Paperclip API & cross-origin requests
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-    // 301 Permanent SEO Redirect from legacy domain ai.breaths.live to opc.breaths.live
+    // Dual Domain Intelligent Routing
     const host = req.headers.host || '';
-    if (host.includes('ai.breaths.live')) {
-        res.writeHead(301, { 'Location': `https://opc.breaths.live${req.url}` });
+    if (host.includes('ai.breaths.live') && (req.url === '/' || req.url === '/index.html')) {
+        // Redirect ai.breaths.live/ root to VI Ladipage
+        res.writeHead(302, { 'Location': 'https://ai.breaths.live/vi' });
         res.end();
         return;
     }
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
     if (req.method === 'OPTIONS') {
         res.writeHead(204);

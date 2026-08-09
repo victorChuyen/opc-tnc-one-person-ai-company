@@ -107,6 +107,20 @@
             gap: 6px;
         }
 
+        .lang-toggle-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
         .btn-mode-3d {
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(157, 78, 221, 0.3));
             border: 1px solid rgba(0, 242, 255, 0.4);
@@ -262,6 +276,24 @@
             cursor: pointer;
         }
 
+        /* Action Buttons inside Drawer */
+        .drawer-action-btn {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(157, 78, 221, 0.25));
+            border: 1px solid var(--neon-cyan);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 11.5px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-top: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
         /* Bottom Fixed Bar */
         .bottom-nav-bar {
             position: fixed;
@@ -353,28 +385,33 @@
                 </div>
             </div>
             <div class="header-actions">
-                <a href="index.html?mode=3d" class="btn-mode-3d">🎮 Chế Độ 3D Engine</a>
+                <button class="lang-toggle-btn" onclick="toggleMobileLanguage()" title="Switch Language">
+                    <span id="lang-flag-current">🇻🇳 VI</span>
+                    <span style="opacity:0.6;">⇄</span>
+                    <span id="lang-flag-next" style="color:#2563eb;font-weight:800;">🇬🇧 EN</span>
+                </button>
+                <a href="index.html?mode=3d" class="btn-mode-3d">🎮 3D Engine</a>
             </div>
         </header>
 
         <!-- Hero Section -->
         <section class="hero-card">
-            <span class="hero-badge">⚡ EXECUTIVE AI COMPANY (0 HEADCOUNT)</span>
-            <h1 class="hero-title">Mô Phỏng Doanh Nghiệp 1 Người Với 6 Giám Đốc AI</h1>
-            <p class="hero-desc">Tự động hóa 80% công việc Marketing, Sales B2B, Code SaaS & Vận hành tài chính 24/7 trên kiến trúc Hub-and-Spoke.</p>
+            <span class="hero-badge" data-i18n="hero_mobile_badge">⚡ EXECUTIVE AI COMPANY (0 HEADCOUNT)</span>
+            <h1 class="hero-title" data-i18n="hero_mobile_title">Mô Phỏng Doanh Nghiệp 1 Người Với 6 Giám Đốc AI</h1>
+            <p class="hero-desc" data-i18n="hero_mobile_desc">Tự động hóa 80% công việc Marketing, Sales B2B, Code SaaS & Vận hành tài chính 24/7 trên kiến trúc Hub-and-Spoke.</p>
             <div style="display:flex;gap:8px;">
-                <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" style="font-size:11.5px;padding:9px;">🚀 Bảng Giá 0đ - 500K - 1M</a>
-                <a href="https://zalo.me/g/tdhmtu261" target="_blank" class="btn-bottom-secondary" style="font-size:11.5px;padding:9px;">💬 Nhóm Zalo Mã Nguồn</a>
+                <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" style="font-size:11.5px;padding:9px;" data-i18n="btn_pricing_checkout">🚀 Bảng Giá 0đ - 500K - 1M</a>
+                <a href="https://zalo.me/g/tdhmtu261" target="_blank" class="btn-bottom-secondary" style="font-size:11.5px;padding:9px;" data-i18n="btn_zalo_group">💬 Nhóm Zalo Mã Nguồn</a>
             </div>
         </section>
 
         <!-- Video VSL Section -->
         <section class="video-card">
             <div class="directors-header">
-                <div class="section-title">🎬 VIDEO DEMO VIRTUAL OFFICE</div>
+                <div class="section-title" data-i18n="video_mobile_title">🎬 VIDEO DEMO VIRTUAL OFFICE</div>
             </div>
             <div class="video-wrapper">
-                <button class="vsl-unmute-btn" id="vsl-unmute-mobile" onclick="unmuteMobileVsl()">🔊 BẤM BẬT ÂM THANH</button>
+                <button class="vsl-unmute-btn" id="vsl-unmute-mobile" onclick="unmuteMobileVsl()" data-i18n="btn_unmute_vsl">🔊 BẤM BẬT ÂM THANH</button>
                 <iframe id="iframe-mobile-vsl" src="https://www.youtube-nocookie.com/embed/gq9JBbjpwF0?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=gq9JBbjpwF0&controls=1&modestbranding=1&rel=0" allowfullscreen></iframe>
             </div>
         </section>
@@ -382,51 +419,51 @@
         <!-- 6 AI Directors Grid -->
         <section>
             <div class="directors-header">
-                <div class="section-title">👥 BỘ SẢO 6 GIÁM ĐỐC AI C-SUITE</div>
-                <span style="font-size:10px;color:var(--text-muted);">Chạm để xem chi tiết</span>
+                <div class="section-title" data-i18n="section_directors">👥 BỘ SẢO 6 GIÁM ĐỐC AI C-SUITE</div>
+                <span style="font-size:10px;color:var(--text-muted);" data-i18n="tap_for_details">Chạm để xem chi tiết</span>
             </div>
 
             <div class="directors-grid">
                 <!-- CEO -->
                 <div class="director-card" style="border-color:var(--color-ceo);" onclick="showDirectorModal('ceo')">
-                    <div class="director-role" style="color:var(--color-ceo);">👑 TỔNG GIÁM ĐỐC</div>
+                    <div class="director-role" style="color:var(--color-ceo);" data-i18n="role_ceo">👑 TỔNG GIÁM ĐỐC</div>
                     <div class="director-title">AI CEO</div>
-                    <div class="director-desc">Phân tích chỉ thị, bóc tách công việc & uỷ quyền cho 5 AI Directors.</div>
+                    <div class="director-desc" data-i18n="desc_ceo_short">Phân tích chỉ thị, bóc tách công việc & uỷ quyền cho 5 AI Directors.</div>
                 </div>
 
                 <!-- CMO -->
                 <div class="director-card" style="border-color:var(--color-cmo);" onclick="showDirectorModal('cmo')">
-                    <div class="director-role" style="color:var(--color-cmo);">📢 MARKETING</div>
+                    <div class="director-role" style="color:var(--color-cmo);" data-i18n="role_cmo">📢 MARKETING</div>
                     <div class="director-title">AI CMO</div>
-                    <div class="director-desc">Meta Ads, Copywriting Alex Hormozi & Phân tích đối thủ ngách.</div>
+                    <div class="director-desc" data-i18n="desc_cmo_short">Meta Ads, Copywriting Alex Hormozi & Phân tích đối thủ ngách.</div>
                 </div>
 
                 <!-- CSO -->
                 <div class="director-card" style="border-color:var(--color-cso);" onclick="showDirectorModal('cso')">
-                    <div class="director-role" style="color:var(--color-cso);">💼 SALES B2B</div>
+                    <div class="director-role" style="color:var(--color-cso);" data-i18n="role_cso">💼 SALES B2B</div>
                     <div class="director-title">AI CSO</div>
-                    <div class="director-desc">Cold Email 3-Step, LinkedIn Outreach & Kịch bản Demo Call 20m.</div>
+                    <div class="director-desc" data-i18n="desc_cso_short">Cold Email 3-Step, LinkedIn Outreach & Kịch bản Demo Call 20m.</div>
                 </div>
 
                 <!-- CPO -->
                 <div class="director-card" style="border-color:var(--color-cpo);" onclick="showDirectorModal('cpo')">
-                    <div class="director-role" style="color:var(--color-cpo);">🛠️ KỸ THUẬT & SAAS</div>
+                    <div class="director-role" style="color:var(--color-cpo);" data-i18n="role_cpo">🛠️ KỸ THUẬT & SAAS</div>
                     <div class="director-title">AI CPO</div>
-                    <div class="director-desc">Fullstack Coder: SaaS, React, Cloudflare Workers & API Design.</div>
+                    <div class="director-desc" data-i18n="desc_cpo_short">Fullstack Coder: SaaS, React, Cloudflare Workers & API Design.</div>
                 </div>
 
                 <!-- CHRO -->
                 <div class="director-card" style="border-color:var(--color-chro);" onclick="showDirectorModal('chro')">
-                    <div class="director-role" style="color:var(--color-chro);">🧬 NHÂN SỰ AI</div>
+                    <div class="director-role" style="color:var(--color-chro);" data-i18n="role_chro">🧬 NHÂN SỰ AI</div>
                     <div class="director-title">AI CHRO</div>
-                    <div class="director-desc">Spawn Agent mới, tạo Skills & Đánh giá năng suất toàn đội ngũ.</div>
+                    <div class="director-desc" data-i18n="desc_chro_short">Spawn Agent mới, tạo Skills & Đánh giá năng suất toàn đội ngũ.</div>
                 </div>
 
                 <!-- CFO -->
                 <div class="director-card" style="border-color:var(--color-cfo);" onclick="showDirectorModal('cfo')">
-                    <div class="director-role" style="color:var(--color-cfo);">💎 TÀI CHÍNH & THUẾ</div>
+                    <div class="director-role" style="color:var(--color-cfo);" data-i18n="role_cfo">💎 TÀI CHÍNH & THUẾ</div>
                     <div class="director-title">AI CFO</div>
-                    <div class="director-desc">Đối soát VietQR MB Bank 3s, tự động cấp quyền tài liệu & MRR.</div>
+                    <div class="director-desc" data-i18n="desc_cfo_short">Đối soát VietQR MB Bank 3s, tự động cấp quyền tài liệu & MRR.</div>
                 </div>
             </div>
         </section>
@@ -434,8 +471,8 @@
 
     <!-- Bottom Fixed CTA Bar -->
     <div class="bottom-nav-bar">
-        <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary">🎁 NHẬN BẢN SAO OPC (0Đ)</a>
-        <a href="https://zalo.me/0989890022" target="_blank" class="btn-bottom-secondary">💬 CHÁT ZALO ADVISOR</a>
+        <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" data-i18n="btn_bottom_source">🎁 NHẬN BẢN SAO OPC (0Đ)</a>
+        <a href="https://zalo.me/0989890022" target="_blank" class="btn-bottom-secondary" data-i18n="btn_bottom_zalo">💬 CHÁT ZALO ADVISOR</a>
     </div>
 
     <!-- Modal Drawer for Director details -->
@@ -446,66 +483,165 @@
         </div>
     </div>
 
-    <script>
+    <script type="module">
+        import { setLanguage, getCurrentLang } from './js/i18n.mjs';
+
+        let currentLang = getCurrentLang() || 'vi';
+
+        const videoMap = {
+            vi: 'gq9JBbjpwF0',
+            en: 'DMwT0iDdIm8'
+        };
+
         const directorsData = {
-            ceo: {
-                title: '👑 AI CEO — TỔNG GIÁM ĐỐC TỰ ĐỘNG',
-                color: '#9d4edd',
-                desc: 'Nhận chỉ thị từ Chairman Victor Chuyen → Bóc tách thành kế hoạch thi hành → Uỷ quyền tự động cho 5 Giám đốc AI (CMO, CSO, CPO, CHRO, CFO).',
-                skills: ['ceo_victor_master_9skills', 'agentic-engineering', 'prompt-engineer', 'kpi-dashboard-design']
+            vi: {
+                ceo: {
+                    title: '👑 AI CEO — TỔNG GIÁM ĐỐC TỰ ĐỘNG',
+                    color: '#9d4edd',
+                    desc: 'Nhận chỉ thị từ Chairman Victor Chuyen → Bóc tách thành kế hoạch thi hành → Uỷ quyền tự động cho 5 Giám đốc AI (CMO, CSO, CPO, CHRO, CFO).',
+                    skills: ['ceo_victor_master_9skills', 'agentic-engineering', 'prompt-engineer', 'kpi-dashboard-design'],
+                    actionBtn: '👑 Uỷ quyền nhiệm vụ mới cho 5 Directors'
+                },
+                cmo: {
+                    title: '📢 AI CMO — GIÁM ĐỐC MARKETING & META ADS',
+                    color: '#ff007f',
+                    desc: 'Chuyên gia Meta Ads, Copywriting Alex Hormozi Offer 500k, phân tích đối thủ cạnh tranh & sáng tạo nội dung ngách.',
+                    skills: ['meta_ads_cmo_framework', 'hormozi_copywriting', 'competitor_intelligence', 'ads_audit'],
+                    actionBtn: '🎯 Kích hoạt Campaign Meta Ads & Copywriting'
+                },
+                cso: {
+                    title: '💼 AI CSO — GIÁM ĐỐC SALES B2B & OUTREACH',
+                    color: '#00f2ff',
+                    desc: 'Tiếp cận B2B qua Cold Email 3-Step, LinkedIn Outreach, Kịch bản Demo Call 20 phút & Neo giá Hormozi.',
+                    skills: ['b2b_outreach_sequence', 'linkedin_b2b_outreach', 'demo_call_script', 'pricing_anchor'],
+                    actionBtn: '📧 Gửi Email Outreach Batch Niche Leads'
+                },
+                cpo: {
+                    title: '🛠️ AI CPO — GIÁM ĐỐC KỸ THUẬT & CODE SAAS',
+                    color: '#00ff88',
+                    desc: 'Lập trình Fullstack: Code SaaS, API Design, Cloudflare Workers & React System. Build & Deploy hệ thống 24/7.',
+                    skills: ['api-design', 'cloudflare-workers-expert', 'frontend-patterns', 'react-best-practices'],
+                    actionBtn: '⚡ Lập trình Feature SaaS & API Integration'
+                },
+                chro: {
+                    title: '🧬 AI CHRO — GIÁM ĐỐC NHÂN SỰ AI AGENTIC',
+                    color: '#ffaa00',
+                    desc: 'Spawn AI Agent mới khi mở rộng phòng ban, tạo Skills chuyên biệt & giám sát hiệu năng làm việc.',
+                    skills: ['agentic-engineering', 'prompt-engineer', 'Agent Spawning', 'Skill Creation'],
+                    actionBtn: '🧬 Spawn AI Agent Mới & Tạo Skill Repository'
+                },
+                cfo: {
+                    title: '💎 AI CFO — GIÁM ĐỐC TÀI CHÍNH & VIETQR 3S',
+                    color: '#10b981',
+                    desc: 'Đối soát chuyển khoản VietQR MB Bank 0989890022 trong 3 giây, tự động mở khóa tài liệu VIP & kiểm soát dòng tiền.',
+                    skills: ['finance-reconciliation', 'auto-access-gating', 'cashflow-audit', 'vietqr-webhook-engine'],
+                    actionBtn: '🧾 Đối Soát Webhook VietQR MB Bank 3s'
+                }
             },
-            cmo: {
-                title: '📢 AI CMO — GIÁM ĐỐC MARKETING & META ADS',
-                color: '#ff007f',
-                desc: 'Chuyên gia Meta Ads, Copywriting Alex Hormozi Offer 500k, phân tích đối thủ cạnh tranh & sáng tạo nội dung ngách.',
-                skills: ['meta_ads_cmo_framework', 'hormozi_copywriting', 'competitor_intelligence', 'ads_audit']
-            },
-            cso: {
-                title: '💼 AI CSO — GIÁM ĐỐC SALES B2B & OUTREACH',
-                color: '#00f2ff',
-                desc: 'Tiếp cận B2B qua Cold Email 3-Step, LinkedIn Outreach, Kịch bản Demo Call 20 phút & Neo giá Hormozi.',
-                skills: ['b2b_outreach_sequence', 'linkedin_b2b_outreach', 'demo_call_script', 'pricing_anchor']
-            },
-            cpo: {
-                title: '🛠️ AI CPO — GIÁM ĐỐC KỸ THUẬT & CODE SAAS',
-                color: '#00ff88',
-                desc: 'Lập trình Fullstack: Code SaaS, API Design, Cloudflare Workers & React System. Build & Deploy hệ thống 24/7.',
-                skills: ['api-design', 'cloudflare-workers-expert', 'frontend-patterns', 'react-best-practices']
-            },
-            chro: {
-                title: '🧬 AI CHRO — GIÁM ĐỐC NHÂN SỰ AI AGENTIC',
-                color: '#ffaa00',
-                desc: 'Spawn AI Agent mới khi mở rộng phòng ban, tạo Skills chuyên biệt & giám sát hiệu năng làm việc.',
-                skills: ['agentic-engineering', 'prompt-engineer', 'Agent Spawning', 'Skill Creation']
-            },
-            cfo: {
-                title: '💎 AI CFO — GIÁM ĐỐC TÀI CHÍNH & VIETQR 3S',
-                color: '#10b981',
-                desc: 'Đối soát chuyển khoản VietQR MB Bank 0989890022 trong 3 giây, tự động mở khóa tài liệu VIP & kiểm soát dòng tiền.',
-                skills: ['finance-reconciliation', 'auto-access-gating', 'cashflow-audit', 'vietqr-webhook-engine']
+            en: {
+                ceo: {
+                    title: '👑 AI CEO — AUTOMATED CHIEF EXECUTIVE OFFICER',
+                    color: '#9d4edd',
+                    desc: 'Receives directives from Chairman Victor Chuyen → Decomposes into actionable blueprints → Delegates tasks autonomously to 5 C-Suite AI Directors.',
+                    skills: ['ceo_victor_master_9skills', 'agentic-engineering', 'prompt-engineer', 'kpi-dashboard-design'],
+                    actionBtn: '👑 Delegate Directive to 5 Directors'
+                },
+                cmo: {
+                    title: '📢 AI CMO — CHIEF MARKETING OFFICER & META ADS',
+                    color: '#ff007f',
+                    desc: 'Meta Ads specialist, Alex Hormozi 500k Offer copywriting, competitor intelligence & niche market research.',
+                    skills: ['meta_ads_cmo_framework', 'hormozi_copywriting', 'competitor_intelligence', 'ads_audit'],
+                    actionBtn: '🎯 Launch Meta Ads Campaign & Copy'
+                },
+                cso: {
+                    title: '💼 AI CSO — CHIEF SALES OFFICER & B2B OUTREACH',
+                    color: '#00f2ff',
+                    desc: 'B2B Growth: 3-Step Cold Email, LinkedIn Messaging, 20-min Demo Call Script & Hormozi Pricing Anchors.',
+                    skills: ['b2b_outreach_sequence', 'linkedin_b2b_outreach', 'demo_call_script', 'pricing_anchor'],
+                    actionBtn: '📧 Dispatch B2B Outreach Campaign'
+                },
+                cpo: {
+                    title: '🛠️ AI CPO — CHIEF PRODUCT OFFICER & SAAS CODER',
+                    color: '#00ff88',
+                    desc: 'Fullstack Developer: SaaS Architect, API Design, Cloudflare Workers & React Systems. 24/7 CI/CD Builder.',
+                    skills: ['api-design', 'cloudflare-workers-expert', 'frontend-patterns', 'react-best-practices'],
+                    actionBtn: '⚡ Build & Deploy SaaS Feature'
+                },
+                chro: {
+                    title: '🧬 AI CHRO — CHIEF HR OFFICER & AGENT SPANNER',
+                    color: '#ffaa00',
+                    desc: 'Spawns new specialized AI Agents upon department scaling, engineers custom skills & audits team throughput.',
+                    skills: ['agentic-engineering', 'prompt-engineer', 'Agent Spawning', 'Skill Creation'],
+                    actionBtn: '🧬 Spawn New AI Agent & Skill Repo'
+                },
+                cfo: {
+                    title: '💎 AI CFO — CHIEF FINANCIAL OFFICER & VIETQR 3S',
+                    color: '#10b981',
+                    desc: 'Reconciles VietQR / Bank transfers in 3 seconds, grants automated VIP access & audits MRR cashflow.',
+                    skills: ['finance-reconciliation', 'auto-access-gating', 'cashflow-audit', 'vietqr-webhook-engine'],
+                    actionBtn: '🧾 Reconcile VietQR Bank Webhook (3s)'
+                }
             }
         };
 
-        function showDirectorModal(key) {
-            const data = directorsData[key];
+        function applyLanguage(lang) {
+            currentLang = lang;
+            setLanguage(lang);
+
+            // Update flags
+            const flagCurrent = document.getElementById('lang-flag-current');
+            const flagNext = document.getElementById('lang-flag-next');
+            if (flagCurrent && flagNext) {
+                if (lang === 'en') {
+                    flagCurrent.innerText = '🇬🇧 EN';
+                    flagNext.innerText = '🇻🇳 VI';
+                } else {
+                    flagCurrent.innerText = '🇻🇳 VI';
+                    flagNext.innerText = '🇬🇧 EN';
+                }
+            }
+
+            // Update Video Source
+            const vslIframe = document.getElementById('iframe-mobile-vsl');
+            const videoId = videoMap[lang] || 'gq9JBbjpwF0';
+            if (vslIframe) {
+                vslIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=${videoId}&controls=1&modestbranding=1&rel=0`;
+            }
+        }
+
+        window.toggleMobileLanguage = function() {
+            const nextLang = currentLang === 'vi' ? 'en' : 'vi';
+            applyLanguage(nextLang);
+        };
+
+        window.showDirectorModal = function(key) {
+            const dict = directorsData[currentLang] || directorsData.vi;
+            const data = dict[key];
             if (!data) return;
+
             const content = document.getElementById('modal-content');
             content.innerHTML = `
                 <div style="font-size:15px;font-weight:900;color:${data.color};margin-bottom:8px;">${data.title}</div>
                 <div style="font-size:12px;color:#cbd5e1;line-height:1.5;margin-bottom:14px;">${data.desc}</div>
                 <div style="font-size:11px;font-weight:800;color:var(--neon-gold);margin-bottom:6px;">⚡ BỘ KỸ NĂNG NỔI BẬT:</div>
-                <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
                     ${data.skills.map(s => `<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;">${s}</span>`).join('')}
                 </div>
+                <button class="drawer-action-btn" onclick="executeDirectorAction('${key}')">${data.actionBtn}</button>
             `;
             document.getElementById('modal-overlay').style.display = 'flex';
-        }
+        };
 
-        function closeDirectorModal() {
+        window.closeDirectorModal = function() {
             document.getElementById('modal-overlay').style.display = 'none';
-        }
+        };
 
-        function unmuteMobileVsl() {
+        window.executeDirectorAction = function(key) {
+            alert(`🚀 [EXECUTIVE ACTION] Đã gửi tín hiệu kích hoạt tác vụ cho Director: ${key.toUpperCase()}!`);
+            closeDirectorModal();
+        };
+
+        window.unmuteMobileVsl = function() {
             const iframe = document.getElementById('iframe-mobile-vsl');
             if (iframe) {
                 iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
@@ -513,7 +649,10 @@
                 iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
                 document.getElementById('vsl-unmute-mobile').style.display = 'none';
             }
-        }
+        };
+
+        // Init language on load
+        applyLanguage(currentLang);
     </script>
 </body>
 </html>

@@ -366,8 +366,8 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // Lead Magnet Opt-in Submission API
-    if (req.url === '/api/leads/submit' && req.method === 'POST') {
+    // Lead Magnet Opt-in Submission API (/api/leads and /api/leads/submit)
+    if ((req.url === '/api/leads' || req.url === '/api/leads/submit') && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => body += chunk.toString());
         req.on('end', async () => {

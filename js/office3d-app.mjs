@@ -7,7 +7,7 @@
         import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
         import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
         import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
-        import { setLanguage, getCurrentLang } from './js/i18n.mjs';
+        import { setLanguage, getCurrentLang } from './i18n.mjs';
 
         /* ────────────── AGENT DATA ────────────── */
         const agentProfiles = {

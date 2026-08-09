@@ -76,29 +76,26 @@
 
         .brand-box {
             display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .brand-logo {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            object-fit: contain;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .brand-title {
             font-family: 'Be Vietnam Pro', 'Inter', -apple-system, sans-serif;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 900;
             color: #ffffff;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
         }
 
         .brand-sub {
-            font-size: 9.5px;
+            font-size: 9px;
             color: var(--neon-cyan);
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            line-height: 1.2;
+            margin-top: 2px;
         }
 
         .header-actions {
@@ -382,11 +379,8 @@
         <!-- Top Header -->
         <header class="mobile-header">
             <div class="brand-box">
-                <img src="LOGO-OPC.png" alt="OPC Logo" class="brand-logo">
-                <div>
-                    <div class="brand-title">OPC-TNC</div>
-                    <div class="brand-sub">🟢 EXECUTIVE MOBILE</div>
-                </div>
+                <div class="brand-title">OPC-TNC</div>
+                <div class="brand-sub">🟢 EXECUTIVE MOBILE</div>
             </div>
             <div class="header-actions">
                 <button class="lang-toggle-btn" onclick="toggleMobileLanguage()" title="Switch Language">

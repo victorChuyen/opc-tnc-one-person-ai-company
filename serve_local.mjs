@@ -561,19 +561,10 @@ const server = http.createServer((req, res) => {
         }
     }
 
-    // Smart Device Router for Root / Domain Access
+    // Smart Domain Router: opc.breaths.live ALWAYS serves index.html (3D Virtual Office Simulator)
     let targetFile = req.url === '/' ? 'index.html' : req.url;
     if (req.url === '/' || req.url === '') {
-        const ua = req.headers['user-agent'] || '';
-        const acceptLang = req.headers['accept-language'] || '';
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-        const isEnglish = acceptLang.toLowerCase().startsWith('en') && !acceptLang.toLowerCase().includes('vi');
-
-        if (isMobile) {
-            targetFile = isEnglish ? 'landing_en.html' : 'landing_vi.html';
-        } else {
-            targetFile = 'index.html';
-        }
+        targetFile = 'index.html';
     }
 
     let filePath = path.join(__dirname, targetFile);

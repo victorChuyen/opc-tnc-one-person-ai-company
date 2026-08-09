@@ -34,18 +34,20 @@ htmlFiles.forEach(file => {
   const matches = html.matchAll(/(?:src|href)=["'](.*?)["']/g);
   for (const match of matches) {
     const link = match[1];
+    const cleanLink = link.split('?')[0].split('#')[0];
+
     if (
       link.startsWith('http://') ||
       link.startsWith('https://') ||
       link.startsWith('#') ||
       link.startsWith('mailto:') ||
       link.startsWith('tel:') ||
-      link.startsWith('data:')
+      link.startsWith('data:') ||
+      ['/vi', '/en', '/checkout', '/app', '/3d', '/'].includes(cleanLink)
     ) {
       continue;
     }
 
-    const cleanLink = link.split('?')[0].split('#')[0];
     if (!cleanLink) continue;
 
     const resolvedAsset = path.resolve(baseDir, cleanLink);

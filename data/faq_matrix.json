@@ -1,0 +1,205 @@
+{
+  "faq_system_info": {
+    "title": "OPC-TNC Bilingual FAQ Matrix (VI & EN)",
+    "version": "3.0.0",
+    "total_questions": 18,
+    "last_updated": "2026-08-09",
+    "market_focus": "Vietnam & Global SME, Solopreneur, Agency, Accountant & HR Audit"
+  },
+  "categories": [
+    {
+      "id": "tech",
+      "name_vi": "🔧 Kỹ Thuật & Hạ Tầng",
+      "name_en": "🔧 Architecture & Tech",
+      "icon": "🔧",
+      "description_vi": "Cấu trúc hệ thống, bảo mật, API token & cơ chế đối soát VietQR/Stripe",
+      "description_en": "System architecture, security, API token costs & reconciliation mechanics"
+    },
+    {
+      "id": "sales",
+      "name_vi": "🚀 Sales & Content",
+      "name_en": "🚀 Sales & Content",
+      "icon": "🚀",
+      "description_vi": "Ứng dụng trong thu hút Lead, tư vấn, chăm sóc, tạo nội dung & bán hàng đa kênh",
+      "description_en": "Lead generation pipeline, sales follow-up, content engine & social automation"
+    },
+    {
+      "id": "edu",
+      "name_vi": "🎓 Coaching & Đào Tạo",
+      "name_en": "🎓 Coaching & Education",
+      "icon": "🎓",
+      "description_vi": "Chuẩn hóa quy trình tư vấn 1-1, lưu vết hồ sơ khách hàng & quản lý học viên",
+      "description_en": "1-1 consulting, client profile recaps, course management & student AI assistant"
+    },
+    {
+      "id": "agency",
+      "name_vi": "💼 Agency & CSKH",
+      "name_en": "💼 Agency & Support",
+      "icon": "💼",
+      "description_vi": "Xây dựng hệ thống dịch vụ lặp lại, quản lý nhiều dự án & chăm sóc tự động",
+      "description_en": "Repeatable service system, multi-project workspaces & SOP CSKH approval"
+    },
+    {
+      "id": "ops",
+      "name_vi": "⚙️ Quản Trị, Kế Toán & HR",
+      "name_en": "⚙️ Ops, Accounting & HR",
+      "icon": "⚙️",
+      "description_vi": "Bóc tách hóa đơn điện tử, thông tư Thuế/BHXH, tuyển dụng, lương KPI & SOP",
+      "description_en": "E-invoice audit, tax regulations, recruitment, KPI payroll & project status"
+    },
+    {
+      "id": "niche",
+      "name_vi": "🏢 Tài Chính & BĐS",
+      "name_en": "🏢 Finance & Industries",
+      "icon": "🏢",
+      "description_vi": "VietQR 24/7 Auto Reconciliation, Bất động sản, E-commerce, Y tế & Pháp lý",
+      "description_en": "VietQR 24/7 / Stripe auto reconciliation, Real estate, E-commerce & legal"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "FAQ-01",
+      "category_id": "tech",
+      "question_vi": "1. Tôi không biết lập trình hay kỹ thuật code thì có tự dùng được không?",
+      "question_en": "1. Do I need coding or technical skills to operate OPC-TNC?",
+      "answer_vi": "Hoàn toàn dễ dàng! Hệ thống OPC-TNC cung cấp giao diện trực quan 3D Virtual Office Simulator và Bot Telegram điều khiển bằng Tiếng Việt. Đội ngũ Kỹ sư sẽ bàn giao theo hình thức 'Chìa khóa trao tay' (Done-For-You) trong 48 giờ. Bạn chỉ cần ra chỉ thị bằng giọng nói hoặc tin nhắn như đang chat với nhân viên thật.",
+      "answer_en": "Not at all! OPC-TNC provides an intuitive 3D Virtual Office Canvas & a remote Telegram Control Bot in plain language. Our engineering team provides a 100% turnkey 48h setup so you don't need to write a single line of code. You simply give voice or text directives just like chatting with human team members."
+    },
+    {
+      "id": "FAQ-02",
+      "category_id": "tech",
+      "question_vi": "2. Máy tính của tôi có cần bật 24/7 không? Gói Local 0 và Gói Cloud 1, 2, 3 khác nhau ra sao?",
+      "question_en": "2. Does my PC need to stay on 24/7? How do Tier 0 Local and Cloud Tiers differ?",
+      "answer_vi": "• Gói 0 (Local 3D Experience): Bạn chỉ cần cắm sạc PC/Laptop và duy trì kết nối Internet. Ứng dụng chạy ngầm 24/7 dưới dạng Background Agent Service ngay cả khi tắt màn hình (Screen Off / Sleep). Nhờ công nghệ Web Tunnel & Telegram Bot API, bạn hoàn toàn có thể điều khiển và nhận báo cáo từ xa qua điện thoại.\n• Gói 1, 2, 3 (Starter / Professional / Enterprise): Toàn bộ 6 Giám đốc AI & Web App được đưa lên Hạ tầng Cloud 24/7/365 (Cloudflare & Server riêng). Bạn có thể TẮT MÁY TÍNH, ngắt điện hay đi du lịch thì AI Directors vẫn tiếp nhận leads, gửi email & đối soát 24/7 không gián đoạn.",
+      "answer_en": "• Tier 0 (Local 3D Experience): Keep your PC/Laptop connected to power & internet. Runs 24/7 as a Background Agent Service even with screen off (Sleep mode). Web Tunnel & Telegram Bot API allow full mobile remote control.\n• Tiers 1, 2, 3 (Cloud Tiers): Deployed 100% on 24/7 Cloud Infrastructure (Cloudflare & Dedicated Private Servers). Turn off your PC anytime while your 6 AI Directors autonomously capture leads, send emails, and reconcile transactions 24/7/365."
+    },
+    {
+      "id": "FAQ-03",
+      "category_id": "tech",
+      "question_vi": "3. Chi phí API chạy AI hàng tháng là bao nhiêu? Có bị phát sinh chi phí ẩn không?",
+      "question_en": "3. What are the recurring monthly API token costs? Are there hidden fees?",
+      "answer_vi": "Chạy Gói 0 Offline (Ollama LLM) chi phí API bằng 0đ hoàn toàn! Khi chạy trên Cloud 24/7, hệ thống áp dụng công nghệ Prompt Caching và phân rã công việc Hub-and-Spoke giúp tối ưu chi phí cực rẻ (chỉ khoảng $2 - $5 USD/tháng cho toàn bộ 6 Giám đốc AI hoạt động liên tục).",
+      "answer_en": "Running Tier 0 Local LLMs (Ollama) costs $0 in API fees! On Cloud 24/7, Hub-and-Spoke delegation and Prompt Caching keep token costs extremely low (approx. $2 - $5 USD/month for all 6 AI Directors running continuously)."
+    },
+    {
+      "id": "FAQ-04",
+      "category_id": "tech",
+      "question_vi": "4. Dữ liệu khách hàng và thông tin kinh doanh của tôi được bảo mật như thế nào?",
+      "question_en": "4. Is my business data and customer information secure?",
+      "answer_vi": "Bảo mật tuyệt đối! OPC-TNC áp dụng kiến trúc Database-per-Tenant (mỗi doanh nghiệp là một két sắt dữ liệu độc lập). Toàn bộ danh sách leads, ghi chú và kịch bản kinh doanh được lưu trữ trực tiếp trên Google Drive / Obsidian Vault do chính bạn làm chủ. Không bên thứ 3 nào có quyền truy cập.",
+      "answer_en": "100% Isolated & Secure. OPC-TNC uses a Database-per-Tenant isolated vault architecture. All leads, CRM records, and business documents are stored directly in your private Google Drive / Obsidian Vault, completely inaccessible to any third parties."
+    },
+    {
+      "id": "FAQ-05",
+      "category_id": "niche",
+      "question_vi": "5. Tính năng Kế toán AI CFO tự động đối soát VietQR 24/7 & Stripe hoạt động ra sao?",
+      "question_en": "5. How does the AI CFO automated bank & VietQR / Stripe reconciliation work?",
+      "answer_vi": "Tại thị trường Việt Nam, khách hàng không dùng Stripe mà sử dụng Chuyển khoản VietQR 24/7 (MB Bank 0989890022 / SePAY Webhook). Với thị trường Quốc tế, hệ thống hỗ trợ cổng Stripe USD / PayPal. Khi khách quét mã QR hoặc thanh toán, Webhook ngân hàng tự động gửi tín hiệu cho AI CFO. Trong 3 giây, AI CFO đọc cú pháp, đối soát tiền về, tự động gạch nợ trên hệ thống, kích hoạt email chào mừng qua Resend API và cấp quyền VIP Google Drive & Zalo/Discord Group tự động 24/7.",
+      "answer_en": "For Vietnam, payments utilize 24/7 VietQR Bank Transfer (MB Bank / SePAY Webhook). For Global markets, Stripe USD / PayPal is integrated. When a customer pays, bank webhooks instantly trigger AI CFO. Within 3 seconds, AI CFO verifies payment memo, reconciles ledger, triggers 5-day Resend email sequence, and provisions instant VIP Google Drive & Zalo/Discord access automatically."
+    },
+    {
+      "id": "FAQ-06",
+      "category_id": "ops",
+      "question_vi": "6. OPC-TNC giải quyết những NỖI ĐAU CỤ THỂ NÀO của Kế toán Thuế tại Việt Nam?",
+      "question_en": "6. How does OPC-TNC solve real Accounting & E-Invoice pain points in Vietnam & Global SME?",
+      "answer_vi": "Kế toán thường đau đầu với 3 bài toán lớn:\n1. Hóa đơn điện tử (E-Invoice): Phải bóc tách thủ công hàng trăm hóa đơn XML/PDF, rủi ro nhập sai hoặc dính phải hóa đơn từ doanh nghiệp bỏ trốn/tạm ngừng hoạt động.\n2. Chính sách Thuế thay đổi liên tục: Nghị định 123, Thông tư 78, Luật thuế GTGT/TNCN thay đổi khiến kế toán sợ bị phạt hành chính.\n3. Dòng tiền rải rác: Chuyển khoản rải rác không khớp với hóa đơn xuất ra.\n👉 AI CFO hỗ trợ: Tự động đọc file hóa đơn XML, tra cứu mã hóa đơn trên cổng Cục Thuế, cảnh báo hóa đơn rủi ro, cập nhật quy định thuế mới và đối soát VietQR tự động 24/7.",
+      "answer_en": "Solves 3 major accounting headaches:\n1. E-Invoice Parsing: Automatically parses XML/PDF invoices and verifies validity against tax authority databases to prevent invalid/canceled invoice risks.\n2. Tax Regulation Updates: Tracks local tax decrees and regulations automatically, preventing compliance penalties.\n3. Bank Reconciliation: Matches bank transfers directly to sales ledgers in 3 seconds."
+    },
+    {
+      "id": "FAQ-07",
+      "category_id": "ops",
+      "question_vi": "7. OPC-TNC giải quyết bài toán NỖI ĐAU NHÂN SỰ (HR & Payroll) ra sao?",
+      "question_en": "7. How does OPC-TNC solve HR, Payroll & Employee Onboarding challenges?",
+      "answer_vi": "Nhân sự (HR) gặp 3 rào cản nhức nhối:\n1. Tính lương & Thuế TNCN / BHXH: Quy định BHXH & mức giảm trừ gia cảnh thuế TNCN cập nhật liên tục; tính lương KPI/hoa hồng trên Excel dễ sai sót gây khiếu nại.\n2. Pháp lý Hợp đồng lao động: Quên thời hạn tái ký HĐLĐ thử việc/chính thức, rủi ro tranh chấp lao động.\n3. Onboarding đào tạo nhân sự mới: Mất 2-4 tuần nhân sự mới mới quen việc vì thiếu SOP.\n👉 AI CHRO hỗ trợ: Tự động hóa bảng tính lương KPI & thuế TNCN/BHXH theo luật hiện hành, cảnh báo hết hạn HĐLĐ trước 15 ngày, trích xuất CV ứng viên và cung cấp Trợ lý AI đào tạo SOP nội bộ cho nhân sự mới trong 24h.",
+      "answer_en": "Solves 3 critical HR bottlenecks:\n1. Payroll & Tax Calculations: Automates complex KPI/commission payroll and personal income tax/insurance calculations.\n2. Contract Expiry Tracking: Sends automated 15-day alerts before labor contract expirations to prevent legal disputes.\n3. 24-Hour SOP Onboarding: Equips new hires with an AI Assistant trained on company SOPs to answer workflow questions 24/7."
+    },
+    {
+      "id": "FAQ-08",
+      "category_id": "tech",
+      "question_vi": "8. Sau khi bàn giao 48h, tôi sẽ nhận được sự hỗ trợ và bảo trì như thế nào?",
+      "question_en": "8. What ongoing support and maintenance do I receive after 48h setup?",
+      "answer_vi": "Bạn được tham gia Nhóm Zalo/Discord Mã Nguồn VIP, hỗ trợ trực tiếp 1:1 qua Telegram với Founder Victor Chuyen, và tham gia các buổi Coach AI định kỳ hàng tuần để cập nhật các Prompt & Agent Skills mới nhất hoàn toàn miễn phí.",
+      "answer_en": "You get instant access to the VIP Source Code Group, direct 1:1 Telegram support with Founder Victor Chuyen, and weekly live AI coaching calls to get the latest Agent skills and prompts completely free!"
+    },
+    {
+      "id": "FAQ-09",
+      "category_id": "sales",
+      "question_vi": "9. OPC-TNC ứng dụng trong Kinh doanh và Bán hàng như thế nào?",
+      "question_en": "9. How does OPC-TNC apply to Sales and Lead Generation Pipelines?",
+      "answer_vi": "OPC-TNC hỗ trợ toàn bộ pipeline bán hàng (Nhu cầu → Lead → Tư vấn → Gửi Offer → Chốt đơn → Chăm sóc → Upsell). AI giúp thu thập lead đa kênh, phân loại nóng/ấm/lạnh, gợi ý câu hỏi discovery, tóm tắt lịch sử trao đổi, tự động tạo tin nhắn follow-up, nhắc lịch chăm sóc và phát hiện các lead bị bỏ quên.",
+      "answer_en": "Supports the full sales funnel (Demand → Lead → Consult → Offer → Close → Support → Upsell). Captures multi-channel leads, qualifies lead heat, generates discovery questions, automates personalized follow-ups, and alerts on stale leads."
+    },
+    {
+      "id": "FAQ-10",
+      "category_id": "sales",
+      "question_vi": "10. OPC-TNC hỗ trợ Marketing và Content Creator ra sao?",
+      "question_en": "10. How does OPC-TNC empower Marketing & Content Creation?",
+      "answer_vi": "Biến kiến thức & kinh nghiệm của người sáng lập thành hệ thống content tái sử dụng: Nghiên cứu câu hỏi thị trường, lập Content Pillar, viết hook, soạn bài Facebook, viết kịch bản livestream/video ngắn (Shorts/TikTok), tách 1 video dài thành 10 bài đăng ngắn và gắn bài viết với Lead Magnet/CTA thu lead tự động.",
+      "answer_en": "Transforms founder expertise into a repeatable content engine: Researches market questions, creates content pillars, writes hooks, generates short-form video scripts (Reels/TikTok), splits long videos into short posts, and connects content to Lead Magnets."
+    },
+    {
+      "id": "FAQ-11",
+      "category_id": "edu",
+      "question_vi": "11. OPC-TNC có thể ứng dụng cho Tư vấn và Coaching 1-1 không?",
+      "question_en": "11. Can OPC-TNC be applied to Coaching and 1-1 Consulting?",
+      "answer_vi": "Rất phù hợp! Hệ thống giúp lưu hồ sơ khách hàng, AI tóm tắt nhu cầu trước buổi gọi, tự động tạo bản Recap sau cuộc họp gửi cho khách, đề xuất bài tập/cam kết hành động, nhắc lịch follow-up kiểm tra tiến độ và xây dựng thư viện case study thực chiến.",
+      "answer_en": "Highly recommended! Maintains client profiles, summarizes client needs pre-call, generates post-call recaps automatically, tracks action item commitments, and builds an active case study library."
+    },
+    {
+      "id": "FAQ-12",
+      "category_id": "edu",
+      "question_vi": "12. OPC-TNC dùng cho Giáo dục và Đào tạo như thế nào?",
+      "question_en": "12. How is OPC-TNC used in Education & Training Centers?",
+      "answer_vi": "- Với người dạy: Xây giáo trình, chia bài học thành module, tạo câu hỏi kiểm tra, cá nhân hóa nội dung theo trình độ & quản lý phản hồi học viên.\n- Với học viên: Trợ lý AI tra cứu kiến thức trong tài liệu khóa học 24/7, tóm tắt bài giảng, tạo flashcard ôn tập & nhắc lịch nộp bài tập chưa xong.",
+      "answer_en": "- For Educators: Structuring course modules, generating quiz questions, and personalizing learning paths.\n- For Students: 24/7 AI learning assistant to search course documents, summarize lectures, create flashcards, and remind on due assignments."
+    },
+    {
+      "id": "FAQ-13",
+      "category_id": "agency",
+      "question_vi": "13. OPC-TNC phù hợp với Freelancer và Agency không?",
+      "question_en": "13. Is OPC-TNC suitable for Freelancers and Agencies?",
+      "answer_vi": "Giải quyết triệt để vấn đề quản lý nhiều dự án cùng lúc. OPC-TNC giúp tạo workspace riêng cho từng client, lưu brief/checklist bàn giao, theo dõi deadline, tự động xuất báo cáo tiến độ tuần và xây dựng hệ thống dịch vụ có thể lặp lại (Repeatable Service System).",
+      "answer_en": "Solves multi-client project management. Isolates workspace per client, stores project briefs & delivery checklists, tracks deadlines, generates weekly status reports, and builds a Repeatable Service System."
+    },
+    {
+      "id": "FAQ-14",
+      "category_id": "agency",
+      "question_vi": "14. OPC-TNC hỗ trợ Chăm sóc Khách hàng (CSKH) ra sao?",
+      "question_en": "14. How does OPC-TNC streamline Customer Support & CSKH?",
+      "answer_vi": "Khi khách hàng thắc mắc, AI tự động tra cứu trong Kho SOP nội bộ, đề xuất câu trả lời chuẩn xác cho nhân viên duyệt gửi trong 5 giây, nhắc khách chưa phản hồi và cảnh báo sớm các khách hàng có nguy cơ rời bỏ (Churn Risk).",
+      "answer_en": "Searches internal SOP knowledge bases upon customer inquiry, proposes draft responses for human agent approval in 5 seconds, alerts on unhandled messages, and detects early Churn Risk signals."
+    },
+    {
+      "id": "FAQ-15",
+      "category_id": "ops",
+      "question_vi": "15. OPC-TNC dùng cho Quản lý Dự án (Project Management) ra sao?",
+      "question_en": "15. How does OPC-TNC manage Projects and Team Task Delegation?",
+      "answer_vi": "Biến chỉ thị bằng giọng nói/tin nhắn thành báo cáo dự án tuần 6 phần: Việc đã hoàn thành, Việc đang làm, Task trễ deadline, Điểm nghẽn (Bottleneck), Đánh giá rủi ro và Hành động đề xuất tiếp theo.",
+      "answer_en": "Converts plain voice/text directives into structured 6-part weekly project status reports: Completed tasks, In-progress tasks, Delayed tasks, Bottlenecks, Risk assessments, and Proposed next actions."
+    },
+    {
+      "id": "FAQ-16",
+      "category_id": "niche",
+      "question_vi": "16. OPC-TNC ứng dụng cho Bất Động Sản & E-Commerce như thế nào?",
+      "question_en": "16. How is OPC-TNC applied in Real Estate & E-Commerce?",
+      "answer_vi": "- BĐS: Khớp nối nhu cầu/ngân sách khách hàng với danh mục sản phẩm, đặt lịch xem nhà và tạo kịch bản follow-up.\n- E-commerce: Viết mô tả sản phẩm SEO hàng loạt, phân loại inbox/comment, theo dõi đơn hàng và tạo chiến dịch bán lại (Remarketing) cho khách cũ.",
+      "answer_en": "- Real Estate: Matches buyer preferences to property listings, schedules property viewings, and automates follow-ups.\n- E-Commerce: Batch generates SEO product descriptions, categorizes inbox queries, tracks orders, and runs automated remarketing campaigns."
+    },
+    {
+      "id": "FAQ-17",
+      "category_id": "niche",
+      "question_vi": "17. OPC-TNC có phù hợp với Y tế, Pháp lý hoặc ngành nhạy cảm không?",
+      "question_en": "17. Is OPC-TNC suitable for Medical, Legal & Sensitive Industries?",
+      "answer_vi": "Có thể hỗ trợ tra cứu & tóm tắt hồ sơ tài liệu nội bộ. Nguyên tắc bất biến: AI chỉ làm trợ lý chuẩn bị & tổng hợp dữ liệu, Chuyên gia con người là người đưa ra quyết định cuối cùng.",
+      "answer_en": "Supports internal document search & dossier summarization. Core Rule: AI acts as a preparation & synthesis assistant — human domain experts retain final decision authority."
+    },
+    {
+      "id": "FAQ-18",
+      "category_id": "tech",
+      "question_vi": "18. 5 Câu hỏi giúp tôi tự đánh giá doanh nghiệp của mình có nên triển khai OPC-TNC không?",
+      "question_en": "18. 5 Self-Assessment Questions to evaluate if OPC-TNC is right for your business?",
+      "answer_vi": "1. Công việc của bạn có nhiều bước lặp lại không?\n2. Bạn có thường xuyên tốn thời gian tìm tài liệu/tin nhắn cũ không?\n3. Bạn có số lượng lớn khách hàng hoặc dự án cần theo dõi không?\n4. Bạn có thường xuyên trễ deadline hoặc quên follow-up không?\n5. Bạn có muốn xây dựng HỆ THỐNG vận hành thay vì phụ thuộc trí nhớ cá nhân không?\n👉 Nếu có 3/5 câu trả lời 'CÓ', doanh nghiệp của bạn cực kỳ phù hợp để bắt đầu ngay!",
+      "answer_en": "1. Are your core business workflows repetitive?\n2. Do you waste time searching for past documents or chat logs?\n3. Do you manage numerous clients or projects simultaneously?\n4. Do you frequently miss deadlines or forget client follow-ups?\n5. Do you want a scalable SYSTEM instead of relying on personal memory?\n👉 If you answer 'YES' to 3+ questions, your business is 100% ready to deploy OPC-TNC!"
+    }
+  ]
+}

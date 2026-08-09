@@ -9,9 +9,15 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://ai.breaths.live/en">
 
-    <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" href="LOGO-OPC.png">
-    <link rel="apple-touch-icon" href="LOGO-OPC.png">
+    <!-- Favicon & Icons (Local & Online Link) -->
+    <link rel="icon" type="image/gif" href="Favicon.gif">
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO-OPC.png">
+    <link rel="shortcut icon" href="Favicon.gif">
+    <link rel="apple-touch-icon" href="https://ai.breaths.live/LOGO-OPC.png">
+
+    <!-- Meta Pixel & Conversions API Tracking -->
+    <script src="js/meta_pixel.js"></script>
+    <script src="js/tv_ticker.js"></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -38,14 +44,16 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/landing.css">
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) with Image SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "OPC-TNC AI Agentic Company Simulator Global",
+        "name": "OPC-TNC AI Agentic Company Simulator",
         "operatingSystem": "All",
         "applicationCategory": "BusinessApplication",
+        "image": "https://ai.breaths.live/tnc_hero_bg.png",
+        "logo": "https://ai.breaths.live/LOGO-OPC.png",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -53,7 +61,15 @@
         },
         "author": {
             "@type": "Person",
-            "name": "Tran Ngoc Chuyen (Victor Chuyen)"
+            "name": "Trần Ngọc Chuyền (Victor Chuyen)",
+            "url": "https://ai.breaths.live/en"
+        },
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://ai.breaths.live/tnc_hero_bg.png",
+            "width": 1672,
+            "height": 941,
+            "caption": "OPC-TNC 6 AI Directors Agentic Company Suite"
         }
     }
     </script>
@@ -320,70 +336,213 @@
     <!-- FAQ Accordion Section -->
     <section class="faq-section">
         <div class="faq-header">
-            <span style="background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;">❓ ARCHITECTURAL & TECHNICAL FAQ</span>
+            <span style="background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;">❓ COMPREHENSIVE ARCHITECTURAL & INDUSTRY FAQ</span>
             <h2 style="font-size:24px;font-weight:900;color:#0f172a;margin:8px 0 4px 0;">FREQUENTLY ASKED QUESTIONS (FAQ)</h2>
-            <p style="font-size:13px;color:#64748b;margin:0;">Everything you need to know about the technical architecture and operation of your One-Person AI Company:</p>
+            <p style="font-size:13px;color:#64748b;margin:0;">Everything you need to know about system architecture, automated workflows, and industry applications:</p>
+            
+            <div class="faq-tabs-container" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0 8px 0;">
+                <button class="faq-tab-btn" onclick="filterFaq('all', this)" style="background:#2563eb;color:#ffffff;border:none;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">All (18 Qs)</button>
+                <button class="faq-tab-btn" onclick="filterFaq('tech', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🔧 Architecture & Tech</button>
+                <button class="faq-tab-btn" onclick="filterFaq('sales', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🚀 Sales & Content</button>
+                <button class="faq-tab-btn" onclick="filterFaq('edu', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🎓 Coaching & Edu</button>
+                <button class="faq-tab-btn" onclick="filterFaq('agency', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">💼 Agency & CSKH</button>
+                <button class="faq-tab-btn" onclick="filterFaq('ops', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">⚙️ Ops, HR & Accounting</button>
+                <button class="faq-tab-btn" onclick="filterFaq('niche', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🏢 Finance & Niche</button>
+            </div>
         </div>
 
         <div class="faq-accordion">
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>1. Do I need coding or technical skills to operate this system?</span>
+                    <span>1. Do I need coding or technical skills to operate OPC-TNC?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    Not at all! OPC-TNC provides an intuitive 3D Virtual Office Simulator canvas & a remote Telegram Control Bot in plain language. Our engineering team provides a 100% turnkey 48h setup so you don't need to write a single line of code. You simply give voice/text directives just like chatting with human employees.
+                    Not at all! OPC-TNC provides an intuitive 3D Virtual Office Canvas & a remote Telegram Control Bot in plain language. Our engineering team provides a 100% turnkey 48h setup so you don't need to write a single line of code. You simply give voice or text directives just like chatting with human team members.
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>2. Does my computer need to stay on 24/7? How do Tier 0 Local and Tiers 1-3 Cloud differ technically?</span>
+                    <span>2. Does my PC need to stay on 24/7? How do Tier 0 Local and Cloud Tiers differ?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin:0 0 8px 0;"><strong>• Tier 0 (Local 3D Experience):</strong> Simply keep your PC/Laptop plugged into power with an active Internet connection. The application runs 24/7 as a <i>Background Agent Service</i> even with your <strong>screen turned off (Standby / Sleep mode)</strong>. Powered by <strong>Secure Web Tunneling & Telegram Bot API</strong>, you can remotely control, assign tasks, and monitor your home PC AI Agents from any mobile phone or secondary laptop anywhere!</p>
-                    <p style="margin:0;"><strong>• Tiers 1, 2, 3 (Starter / Professional / Enterprise):</strong> 100% deployed on <strong>24/7 Cloud Infrastructure (Cloudflare & Dedicated Private Servers)</strong>. You can <strong>TURN OFF YOUR PC</strong>, unplug power, or travel overseas while your 6 AI Directors autonomously capture leads, send welcome emails, and reconcile VietQR/Stripe payments 24/7/365 without interruption.</p>
+                    <p style="margin:0 0 8px 0;"><strong>• Tier 0 (Local 3D Experience):</strong> Keep your PC/Laptop connected to power & internet. Runs 24/7 as a <i>Background Agent Service</i> even with screen off (Sleep mode). Web Tunnel & Telegram Bot API allow full mobile remote control.</p>
+                    <p style="margin:0;"><strong>• Tiers 1, 2, 3 (Cloud Tiers):</strong> Deployed 100% on <strong>24/7 Cloud Infrastructure (Cloudflare & Dedicated Private Servers)</strong>. Turn off your PC anytime while your 6 AI Directors autonomously capture leads, send emails, and reconcile transactions 24/7/365.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>3. What are the recurring monthly API token costs? Are there hidden fees?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    Running <strong>Tier 0 Local LLMs (Ollama)</strong> costs <strong>$0 in API fees</strong>! When running on 24/7 Cloud, our Hub-and-Spoke task delegation and <i>Prompt Caching</i> keep token costs extremely low (approx. $2 - $5 USD/month for all 6 AI Directors running continuously).
+                    Running <strong>Tier 0 Local LLMs (Ollama)</strong> costs <strong>$0 in API fees</strong>! On Cloud 24/7, Hub-and-Spoke delegation and <i>Prompt Caching</i> keep token costs extremely low (approx. $2 - $5 USD/month for all 6 AI Directors running continuously).
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>4. Is my business data and customer information secure?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    100% Isolated & Secure. OPC-TNC utilizes a <strong>Database-per-Tenant</strong> isolated vault architecture. All leads, CRM records, and business documents are stored directly in your private Google Drive / Obsidian Vault, completely inaccessible to any third parties.
+                    100% Isolated & Secure. OPC-TNC uses a <strong>Database-per-Tenant</strong> isolated vault architecture. All leads, CRM records, and business documents are stored directly in your private Google Drive / Obsidian Vault, completely inaccessible to any third parties.
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="niche">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>5. How does the AI CFO automated VietQR & Stripe reconciliation work?</span>
+                    <span>5. How does the AI CFO automated bank & VietQR / Stripe reconciliation work?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    When a customer scans a VietQR code or pays via Stripe USD, bank webhooks instantly trigger AI CFO. Within 3 seconds, AI CFO verifies payment memo, reconciles ledger, triggers 5-day Resend email sequence, and provisions instant VIP Google Drive & Discord/Zalo access automatically without manual checks.
+                    For Vietnam, payments utilize 24/7 VietQR Bank Transfer (MB Bank 0989890022 / SePAY Webhook). For Global markets, Stripe USD / PayPal is integrated. When a customer pays, bank webhooks instantly trigger AI CFO. Within 3 seconds, AI CFO verifies payment memo, reconciles ledger, triggers 5-day Resend email sequence, and provisions instant VIP Google Drive & Zalo/Discord access automatically.
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="ops">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>6. What ongoing support and maintenance do I receive after 48h setup?</span>
+                    <span>6. How does OPC-TNC solve real Accounting & E-Invoice pain points in Vietnam & Global SME?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Solves 3 major accounting headaches:<br>
+                    1. <i>E-Invoice Parsing:</i> Automatically parses XML/PDF invoices and verifies validity against tax authority databases to prevent invalid/canceled invoice risks.<br>
+                    2. <i>Tax Regulation Updates:</i> Tracks local tax decrees and regulations automatically, preventing compliance penalties.<br>
+                    3. <i>Bank Reconciliation:</i> Matches bank transfers directly to sales ledgers in 3 seconds.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="ops">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>7. How does OPC-TNC solve HR, Payroll & Employee Onboarding challenges?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Solves 3 critical HR bottlenecks:<br>
+                    1. <i>Payroll & Tax Calculations:</i> Automates complex KPI/commission payroll and personal income tax/insurance calculations.<br>
+                    2. <i>Contract Expiry Tracking:</i> Sends automated 15-day alerts before labor contract expirations to prevent legal disputes.<br>
+                    3. <i>24-Hour SOP Onboarding:</i> Equips new hires with an AI Assistant trained on company SOPs to answer workflow questions 24/7.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="tech">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>8. What ongoing support and maintenance do I receive after 48h setup?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
                     You get instant access to the VIP Source Code Group, direct 1:1 Telegram support with Founder Victor Chuyen, and weekly live AI coaching calls to get the latest Agent skills and prompts completely free!
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="sales">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>9. How does OPC-TNC apply to Sales and Lead Generation Pipelines?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Supports the full sales funnel (Demand → Lead → Consult → Offer → Close → Support → Upsell). Captures multi-channel leads, qualifies lead heat, generates discovery questions, automates personalized follow-ups, and alerts on stale leads.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="sales">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>10. How does OPC-TNC empower Marketing & Content Creation?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Transforms founder expertise into a repeatable content engine: Researches market questions, creates content pillars, writes hooks, generates short-form video scripts (Reels/TikTok), splits long videos into short posts, and connects content to Lead Magnets.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="edu">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>11. Can OPC-TNC be applied to Coaching and 1-1 Consulting?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Highly recommended! Maintains client profiles, summarizes client needs pre-call, generates post-call recaps automatically, tracks action item commitments, and builds an active case study library.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="edu">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>12. How is OPC-TNC used in Education & Training Centers?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    - For Educators: Structuring course modules, generating quiz questions, and personalizing learning paths.<br>
+                    - For Students: 24/7 AI learning assistant to search course documents, summarize lectures, create flashcards, and remind on due assignments.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="agency">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>13. Is OPC-TNC suitable for Freelancers and Agencies?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Solves multi-client project management. Isolates workspace per client, stores project briefs & delivery checklists, tracks deadlines, generates weekly status reports, and builds a Repeatable Service System.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="agency">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>14. How does OPC-TNC streamline Customer Support & CSKH?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Searches internal SOP knowledge bases upon customer inquiry, proposes draft responses for human agent approval in 5 seconds, alerts on unhandled messages, and detects early Churn Risk signals.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="ops">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>15. How does OPC-TNC manage Projects and Team Task Delegation?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Converts plain voice/text directives into structured 6-part weekly project status reports: Completed tasks, In-progress tasks, Delayed tasks, Bottlenecks, Risk assessments, and Proposed next actions.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="niche">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>16. How is OPC-TNC applied in Real Estate & E-Commerce?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    - Real Estate: Matches buyer preferences to property listings, schedules property viewings, and automates follow-ups.<br>
+                    - E-Commerce: Batch generates SEO product descriptions, categorizes inbox queries, tracks orders, and runs automated remarketing campaigns.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="niche">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>17. Is OPC-TNC suitable for Medical, Legal & Sensitive Industries?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Supports internal document search & dossier summarization. Core Rule: AI acts as a preparation & synthesis assistant — human domain experts retain final decision authority.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="tech">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>18. 5 Self-Assessment Questions to evaluate if OPC-TNC is right for your business?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    1. Are your core business workflows repetitive?<br>
+                    2. Do you waste time searching for past documents or chat logs?<br>
+                    3. Do you manage numerous clients or projects simultaneously?<br>
+                    4. Do you frequently miss deadlines or forget client follow-ups?<br>
+                    5. Do you want a scalable SYSTEM instead of relying on personal memory?<br>
+                    👉 <strong>If you answer "YES" to 3+ questions, your business is 100% ready to deploy OPC-TNC!</strong>
                 </div>
             </div>
         </div>

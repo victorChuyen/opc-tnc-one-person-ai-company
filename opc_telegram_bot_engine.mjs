@@ -1,7 +1,7 @@
 // OPC-TNC Telegram Bot Engine (@OPCTNC_bot)
 // Integrated with Management Channel & Group (-1001812138135)
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8257466148:AAGjwgPgoGWMknWizOvAmQ_78RaJX60owz8';
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const CHANNEL_ID = process.env.TELEGRAM_CHANNEL_ID || '-1001812138135';
 const GROUP_ID = process.env.TELEGRAM_GROUP_ID || '-1001812138135';
 const API_BASE = `https://api.telegram.org/bot${BOT_TOKEN}`;

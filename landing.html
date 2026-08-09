@@ -9,9 +9,15 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://ai.breaths.live/vi">
 
-    <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" href="LOGO-OPC.png">
-    <link rel="apple-touch-icon" href="LOGO-OPC.png">
+    <!-- Favicon & Icons (Local & Online Link) -->
+    <link rel="icon" type="image/gif" href="Favicon.gif">
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO-OPC.png">
+    <link rel="shortcut icon" href="Favicon.gif">
+    <link rel="apple-touch-icon" href="https://ai.breaths.live/LOGO-OPC.png">
+
+    <!-- Meta Pixel & Conversions API Tracking -->
+    <script src="js/meta_pixel.js"></script>
+    <script src="js/tv_ticker.js"></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -38,7 +44,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/landing.css">
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) with Image SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -46,6 +52,8 @@
         "name": "OPC-TNC AI Agentic Company Simulator",
         "operatingSystem": "All",
         "applicationCategory": "BusinessApplication",
+        "image": "https://ai.breaths.live/tnc_hero_bg.png",
+        "logo": "https://ai.breaths.live/LOGO-OPC.png",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -53,7 +61,15 @@
         },
         "author": {
             "@type": "Person",
-            "name": "Trần Ngọc Chuyền (Victor Chuyen)"
+            "name": "Trần Ngọc Chuyền (Victor Chuyen)",
+            "url": "https://ai.breaths.live"
+        },
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://ai.breaths.live/tnc_hero_bg.png",
+            "width": 1672,
+            "height": 941,
+            "caption": "Bộ Tài Liệu & Hệ Thống 6 Giám Đốc AI OPC-TNC"
         }
     }
     </script>
@@ -320,13 +336,24 @@
     <!-- FAQ Accordion Section -->
     <section class="faq-section">
         <div class="faq-header">
-            <span style="background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;">❓ GIẢI ĐÁP CẤU TRÚC KỸ THUẬT B2B</span>
+            <span style="background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;">❓ HỎI ĐÁP TOÀN DIỆN KỸ THUẬT & ỨNG DỤNG NGHÀNH NGHỀ</span>
             <h2 style="font-size:24px;font-weight:900;color:#0f172a;margin:8px 0 4px 0;">CÂU HỎI THƯỜNG GẶP (FAQ)</h2>
-            <p style="font-size:13px;color:#64748b;margin:0;">Giải đáp chi tiết cấu trúc kỹ thuật & cơ chế vận hành của Doanh Nghiệp AI OPC-TNC:</p>
+            <p style="font-size:13px;color:#64748b;margin:0;">Giải đáp chi tiết cấu trúc kỹ thuật & khả năng ứng dụng thực tế cho từng ngành nghề:</p>
+            
+            <div class="faq-tabs-container" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0 8px 0;">
+                <button class="faq-tab-btn" onclick="filterFaq('all', this)" style="background:#2563eb;color:#ffffff;border:none;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">Tất Cả (18 Câu)</button>
+                <button class="faq-tab-btn" onclick="filterFaq('tech', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🔧 Kỹ Thuật & Hạ Tầng</button>
+                <button class="faq-tab-btn" onclick="filterFaq('sales', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🚀 Sales & Content</button>
+                <button class="faq-tab-btn" onclick="filterFaq('edu', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🎓 Coaching & Đào Tạo</button>
+                <button class="faq-tab-btn" onclick="filterFaq('agency', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">💼 Agency & CSKH</button>
+                <button class="faq-tab-btn" onclick="filterFaq('ops', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">⚙️ Quản Trị & HR</button>
+                <button class="faq-tab-btn" onclick="filterFaq('niche', this)" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">🏢 Tài Chính & BĐS</button>
+            </div>
         </div>
 
         <div class="faq-accordion">
-            <div class="faq-item">
+            <!-- Technical FAQs -->
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>1. Tôi không biết lập trình hay kỹ thuật code thì có tự dùng được không?</span>
                     <span class="faq-icon">▼</span>
@@ -336,7 +363,7 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>2. Máy tính của tôi có cần bật 24/7 không? Gói Local 0 và Gói Cloud 1, 2, 3 khác nhau ra sao?</span>
                     <span class="faq-icon">▼</span>
@@ -347,7 +374,7 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>3. Chi phí API chạy AI hàng tháng là bao nhiêu? Có bị phát sinh chi phí ẩn không?</span>
                     <span class="faq-icon">▼</span>
@@ -357,7 +384,7 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>4. Dữ liệu khách hàng và thông tin kinh doanh của tôi được bảo mật như thế nào?</span>
                     <span class="faq-icon">▼</span>
@@ -367,23 +394,169 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="tech">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>5. Tính năng Kế toán AI CFO tự động gạch nợ VietQR / Stripe hoạt động ra sao?</span>
+                    <span>5. Tính năng Kế toán AI CFO tự động đối soát VietQR 24/7 tại Việt Nam hoạt động ra sao?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    Khi khách hàng quét mã VietQR chuyển khoản (MB Bank 0989890022) hoặc thanh toán Stripe USD, Webhook ngân hàng sẽ tự động gửi tín hiệu cho AI CFO. Trong 3 giây, AI CFO đối soát nội dung, tự động gạch nợ, kích hoạt chuỗi email chào mừng qua Resend API và cấp quyền VIP Google Drive & Zalo Group cho khách mà bạn không cần check thủ công.
+                    Tại thị trường Việt Nam, khách hàng không dùng Stripe mà sử dụng <strong>Chuyển khoản VietQR 24/7 (MB Bank 0989890022 / SePAY Webhook)</strong>. Khi khách quét mã QR chuyển khoản, Webhook ngân hàng tự động bắn tín hiệu cho AI CFO. Trong 3 giây, AI CFO đọc cú pháp, đối soát tiền về, tự động gạch nợ trên hệ thống, kích hoạt email chào mừng qua Resend API và cấp quyền VIP Google Drive & Zalo Group tự động 24/7 mà bạn không cần check tay thủ công.
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-faq-cat="ops">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>6. Sau khi bàn giao 48h, tôi sẽ nhận được sự hỗ trợ và bảo trì như thế nào?</span>
+                    <span>6. OPC-TNC giải quyết những NỖI ĐAU CỤ THỂ NÀO của Kế toán Thuế tại Việt Nam?</span>
                     <span class="faq-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    Bạn được tham gia Nhóm Zalo Mã Nguồn VIP, hỗ trợ trực tiếp 1:1 qua Telegram với Founder Victor Chuyen, và tham gia các buổi Coach AI định kỳ hàng tuần để cập nhật các Prompt & Agent Skills mới nhất hoàn toàn miễn phí.
+                    Kế toán tại Việt Nam thường đau đầu với 3 bài toán lớn:<br>
+                    1. <i>Hóa đơn điện tử (E-Invoice):</i> Phải bóc tách thủ công hàng trăm hóa đơn XML/PDF, rủi ro nhập sai hoặc dính phải hóa đơn từ doanh nghiệp bỏ trốn/tạm ngừng hoạt động.<br>
+                    2. <i>Chính sách Thuế thay đổi liên tục:</i> Nghị định 123, Thông tư 78, Luật thuế GTGT/TNCN thay đổi khiến kế toán sợ bị phạt hành chính.<br>
+                    3. <i>Dòng tiền rải rác:</i> Chuyển khoản rải rác không khớp với hóa đơn xuất ra.<br>
+                    👉 <strong>AI CFO hỗ trợ:</strong> Tự động đọc file hóa đơn XML, tra cứu mã hóa đơn trên cổng Cục Thuế, cảnh báo hóa đơn rủi ro, cập nhật quy định thuế mới và đối soát VietQR tự động 24/7.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="ops">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>7. OPC-TNC giải quyết bài toán NỖI ĐAU NHÂN SỰ (HR & Payroll) tại Việt Nam ra sao?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Nhân sự (HR) gặp 3 rào cản nhức nhối:<br>
+                    1. <i>Tính lương & Thuế TNCN / BHXH:</i> Quy định BHXH & mức giảm trừ gia cảnh thuế TNCN cập nhật liên tục; tính lương KPI/hoa hồng trên Excel dễ sai sót gây khiếu nại.<br>
+                    2. <i>Pháp lý Hợp đồng lao động:</i> Quên thời hạn tái ký HĐLĐ thử việc/chính thức, rủi ro tranh chấp lao động.<br>
+                    3. <i>Onboarding đào tạo nhân sự mới:</i> Mất 2-4 tuần nhân sự mới mới quen việc vì thiếu SOP.<br>
+                    👉 <strong>AI CHRO hỗ trợ:</strong> Tự động hóa bảng tính lương KPI & thuế TNCN/BHXH theo luật hiện hành, cảnh báo hết hạn HĐLĐ, trích xuất CV ứng viên và cung cấp Trợ lý AI đào tạo SOP nội bộ cho nhân sự mới trong 24h.
+                </div>
+            </div>
+
+            <!-- Industry Application FAQs -->
+            <div class="faq-item" data-faq-cat="sales">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>7. OPC-TNC ứng dụng trong Kinh doanh và Bán hàng như thế nào?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    OPC-TNC hỗ trợ toàn bộ pipeline bán hàng (Nhu cầu → Lead → Tư vấn → Gửi Offer → Chốt đơn → Chăm sóc → Upsell). AI giúp thu thập lead đa kênh, phân loại nóng/ấm/lạnh, gợi ý câu hỏi discovery, tóm tắt lịch sử trao đổi, tự động tạo tin nhắn follow-up, nhắc lịch chăm sóc và phát hiện các lead bị bỏ quên.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="sales">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>8. OPC-TNC hỗ trợ Marketing và Content Creator ra sao?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Biến kiến thức & kinh nghiệm của người sáng lập thành hệ thống content tái sử dụng: Nghiên cứu câu hỏi thị trường, lập Content Pillar, viết hook, soạn bài Facebook, viết kịch bản livestream/video ngắn (Shorts/TikTok), tách 1 video dài thành 10 bài đăng ngắn và gắn bài viết với Lead Magnet/CTA thu lead tự động.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="edu">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>9. OPC-TNC có thể ứng dụng cho Tư vấn và Coaching 1-1 không?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Rất phù hợp! Hệ thống giúp lưu hồ sơ khách hàng, AI tóm tắt nhu cầu trước buổi gọi, tự động tạo bản Recap sau cuộc họp gửi cho khách, đề xuất bài tập/cam kết hành động, nhắc lịch follow-up kiểm tra tiến độ và xây dựng thư viện case study thực chiến.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="edu">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>10. OPC-TNC dùng cho Giáo dục và Đào tạo như thế nào?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    - Với người dạy: Xây giáo trình, chia bài học thành module, tạo câu hỏi kiểm tra, cá nhân hóa nội dung theo trình độ & quản lý phản hồi học viên.<br>
+                    - Với học viên: Trợ lý AI tra cứu kiến thức trong tài liệu khóa học 24/7, tóm tắt bài giảng, tạo flashcard ôn tập & nhắc lịch nộp bài tập chưa xong.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="agency">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>11. OPC-TNC phù hợp với Freelancer và Agency không?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Giải quyết triệt để vấn đề quản lý nhiều dự án cùng lúc. OPC-TNC giúp tạo workspace riêng cho từng client, lưu brief/checklist bàn giao, theo dõi deadline, tự động xuất báo cáo tiến độ tuần và xây dựng hệ thống dịch vụ có thể lặp lại (Repeatable Service System).
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="agency">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>12. OPC-TNC hỗ trợ Chăm sóc Khách hàng (CSKH) ra sao?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Khi khách hàng thắc mắc, AI tự động tra cứu trong Kho SOP nội bộ, đề xuất câu trả lời chuẩn xác cho nhân viên duyệt gửi trong 5 giây, nhắc khách chưa phản hồi và cảnh báo sớm các khách hàng có nguy cơ rời bỏ (Churn Risk).
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="ops">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>13. OPC-TNC ứng dụng trong Tuyển dụng và Nhân sự (HR) như thế nào?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    AI tự động tiếp nhận & trích xuất thông tin CV, so sánh với tiêu chí JD, chấm điểm sơ bộ, đề xuất câu hỏi phỏng vấn xoáy vào điểm yếu ứng viên, soạn email phản hồi và kích hoạt Checklist Onboarding cho nhân viên mới.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="ops">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>14. OPC-TNC dùng cho Quản lý Dự án (Project Management) ra sao?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Biến chỉ thị bằng giọng nói/tin nhắn thành báo cáo dự án tuần 6 phần: Việc đã hoàn thành, Việc đang làm, Task trễ deadline, Điểm nghẽn (Bottleneck), Đánh giá rủi ro và Hành động đề xuất tiếp theo.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="niche">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>15. OPC-TNC có thể dùng trong Tài chính & Kế toán không?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    AI CFO tự động đối soát VietQR / Stripe 3 giây gạch nợ, phân loại thu chi theo dự án, nhắc hạn công nợ và trả lời nhanh các câu hỏi quản trị như khoản chi tăng bất thường hay dự án vượt ngân sách.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="niche">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>16. OPC-TNC ứng dụng cho Bất Động Sản & E-Commerce như thế nào?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    - BĐS: Khớp nối nhu cầu/ngân sách khách hàng với danh mục sản phẩm, đặt lịch xem nhà và tạo kịch bản follow-up.<br>
+                    - E-commerce: Viết mô tả sản phẩm SEO hàng loạt, phân loại inbox/comment, theo dõi đơn hàng và tạo chiến dịch bán lại (Remarketing) cho khách cũ.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="niche">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>17. OPC-TNC có phù hợp với Y tế, Pháp lý hoặc ngành nhạy cảm không?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Có thể hỗ trợ tra cứu & tóm tắt hồ sơ tài liệu nội bộ. Nguyên tắc bất biến: AI chỉ làm trợ lý chuẩn bị & tổng hợp dữ liệu, Chuyên gia con người là người đưa ra quyết định cuối cùng.
+                </div>
+            </div>
+
+            <div class="faq-item" data-faq-cat="tech">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>18. 5 Câu hỏi giúp tôi tự đánh giá doanh nghiệp của mình có nên triển khai OPC-TNC không?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    1. Công việc của bạn có nhiều bước lặp lại không?<br>
+                    2. Bạn có thường xuyên tốn thời gian tìm tài liệu/tin nhắn cũ không?<br>
+                    3. Bạn có số lượng lớn khách hàng hoặc dự án cần theo dõi không?<br>
+                    4. Bạn có thường xuyên trễ deadline hoặc quên follow-up không?<br>
+                    5. Bạn có muốn xây dựng HỆ THỐNG vận hành thay vì phụ thuộc trí nhớ cá nhân không?<br>
+                    👉 <strong>Nếu có 3/5 câu trả lời "CÓ", doanh nghiệp của bạn cực kỳ phù hợp để bắt đầu ngay!</strong>
                 </div>
             </div>
         </div>

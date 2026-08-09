@@ -1,4 +1,5 @@
-const BOT_TOKEN = "8257466148:AAGjwgPgoGWMknWizOvAmQ_78RaJX60owz8";
+import 'dotenv/config';
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 
 async function sendTelegramMessage(chatId, text, options = {}) {
   try {

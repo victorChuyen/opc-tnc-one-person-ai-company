@@ -147,6 +147,11 @@ export function initOtoModal(defaultAmount = 500000) {
         }
         if (modal) modal.classList.add('active');
         startOtoTimer();
+
+        // Fire Meta Pixel InitiateCheckout Event
+        if (window.OPCMetaTracker) {
+            window.OPCMetaTracker.trackInitiateCheckout('OPC_VIP_500K', amount);
+        }
     };
 
     window.skipOtoToZalo = function() {
@@ -221,6 +226,11 @@ export function initLeadForm(config = { lang: 'vi', segment: 'VIETNAM_DOMESTIC' 
                     lang: config.lang 
                 })
             });
+
+            // Fire Meta Pixel & CAPI Lead Event
+            if (window.OPCMetaTracker) {
+                window.OPCMetaTracker.trackLead({ name, phone, email });
+            }
         } catch (err) {
             console.error('[LEAD SUBMIT ERROR]', err);
         } finally {
@@ -288,7 +298,7 @@ export async function fetchLiveLeadsTicker(tickerId = 'live-ticker', lang = 'vi'
     }
 }
 
-/* ── FAQ Interactive Accordion Handler ── */
+/* ── FAQ Interactive Accordion & Category Filter Handler ── */
 export function initFaqAccordion() {
     window.toggleFaq = function(element) {
         const item = element.parentElement;
@@ -303,6 +313,28 @@ export function initFaqAccordion() {
         if (!isActive) {
             item.classList.add('active');
         }
+    };
+
+    window.filterFaq = function(category, btn) {
+        document.querySelectorAll('.faq-tab-btn').forEach(b => {
+            b.style.background = '#f1f5f9';
+            b.style.color = '#334155';
+            b.style.border = '1px solid #cbd5e1';
+        });
+        if (btn) {
+            btn.style.background = '#2563eb';
+            btn.style.color = '#ffffff';
+            btn.style.border = 'none';
+        }
+
+        document.querySelectorAll('.faq-item').forEach(el => {
+            const cat = el.getAttribute('data-faq-cat') || 'tech';
+            if (category === 'all' || cat === category || cat.includes(category)) {
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'none';
+            }
+        });
     };
 }
 

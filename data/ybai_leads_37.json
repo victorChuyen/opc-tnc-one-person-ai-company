@@ -1,77 +1,5 @@
 [
   {
-    "id": "LEAD-1786251861390",
-    "name": "Tuấn lương",
-    "phone": "0919431722",
-    "email": "tuanluong.51pm1@gmail.com",
-    "business": "SME Business",
-    "timestamp": "2026-08-09T05:04:21.392Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786201378820",
-    "name": "Alex Hormori",
-    "phone": "1458764328",
-    "email": "coach.chuyen@gmail.com",
-    "business": "Agency Owner / Solopreneur",
-    "timestamp": "2026-08-08T15:02:58.821Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786201045714",
-    "name": "Lê Văn Phụng QA Test",
-    "phone": "0979034798",
-    "email": "gdkd.3t@gmail.com",
-    "business": "Mô hình OPC 1 Người",
-    "timestamp": "2026-08-08T14:57:25.715Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786191502292",
-    "name": "Lê Văn Phụng",
-    "phone": "0979034798",
-    "email": "tncsharetools@gmail.com",
-    "business": "Agency / Freelancer",
-    "timestamp": "2026-08-08T12:18:22.293Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786179126266",
-    "name": "LUCKY",
-    "phone": "0869356799",
-    "email": "TNC.CANVA@GMAIL.COM",
-    "business": "SME Business",
-    "timestamp": "2026-08-08T08:52:06.272Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786169612581",
-    "name": "HOÀNG NGỌC LAN",
-    "phone": "0346611825",
-    "email": "getyourguidemedia@gmail.com",
-    "business": "SME / Chủ Doanh Nghiệp",
-    "timestamp": "2026-08-08T06:13:32.583Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786161691381",
-    "name": "Nguyễn Thiết Hừng",
-    "phone": "0332356009",
-    "email": "hungnguyenthiet2001@gmail.com",
-    "business": "SME Business",
-    "timestamp": "2026-08-08T04:01:31.385Z",
-    "status": "QUALIFIED"
-  },
-  {
-    "id": "LEAD-1786160981861",
-    "name": "Nguyễn Thị Xuân Phương",
-    "phone": "0984355305",
-    "email": "kiemtienvuive837@gmail.com",
-    "business": "Agency / Freelancer",
-    "timestamp": "2026-08-08T03:49:41.867Z",
-    "status": "QUALIFIED"
-  },
-  {
     "id": "LEAD-YBAI-567890",
     "stt": 1,
     "name": "MONEY AI",
@@ -82,10 +10,9 @@
     "ambassador_code": "567890",
     "timestamp": "2026-08-09T03:48:31.675Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:51:46.866Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-bzeu9k",
@@ -98,10 +25,9 @@
     "ambassador_code": "bzeu9k",
     "timestamp": "2026-08-09T03:48:31.699Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:51:55.376Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-968968",
@@ -114,10 +40,9 @@
     "ambassador_code": "968968",
     "timestamp": "2026-08-09T03:48:31.699Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:52:05.191Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-ph8kod",
@@ -130,10 +55,9 @@
     "ambassador_code": "ph8kod",
     "timestamp": "2026-08-09T03:48:31.699Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:52:14.017Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-xw16ou",
@@ -146,10 +70,9 @@
     "ambassador_code": "xw16ou",
     "timestamp": "2026-08-09T03:48:31.699Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:52:27.519Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-tf28q2",
@@ -162,10 +85,9 @@
     "ambassador_code": "tf28q2",
     "timestamp": "2026-08-09T03:48:31.699Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:52:35.963Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-e61gcb",
@@ -178,10 +100,9 @@
     "ambassador_code": "e61gcb",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:52:44.380Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-ufkp9q",
@@ -194,10 +115,9 @@
     "ambassador_code": "ufkp9q",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:52:54.269Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-a6lpon",
@@ -210,10 +130,9 @@
     "ambassador_code": "a6lpon",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:03.134Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-gjbeq8",
@@ -226,10 +145,9 @@
     "ambassador_code": "gjbeq8",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:12.637Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-fh2dez",
@@ -242,10 +160,9 @@
     "ambassador_code": "fh2dez",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:21.138Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-smdqxc",
@@ -258,10 +175,9 @@
     "ambassador_code": "smdqxc",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:29.594Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-dtfqrj",
@@ -274,10 +190,9 @@
     "ambassador_code": "dtfqrj",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:38.764Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-rlqawr",
@@ -290,10 +205,9 @@
     "ambassador_code": "rlqawr",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:47.232Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-beorfc",
@@ -306,10 +220,9 @@
     "ambassador_code": "beorfc",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:53:55.700Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-tn6l4s",
@@ -322,10 +235,9 @@
     "ambassador_code": "tn6l4s",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:54:04.132Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-qaxofu",
@@ -338,10 +250,9 @@
     "ambassador_code": "qaxofu",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:54:12.550Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-wxbkr3",
@@ -354,10 +265,9 @@
     "ambassador_code": "wxbkr3",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:54:21.063Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-hfcpbw",
@@ -370,10 +280,9 @@
     "ambassador_code": "hfcpbw",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:54:34.288Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-r7qphv",
@@ -386,10 +295,9 @@
     "ambassador_code": "r7qphv",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:54:42.707Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-o3rxwm",
@@ -402,10 +310,9 @@
     "ambassador_code": "o3rxwm",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:54:51.846Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-nw2vaq",
@@ -418,10 +325,9 @@
     "ambassador_code": "nw2vaq",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:55:00.329Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-tkwqh4",
@@ -434,10 +340,9 @@
     "ambassador_code": "tkwqh4",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:55:11.298Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-xji1hf",
@@ -450,10 +355,9 @@
     "ambassador_code": "xji1hf",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:55:31.865Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-yuzsry",
@@ -466,10 +370,9 @@
     "ambassador_code": "yuzsry",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:55:40.286Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-pawgkw",
@@ -482,10 +385,9 @@
     "ambassador_code": "pawgkw",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:55:51.556Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-sci69m",
@@ -498,10 +400,9 @@
     "ambassador_code": "sci69m",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:07.556Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-whccbv",
@@ -514,10 +415,9 @@
     "ambassador_code": "whccbv",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:16.057Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-ujecpn",
@@ -530,10 +430,9 @@
     "ambassador_code": "ujecpn",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:24.558Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-8hw48j",
@@ -546,10 +445,9 @@
     "ambassador_code": "8hw48j",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:33.707Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-itw1qs",
@@ -562,10 +460,9 @@
     "ambassador_code": "itw1qs",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:42.167Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-dwtvn8",
@@ -578,10 +475,9 @@
     "ambassador_code": "dwtvn8",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:50.748Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-rm77kl",
@@ -594,10 +490,9 @@
     "ambassador_code": "rm77kl",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:56:59.154Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-zqkar0",
@@ -610,10 +505,9 @@
     "ambassador_code": "zqkar0",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:57:07.591Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-0azugr",
@@ -626,10 +520,9 @@
     "ambassador_code": "0azugr",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:57:16.135Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-lvmhmf",
@@ -642,10 +535,9 @@
     "ambassador_code": "lvmhmf",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:57:25.444Z"
+    "last_opened_at": null
   },
   {
     "id": "LEAD-YBAI-uvqvkw",
@@ -658,9 +550,8 @@
     "ambassador_code": "uvqvkw",
     "timestamp": "2026-08-09T03:48:31.700Z",
     "status": "WARM",
-    "step": "EMAIL_1_SENT",
+    "step": "NOT_SENT",
     "open_count": 0,
-    "last_opened_at": null,
-    "email_1_sent_at": "2026-08-09T03:57:33.922Z"
+    "last_opened_at": null
   }
 ]

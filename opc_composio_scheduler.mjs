@@ -82,8 +82,15 @@ export async function scheduleComposioPost(postItem, timeSlot) {
     }, CONNECTED_ACCOUNT_1);
   }
 
-  // Dispatch to Connected Account 2 (LinkedIn / Facebook)
-  if (postItem.platform.includes('Facebook') || postItem.platform.includes('LinkedIn')) {
+  // Dispatch to Connected Account 2 (Facebook Fanpage / LinkedIn: ca_RC-qYfv97MI6)
+  if (postItem.platform.includes('Facebook')) {
+    await executeComposioAction('FACEBOOK_CREATE_POST', {
+      message: contentMsg,
+      link: 'https://ai.breaths.live/checkout'
+    }, CONNECTED_ACCOUNT_2);
+  }
+
+  if (postItem.platform.includes('LinkedIn')) {
     await executeComposioAction('LINKEDIN_CREATE_POST', {
       text: contentMsg
     }, CONNECTED_ACCOUNT_2);

@@ -32,23 +32,65 @@ const PAYPAL_ME = process.env.PAYPAL_ME_LINK || 'https://PayPal.Me/victorchuyen'
 const GITHUB_REPO = 'https://github.com/victorChuyen/opc-tnc-one-person-ai-company';
 const GITHUB_STAR = 'https://github.com/victorChuyen/opc-tnc-one-person-ai-company/stargazers';
 
+// 10 Subdomain Pool Configuration (opc1.breaths.live -> opc10.breaths.live)
+export const SUBDOMAIN_POOL = Array.from({ length: 10 }, (_, i) => {
+  const index = i + 1;
+  const subdomain = `opc${index}.breaths.live`;
+  return {
+    id: `opc${index}`,
+    subdomain: subdomain,
+    sender: `🚀 OPC TNC | One Person Company <victor@${subdomain}>`,
+    apiKey: process.env[`RESEND_API_KEY_OPC${index}`] || process.env.RESEND_API_KEY || ''
+  };
+});
+
+let poolIndex = 0;
+
+/**
+ * Get Next Active Subdomain Node from Pool (Round-Robin)
+ */
+export function getNextPoolNode() {
+  const activeNodes = SUBDOMAIN_POOL.filter(n => n.apiKey && n.apiKey !== 'your_resend_api_key_here');
+  if (activeNodes.length === 0) {
+    return {
+      id: 'default',
+      subdomain: 'breaths.live',
+      sender: DOMAIN_SENDER,
+      apiKey: RESEND_API_KEY
+    };
+  }
+  const node = activeNodes[poolIndex % activeNodes.length];
+  poolIndex++;
+  return node;
+}
+
 /**
  * Send Email via Resend REST API (Native Fetch - Zero Dependency)
+ * Supports Multi-Subdomain Rotation (opc1..opc10.breaths.live)
  */
-export async function sendResendEmail({ to, subject, html }) {
+export async function sendResendEmail({ to, cc, subject, html, poolNode = null }) {
   try {
+    const node = poolNode || getNextPoolNode();
+    const payload = {
+      from: node.sender,
+      to: Array.isArray(to) ? to : [to],
+      subject: subject,
+      html: html
+    };
+
+    if (cc) {
+      payload.cc = Array.isArray(cc) ? cc : [cc];
+    }
+
+    console.log(`[EMAIL DISPATCH] Using Pool Subdomain [${node.subdomain}] for target ${to}`);
+
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
+        'Authorization': `Bearer ${node.apiKey}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        from: DOMAIN_SENDER,
-        to: Array.isArray(to) ? to : [to],
-        subject: subject,
-        html: html
-      })
+      body: JSON.stringify(payload)
     });
 
     const data = await res.json();

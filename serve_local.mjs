@@ -1,6 +1,7 @@
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { socialEngine } from './opc_facebook_youtube_engine.mjs';
 import { triggerLeadWelcomeEmail, dispatchSequenceStep } from './opc_resend_email_engine.mjs';
@@ -42,6 +43,7 @@ const MIME_TYPES = {
     '.png': 'image/png',
     '.jpg': 'image/jpeg',
     '.webp': 'image/webp',
+    '.gif': 'image/gif',
     '.ico': 'image/x-icon',
     '.json': 'application/json',
     '.svg': 'image/svg+xml'
@@ -109,6 +111,110 @@ const server = http.createServer((req, res) => {
             } else {
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(data);
+            }
+        });
+        return;
+    }
+
+    if (req.url === '/api/faq' && req.method === 'GET') {
+        const faqPath = path.join(__dirname, 'data', 'faq_matrix.json');
+        fs.readFile(faqPath, 'utf8', (err, data) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: false, message: err.message }));
+            } else {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(data);
+            }
+        });
+        return;
+    }
+
+    // Dynamic TV Breaking News Ticker Endpoint
+    if (req.url === '/api/ticker/news' && req.method === 'GET') {
+        let leadsCount = 44;
+        let ybaiSentCount = 37;
+        try {
+            const dbPath = path.join(__dirname, 'data', 'leads_db.json');
+            if (fs.existsSync(dbPath)) {
+                const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+                leadsCount = db.length;
+                ybaiSentCount = db.filter(l => l.step === 'EMAIL_1_SENT').length;
+            }
+        } catch (e) {}
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+            success: true,
+            updated_at: new Date().toISOString(),
+            news: [
+                { tag: '🔴 LIVE 24/7', text: `Hệ thống AI Squad vừa gửi thành công ${ybaiSentCount} Email Outreach cá nhân hóa cho Danh sách Đại sứ YBAI!` },
+                { tag: '⚡ KẾ HOẠCH HOT', text: 'AI CFO đã tích hợp tự động đối soát VietQR MB Bank 0989890022 gạch nợ tự động trong 3 giây!' },
+                { tag: '🚀 BÁO CÁO REALTIME', text: `Tổng cộng ${leadsCount} Leads đã được đồng bộ trực tiếp lên hệ thống Google Sheets & Database!` },
+                { tag: '🎓 AI CHRO', text: 'AI CHRO đang tự động hóa tính lương KPI, thuế TNCN/BHXH và đào tạo SOP nhân sự mới trong 24h!' },
+                { tag: '🔥 ƯU ĐÃI KHAN HIẾM', text: 'Còn 01 Slot Coach 1:1 trực tiếp cùng Founder Victor Chuyen tuần này! Đặt lịch tại cal.com/victorchuyen/coachai' }
+            ]
+        }));
+        return;
+    }
+
+    // Meta Conversions API (CAPI) Proxy Endpoint
+    if (req.url === '/api/meta/capi' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => body += chunk.toString());
+        req.on('end', async () => {
+            try {
+                const payload = JSON.parse(body || '{}');
+                const eventName = payload.event_name || 'PageView';
+                const eventId = payload.event_id || `EVT-${Date.now()}`;
+                const rawUser = payload.user_data || {};
+                const customData = payload.custom_data || {};
+
+                const hashValue = (val) => val ? crypto.createHash('sha256').update(val.toString().trim().toLowerCase()).digest('hex') : undefined;
+
+                const hashedUserData = {
+                    em: rawUser.email ? [hashValue(rawUser.email)] : undefined,
+                    ph: rawUser.phone ? [hashValue(rawUser.phone)] : undefined,
+                    fn: rawUser.name ? [hashValue(rawUser.name)] : undefined,
+                    client_ip_address: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+                    client_user_agent: req.headers['user-agent']
+                };
+
+                const capiEvent = {
+                    event_name: eventName,
+                    event_time: payload.timestamp || Math.floor(Date.now() / 1000),
+                    event_id: eventId,
+                    event_source_url: payload.event_source_url || 'https://ai.breaths.live',
+                    action_source: 'website',
+                    user_data: hashedUserData,
+                    custom_data: customData
+                };
+
+                console.log(`[META CAPI SERVER-SIDE EVENT] ${eventName}`, { eventId, customData });
+
+                const pixelId = process.env.META_PIXEL_ID || '1082547193645028';
+                const capiToken = process.env.META_CAPI_ACCESS_TOKEN;
+                let capiResult = { status: 'LOGGED_LOCALLY', eventId };
+
+                if (capiToken) {
+                    try {
+                        const metaUrl = `https://graph.facebook.com/v19.0/${pixelId}/events?access_token=${capiToken}`;
+                        const metaRes = await fetch(metaUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ data: [capiEvent] })
+                        });
+                        capiResult = await metaRes.json();
+                    } catch (err) {
+                        console.error('[META CAPI GRAPH API ERROR]', err.message);
+                    }
+                }
+
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: true, eventName, eventId, capiResult }));
+            } catch (e) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: false, message: e.message }));
             }
         });
         return;
@@ -403,6 +509,17 @@ const server = http.createServer((req, res) => {
     }
     if (req.url === '/app' || req.url === '/3d') {
         req.url = '/index.html';
+    }
+    if (req.url === '/favicon.ico' || req.url === '/favicon.gif' || req.url === '/Favicon.gif' || req.url === '/favicon.png') {
+        const iconName = req.url.replace('/', '');
+        const targetPath = path.join(__dirname, iconName);
+        if (fs.existsSync(targetPath)) {
+            req.url = '/' + iconName;
+        } else if (fs.existsSync(path.join(__dirname, 'Favicon.gif'))) {
+            req.url = '/Favicon.gif';
+        } else {
+            req.url = '/LOGO-OPC.png';
+        }
     }
 
     // Smart Device Router for Root / Domain Access

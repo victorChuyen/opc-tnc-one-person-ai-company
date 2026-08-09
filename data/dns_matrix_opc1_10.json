@@ -1,0 +1,192 @@
+[
+  {
+    "subdomain_id": "OPC-1",
+    "subdomain_name": "opc1.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc1.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC1",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc1.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc1.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc1.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-2",
+    "subdomain_name": "opc2.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc2.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC2",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc2.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc2.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc2.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-3",
+    "subdomain_name": "opc3.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc3.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC3",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc3.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc3.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc3.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-4",
+    "subdomain_name": "opc4.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc4.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC4",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc4.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc4.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc4.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-5",
+    "subdomain_name": "opc5.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc5.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC5",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc5.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc5.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc5.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-6",
+    "subdomain_name": "opc6.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc6.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC6",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc6.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc6.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc6.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-7",
+    "subdomain_name": "opc7.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc7.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC7",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc7.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc7.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc7.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-8",
+    "subdomain_name": "opc8.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc8.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC8",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc8.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc8.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc8.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-9",
+    "subdomain_name": "opc9.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc9.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC9",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc9.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc9.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc9.breaths.live trên Resend Dashboard."
+    }
+  },
+  {
+    "subdomain_id": "OPC-10",
+    "subdomain_name": "opc10.breaths.live",
+    "sender_identity": "🚀 OPC TNC | One Person Company <victor@opc10.breaths.live>",
+    "env_key": "RESEND_API_KEY_OPC10",
+    "dns_records": {
+      "spf_txt": {
+        "name": "opc10.breaths.live",
+        "type": "TXT",
+        "value": "v=spf1 include:resend.com ~all"
+      },
+      "dmarc_txt": {
+        "name": "_dmarc.opc10.breaths.live",
+        "type": "TXT",
+        "value": "v=DMARC1; p=none; rua=mailto:dmarc@breaths.live"
+      },
+      "dkim_cname_note": "Bản ghi DKIM CNAME sẽ được tạo tự động khi anh Add Domain opc10.breaths.live trên Resend Dashboard."
+    }
+  }
+]

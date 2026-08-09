@@ -98,7 +98,31 @@ export const translations = {
         "btn_footer_book": "📩 BOOK TƯ VẤN AI AGENCY",
         "mobile_footer_action_link": "https://zalo.me/g/tdhmtu261",
         "mobile_footer_action_label": "💬 Nhóm Zalo Mã Nguồn",
-        "mobile_footer_book_label": "👉 Book Tư Vấn 1:1"
+        "mobile_footer_book_label": "👉 Book Tư Vấn 1:1",
+
+        // Mobile Specific Elements
+        "btn_pricing_checkout": "🚀 Bảng Giá 0đ - 500K - 1M",
+        "btn_zalo_group": "💬 Nhóm Zalo Mã Nguồn",
+        "video_mobile_title": "🎬 VIDEO DEMO VIRTUAL OFFICE",
+        "btn_unmute_vsl": "🔊 BẤM BẬT ÂM THANH",
+        "section_directors": "👥 BỘ 6 GIÁM ĐỐC AI C-SUITE",
+        "tap_for_details": "Chạm để xem chi tiết",
+        "role_ceo": "👑 TỔNG GIÁM ĐỐC",
+        "role_cmo": "📢 MARKETING",
+        "role_cso": "💼 SALES B2B",
+        "role_cpo": "🛠️ KỸ THUẬT & SAAS",
+        "role_chro": "🧬 NHÂN SỰ AI",
+        "role_cfo": "💎 TÀI CHÍNH & THUẾ",
+        "desc_ceo_short": "Phân tích chỉ thị, bóc tách công việc & uỷ quyền cho 5 Giám đốc AI (CMO, CSO, CPO, CHRO, CFO).",
+        "desc_cmo_short": "Meta Ads, Copywriting Alex Hormozi & Phân tích đối thủ ngách.",
+        "desc_cso_short": "Cold Email 3-Step, LinkedIn Outreach & Kịch bản Demo Call 20m.",
+        "desc_cpo_short": "Fullstack Coder: SaaS, React, Cloudflare Workers & API Design.",
+        "desc_chro_short": "Spawn Agent mới, tạo Skills & Đánh giá năng suất toàn đội ngũ.",
+        "desc_cfo_short": "Đối soát VietQR MB Bank 3s, tự động cấp quyền tài liệu & MRR.",
+        "btn_bottom_source": "🎁 NHẬN BẢN SAO OPC (0Đ)",
+        "btn_bottom_zalo": "💬 CHÁT ZALO ADVISOR",
+        "key_skills_label": "⚡ BỘ KỸ NĂNG NỔI BẬT:",
+        "drawer_close": "✕ Đóng"
     },
     en: {
         // Header & Branding
@@ -197,7 +221,31 @@ export const translations = {
         "btn_footer_book": "📩 BOOK AI AGENCY CONSULTATION",
         "mobile_footer_action_link": "https://discord.com/channels/1098935967873765457/1098935968582598707",
         "mobile_footer_action_label": "👾 Discord Community",
-        "mobile_footer_book_label": "👉 Book 1:1 Consultation"
+        "mobile_footer_book_label": "👉 Book 1:1 Consultation",
+
+        // Mobile Specific Elements
+        "btn_pricing_checkout": "🚀 Pricing $0 - $20 - $49",
+        "btn_zalo_group": "✈️ Telegram 2-Way",
+        "video_mobile_title": "🎬 VIRTUAL OFFICE DEMO VIDEO",
+        "btn_unmute_vsl": "🔊 UNMUTE AUDIO",
+        "section_directors": "👥 6 C-SUITE AI DIRECTORS",
+        "tap_for_details": "Tap for details",
+        "role_ceo": "👑 CHIEF EXECUTIVE",
+        "role_cmo": "📢 CHIEF MARKETING",
+        "role_cso": "💼 CHIEF SALES",
+        "role_cpo": "🛠️ CHIEF PRODUCT",
+        "role_chro": "🧬 CHIEF HR",
+        "role_cfo": "💎 CHIEF FINANCIAL",
+        "desc_ceo_short": "Analyzes directives, decomposes tasks & delegates to 5 AI Directors (CMO, CSO, CPO, CHRO, CFO).",
+        "desc_cmo_short": "Meta Ads, Alex Hormozi Copywriting & Niche Competitor Analysis.",
+        "desc_cso_short": "3-Step Cold Email, LinkedIn Outreach & 20m Demo Call Script.",
+        "desc_cpo_short": "Fullstack Coder: SaaS, React, Cloudflare Workers & API Design.",
+        "desc_chro_short": "Spawns new AI Agents, builds Skills & audits team throughput.",
+        "desc_cfo_short": "3s VietQR & Bank reconciliation, automated VIP access & MRR.",
+        "btn_bottom_source": "🎁 GET OPC SOURCE CODE ($0)",
+        "btn_bottom_zalo": "👾 DISCORD / TELEGRAM 2-WAY",
+        "key_skills_label": "⚡ FEATURED AI SKILLS:",
+        "drawer_close": "✕ Close"
     }
 };
 

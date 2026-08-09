@@ -421,7 +421,7 @@
         <!-- 6 AI Directors Grid -->
         <section>
             <div class="directors-header">
-                <div class="section-title" data-i18n="section_directors">👥 BỘ SẢO 6 GIÁM ĐỐC AI C-SUITE</div>
+                <div class="section-title" data-i18n="section_directors">👥 BỘ 6 GIÁM ĐỐC AI C-SUITE</div>
                 <span style="font-size:10px;color:var(--text-muted);" data-i18n="tap_for_details">Chạm để xem chi tiết</span>
             </div>
 
@@ -480,7 +480,7 @@
     <!-- Modal Drawer for Director details -->
     <div class="modal-overlay" id="modal-overlay" onclick="closeDirectorModal()">
         <div class="modal-drawer" onclick="event.stopPropagation()">
-            <button class="modal-close-btn" onclick="closeDirectorModal()">✕ Đóng</button>
+            <button class="modal-close-btn" onclick="closeDirectorModal()" data-i18n="drawer_close">✕ Đóng</button>
             <div id="modal-content"></div>
         </div>
     </div>
@@ -644,11 +644,13 @@
             const data = dict[key];
             if (!data) return;
 
+            const skillsLabel = currentLang === 'en' ? '⚡ FEATURED AI SKILLS:' : '⚡ BỘ KỸ NĂNG NỔI BẬT:';
+
             const content = document.getElementById('modal-content');
             content.innerHTML = `
                 <div style="font-size:15px;font-weight:900;color:${data.color};margin-bottom:8px;">${data.title}</div>
                 <div style="font-size:12px;color:#cbd5e1;line-height:1.5;margin-bottom:14px;">${data.desc}</div>
-                <div style="font-size:11px;font-weight:800;color:var(--neon-gold);margin-bottom:6px;">⚡ BỘ KỸ NĂNG NỔI BẬT:</div>
+                <div style="font-size:11px;font-weight:800;color:var(--neon-gold);margin-bottom:6px;">${skillsLabel}</div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
                     ${data.skills.map(s => `<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;">${s}</span>`).join('')}
                 </div>
@@ -662,7 +664,10 @@
         };
 
         window.executeDirectorAction = function(key) {
-            alert(`🚀 [EXECUTIVE ACTION] Đã gửi tín hiệu kích hoạt tác vụ cho Director: ${key.toUpperCase()}!`);
+            const msg = currentLang === 'en' 
+                ? `🚀 [EXECUTIVE ACTION] Task signal dispatched to Director: ${key.toUpperCase()}!`
+                : `🚀 [EXECUTIVE ACTION] Đã gửi tín hiệu kích hoạt tác vụ cho Director: ${key.toUpperCase()}!`;
+            alert(msg);
             closeDirectorModal();
         };
 

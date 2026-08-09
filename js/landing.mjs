@@ -348,5 +348,24 @@ export function initMasterFooterToggle() {
     };
 }
 
+/* ── VSL Video Unmute Handler ── */
+export function unmuteVslVideo(iframeId, btnEl) {
+    const iframe = document.getElementById(iframeId);
+    if (!iframe) return;
+
+    try {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+
+        if (btnEl) {
+            btnEl.style.display = 'none';
+        }
+    } catch (e) {
+        console.error('[VSL UNMUTE ERROR]', e);
+    }
+}
+window.unmuteVslVideo = unmuteVslVideo;
+
 
 

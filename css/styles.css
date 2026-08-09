@@ -1434,9 +1434,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 3px;
     padding: 14px 10px;
-    background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.82)), url('../tnc_hub_spoke_bg.jpg'), url('https://scontent.fdad3-8.fna.fbcdn.net/v/t39.30808-6/767002328_1366624052333383_5292408667519421487_n.jpg?stp=dst-jpg_tt6&cstp=mx1254x1254&ctp=s1254x1254&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=p_WGRddlMksQ7kNvwE4i85j&_nc_oc=Adp73AbRUuKl2nnFrlTxISJwuonjtFB29t1eH5BG9gLLMyHSPyBZ8u55UtgU86E2k0k&_nc_zt=23&_nc_ht=scontent.fdad3-8.fna&_nc_gid=WC4cQuKnMpjXFxRPhKP84w&_nc_ss=7b2a8&oh=00_AQGJhCED_vocJaVSfF0Tv5STTmgfWVK9DEImwVyx5IAkZg&oe=6A7CD872');
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('../tnc_hub_spoke_bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1446,19 +1446,23 @@ body {
 }
 .org-row {
     display: flex;
-    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
     align-items: center;
+    width: 100%;
 }
 .org-chip {
-    padding: 3px 8px;
+    padding: 4px 8px;
     border-radius: 6px;
     font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
-    font-size: 9px;
+    font-size: 9.5px;
     font-weight: 800;
     cursor: pointer;
     transition: all .2s;
+    backdrop-filter: blur(8px);
 }
-.org-chip:hover { transform: scale(1.1); }
+.org-chip:hover { transform: scale(1.08); box-shadow: 0 0 12px currentColor; }
 .org-connector {
     width: 1px;
     height: 12px;

@@ -6,6 +6,12 @@
     <title>OPC-TNC — Executive Mobile AI Dashboard | One Person Company</title>
     <meta name="description" content="Mô phỏng Điều hành Doanh nghiệp 1 Người tự động hóa 80% với bộ 6 Giám đốc AI C-Suite. Giao diện Mobile siêu tốc, mượt mà 60fps.">
 
+    <!-- PWA & Mobile Web App Meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0b1120">
+
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/gif" href="Favicon.gif">
     <link rel="apple-touch-icon" href="LOGO-OPC.png">
@@ -523,12 +529,24 @@
                 <img id="m-vietqr-img" src="https://img.vietqr.io/image/MB-0989890022-compact2.png?amount=500000&addInfo=OPC%20500K&accountName=TRAN%20NGOC%20CHUYEN" style="max-width:210px;width:100%;border-radius:10px;margin-bottom:10px;" alt="VietQR Scan">
                 <div style="font-size:11px;color:#fff;font-weight:700;">MB Bank: <span style="color:#00f2ff;">0989890022</span> (Trần Ngọc Chuyền)</div>
                 <div style="font-size:11px;color:#ffaa00;font-weight:800;margin-top:2px;">Cú pháp CK: <span style="color:#fff;">OPC 500K</span></div>
+                <div style="display:flex;gap:6px;justify-content:center;margin-top:8px;">
+                    <button onclick="navigator.clipboard.writeText('0989890022');alert('✅ Đã sao chép STK MB Bank: 0989890022!')" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:10px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">📋 Copy STK</button>
+                    <button onclick="navigator.clipboard.writeText('500000');alert('✅ Đã sao chép Số tiền: 500.000đ!')" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:10px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">📋 Copy 500K</button>
+                    <button onclick="navigator.clipboard.writeText('OPC 500K');alert('✅ Đã sao chép Cú pháp: OPC 500K!')" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:10px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">📋 Copy Cú Pháp</button>
+                </div>
             </div>
 
             <div style="display:flex;flex-direction:column;gap:8px;">
                 <a href="https://ai.breaths.live/checkout" class="btn-bottom-primary" style="font-size:12px;padding:11px;">🚀 XEM BẢNG GIÁ FULL 4-TIER (500K - 1M)</a>
                 <a href="https://zalo.me/g/tdhmtu261" target="_blank" class="btn-bottom-secondary" id="btn-oto-group" style="font-size:11.5px;padding:10px;">💬 VÀO NHÓM ZALO MÃ NGUỒN (VIP)</a>
             </div>
+        </div>
+    <!-- Social Proof FOMO Toast -->
+    <div id="m-fomo-toast" style="position:fixed;bottom:75px;left:14px;right:14px;background:rgba(15,23,42,0.92);backdrop-filter:blur(12px);border:1px solid var(--neon-cyan);border-radius:12px;padding:8px 12px;display:none;align-items:center;gap:10px;z-index:9998;box-shadow:0 6px 20px rgba(0,0,0,0.5);">
+        <div style="font-size:18px;">🔥</div>
+        <div style="flex:1;overflow:hidden;">
+            <div id="m-fomo-title" style="font-size:11px;font-weight:800;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Anh Nguyễn Thiết Hừng</div>
+            <div id="m-fomo-desc" style="font-size:10px;color:var(--neon-gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Vừa mở khóa Bản Sao OPC (2 phút trước)</div>
         </div>
     </div>
 
@@ -729,6 +747,12 @@
         };
 
         window.openMobileLeadModal = function() {
+            const savedName = localStorage.getItem('opc-lead-name') || '';
+            const savedPhone = localStorage.getItem('opc-lead-phone') || '';
+            const savedEmail = localStorage.getItem('opc-lead-email') || '';
+            if (savedName) document.getElementById('m-lead-name').value = savedName;
+            if (savedPhone) document.getElementById('m-lead-phone').value = savedPhone;
+            if (savedEmail) document.getElementById('m-lead-email').value = savedEmail;
             document.getElementById('mobile-lead-modal').style.display = 'flex';
         };
 
@@ -753,6 +777,11 @@
                 alert(currentLang === 'en' ? '⚠️ Please fill out all required fields (*).' : '⚠️ Vui lòng điền đầy đủ thông tin bắt buộc (*).');
                 return;
             }
+
+            // Save to LocalStorage for auto pre-fill
+            localStorage.setItem('opc-lead-name', name);
+            localStorage.setItem('opc-lead-phone', phone);
+            localStorage.setItem('opc-lead-email', email);
 
             const btn = document.getElementById('btn-submit-m-lead');
             btn.disabled = true;
@@ -783,8 +812,46 @@
             }
         };
 
-        // Init language on load
+        const fomoList = {
+            vi: [
+                { name: "Anh Nguyễn Thiết Hừng", desc: "Vừa kích hoạt Gói VIP Coaching 1:1 (2 phút trước)" },
+                { name: "Anh LUCKY", desc: "Vừa mở khóa Bản Sao OPC Mã Nguồn 0đ (4 phút trước)" },
+                { name: "Chị Hoàng Ngọc Lan", desc: "Vừa tải Bộ 157 Prompt OPC (7 phút trước)" },
+                { name: "Anh Long AI", desc: "Vừa đăng ký Gói Setup 3D Simulator (10 phút trước)" },
+                { name: "Anh Victor Chuyen", desc: "Vừa nâng cấp VIP Access Member (vừa xong)" }
+            ],
+            en: [
+                { name: "Alex Rivers (US)", desc: "Just activated OPC Source Code Clone ($0)" },
+                { name: "Michael Vance (UK)", desc: "Just unlocked 6 AI C-Suite Directors ($49)" },
+                { name: "David Chen (SG)", desc: "Just downloaded 157 Prompt Vault (3m ago)" },
+                { name: "Sarah Jenkins (AU)", desc: "Just joined Discord VIP Community (6m ago)" }
+            ]
+        };
+
+        function startMobileFomoToast() {
+            let idx = 0;
+            const toast = document.getElementById('m-fomo-toast');
+            const titleEl = document.getElementById('m-fomo-title');
+            const descEl = document.getElementById('m-fomo-desc');
+            if (!toast || !titleEl || !descEl) return;
+
+            setInterval(() => {
+                const list = fomoList[currentLang] || fomoList.vi;
+                const item = list[idx % list.length];
+                titleEl.innerText = item.name;
+                descEl.innerText = item.desc;
+                toast.style.display = 'flex';
+
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 4000);
+                idx++;
+            }, 9000);
+        }
+
+        // Init language and FOMO toast on load
         applyLanguage(currentLang);
+        startMobileFomoToast();
     </script>
 </body>
 </html>

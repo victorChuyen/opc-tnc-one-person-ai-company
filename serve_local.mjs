@@ -3,35 +3,22 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { loadEnv } from './lib/env-loader.mjs';
 import { socialEngine } from './opc_facebook_youtube_engine.mjs';
 import { triggerLeadWelcomeEmail, dispatchSequenceStep } from './opc_resend_email_engine.mjs';
 import { notifyNewLeadToTelegram, startTelegramBotPolling } from './opc_telegram_bot_engine.mjs';
 
+// New modular route imports
+import { handleTickerNews } from './routes/api-ticker.mjs';
+import { handleFinanceWebhook, handleFinanceTransactions } from './routes/api-finance.mjs';
+import { handleLeadSubmit, handleLeadsRecent } from './routes/api-leads.mjs';
+import { handleHealth } from './routes/api-health.mjs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load environment variables from .env file
-try {
-    const envPath = path.join(__dirname, '.env');
-    if (fs.existsSync(envPath)) {
-        const envContent = fs.readFileSync(envPath, 'utf8');
-        envContent.split(/\r?\n/).forEach(line => {
-            const trimmed = line.trim();
-            if (trimmed && !trimmed.startsWith('#')) {
-                const parts = trimmed.split('=');
-                if (parts.length >= 2) {
-                    const key = parts[0].trim();
-                    const val = parts.slice(1).join('=').trim();
-                    if (key && !process.env[key]) {
-                        process.env[key] = val;
-                    }
-                }
-            }
-        });
-    }
-} catch (e) {
-    console.error('[ENV LOAD ERROR]', e.message);
-}
+// Load environment variables from .env file (shared loader — single parse)
+loadEnv(__dirname);
 
 const PORT = 8085;
 
@@ -68,6 +55,11 @@ const server = http.createServer((req, res) => {
         res.writeHead(204);
         res.end();
         return;
+    }
+
+    // Health Check Endpoint (for UptimeRobot, Betterstack, etc.)
+    if (req.url === '/api/health' && req.method === 'GET') {
+        return handleHealth(req, res);
     }
 
     // API Routes for Social Automation & Credentials

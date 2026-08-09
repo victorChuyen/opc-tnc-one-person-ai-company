@@ -1,0 +1,26 @@
+{
+  "name": "opc-tnc",
+  "version": "2.0.0",
+  "description": "OPC-TNC — AI Agentic One-Person Company Toolkit & Virtual Office Simulator",
+  "type": "module",
+  "main": "serve_local.mjs",
+  "scripts": {
+    "start": "node serve_local.mjs",
+    "dev": "node serve_local.mjs",
+    "tunnel": "cloudflared tunnel run opc-tnc-tunnel",
+    "online": "node serve_local.mjs & cloudflared tunnel run opc-tnc-tunnel",
+    "qa": "node scripts/qa_link_audit.mjs",
+    "outreach": "node scripts/dispatch_warm_outreach.mjs",
+    "import-leads": "node scripts/import_ybai_leads.mjs"
+  },
+  "author": "Victor Chuyen <coach.chuyen@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorChuyen/opc-tnc-one-person-ai-company"
+  },
+  "keywords": ["ai-agent", "one-person-company", "automation", "virtual-office", "opc-tnc"],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

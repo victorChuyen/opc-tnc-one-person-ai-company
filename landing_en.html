@@ -19,22 +19,27 @@
     <script src="js/meta_pixel.js"></script>
     <script src="js/tv_ticker.js"></script>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
+    <!-- Open Graph (Facebook / LinkedIn / Twitter / Telegram Sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OPC-TNC Global">
     <meta property="og:url" content="https://ai.breaths.live/en">
-    <meta property="og:title" content="Free AI Agentic One-Person Company Toolkit & SaaS Architecture">
-    <meta property="og:description" content="Automate 80% of Marketing, B2B Sales, and Business Operations with 6 C-Suite AI Directors. Stripe & Cal.com ready.">
-    <meta property="og:image" content="https://opc.breaths.live/tnc_hero_bg.png">
+    <meta property="og:title" content="⚡ FREE AI AGENTIC ONE-PERSON COMPANY TOOLKIT ($0) — OPC-TNC">
+    <meta property="og:description" content="Automate 80% of Marketing, B2B Sales, SaaS Coding & Business Operations with 6 C-Suite AI Directors (CEO, CMO, CSO, CPO, CHRO, CFO). Get instant $0 source code download!">
+    <meta property="og:image" content="https://ai.breaths.live/tnc_hero_bg.png">
+    <meta property="og:image:secure_url" content="https://ai.breaths.live/tnc_hero_bg.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1672">
     <meta property="og:image:height" content="941">
-    <meta property="og:image:alt" content="AI Agentic One-Person Company Toolkit">
+    <meta property="og:image:alt" content="OPC-TNC 6 AI Directors Agentic Company Suite">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card -->
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free AI Agentic One-Person Company Toolkit">
-    <meta name="twitter:description" content="Automate 80% of Marketing, B2B Sales, and SaaS Operations with 6 C-Suite AI Directors.">
-    <meta name="twitter:image" content="https://opc.breaths.live/tnc_hero_bg.png">
+    <meta name="twitter:site" content="@OPCTNC">
+    <meta name="twitter:creator" content="@victorchuyen">
+    <meta name="twitter:title" content="⚡ FREE AI AGENTIC ONE-PERSON COMPANY TOOLKIT ($0) — OPC-TNC">
+    <meta name="twitter:description" content="Automate 80% of Marketing, B2B Sales, SaaS Coding & Business Operations with 6 C-Suite AI Directors.">
+    <meta name="twitter:image" content="https://ai.breaths.live/tnc_hero_bg.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,33 +49,71 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/landing.css">
 
-    <!-- Structured Data (JSON-LD) with Image SEO -->
+    <!-- Rich Multi-Schema Structured Data (JSON-LD Graph) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "OPC-TNC AI Agentic Company Simulator",
-        "operatingSystem": "All",
-        "applicationCategory": "BusinessApplication",
-        "image": "https://opc.breaths.live/tnc_hero_bg.png",
-        "logo": "https://opc.breaths.live/LOGO-OPC.png",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Trần Ngọc Chuyền (Victor Chuyen)",
-            "url": "https://opc.breaths.live/en"
-        },
-        "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://opc.breaths.live/tnc_hero_bg.png",
-            "width": 1672,
-            "height": 941,
-            "caption": "OPC-TNC 6 AI Directors Agentic Company Suite"
-        }
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://ai.breaths.live/en#webpage",
+                "url": "https://ai.breaths.live/en",
+                "name": "FREE AI AGENTIC ONE-PERSON COMPANY TOOLKIT ($0) | OPC-TNC GLOBAL",
+                "description": "Automate 80% of Marketing, B2B Sales, SaaS Coding & Business Operations with 6 C-Suite AI Directors.",
+                "inLanguage": "en-US",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "@id": "https://ai.breaths.live/#website",
+                    "url": "https://ai.breaths.live/",
+                    "name": "OPC-TNC AI Agentic Platform",
+                    "publisher": { "@id": "https://ai.breaths.live/en#organization" }
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "@id": "https://ai.breaths.live/en#primaryimage",
+                    "url": "https://ai.breaths.live/tnc_hero_bg.png",
+                    "width": 1672,
+                    "height": 941,
+                    "caption": "OPC-TNC 6 AI Directors Agentic Company Suite"
+                }
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://ai.breaths.live/en#organization",
+                "name": "OPC-TNC",
+                "url": "https://ai.breaths.live",
+                "logo": "https://ai.breaths.live/LOGO-OPC.png",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Trần Ngọc Chuyền (Victor Chuyen)",
+                    "jobTitle": "Founder & Chairman",
+                    "sameAs": [
+                        "https://github.com/victorChuyen",
+                        "https://www.facebook.com/OPCTNC",
+                        "https://t.me/victorchuyen"
+                    ]
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://ai.breaths.live/en#software",
+                "name": "OPC-TNC AI Agentic Company Simulator",
+                "operatingSystem": "All",
+                "applicationCategory": "BusinessApplication",
+                "image": "https://ai.breaths.live/tnc_hero_bg.png",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "ratingCount": "157"
+                }
+            }
+        ]
     }
     </script>
 </head>
